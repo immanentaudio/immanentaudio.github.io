@@ -44,14 +44,18 @@ body {
     padding: 1rem 0;
 }
 
-/* Subdued Spacey Hero Section */
+/* FIXED: Hard-centered landing alignment for both Desktop & Mobile layouts */
 .hero {
     position: relative;
-    text-align: center;
-    padding: 8rem 0 6rem 0;
     background: #040407;
     border-bottom: 5px solid #1a1a2e;
     box-shadow: inset 0 -3px 10px rgba(0, 0, 0, 0.8);
+    padding: 8rem 1rem 6rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .cosmic-glow {
@@ -65,26 +69,29 @@ body {
     box-shadow: 0 0 50px rgba(168, 85, 247, 0.8);
 }
 
+/* Ecosystems of Sound Tag */
 .brand-tag {
+    display: block;
     color: #c084fc;
     font-weight: 700;
     letter-spacing: 0.3em;
     font-size: 0.8rem;
     text-transform: uppercase;
     text-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+    margin-bottom: 0.5rem;
+    width: 100%;
 }
 
-/* FIXED: Text-stroke borders around letters and ultra-bright multi-color background glow */
+/* FIXED: Immanent Audio Title - Centered perfectly with bright cosmic background aura & outlines */
 .hero h1 {
     font-size: 3.25rem;
     font-weight: 900;
     color: #ffffff;
-    margin: 0.75rem 0 1.25rem 0;
+    margin: 0 auto 1.25rem auto;
     letter-spacing: 0.08em;
     position: relative;
     display: inline-block;
     z-index: 1;
-    /* Clean individual letter border outlines */
     -webkit-text-stroke: 1px rgba(255, 255, 255, 0.6);
     text-stroke: 1px rgba(255, 255, 255, 0.6);
 }
@@ -95,9 +102,8 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 120%;
-    height: 80%;
-    /* Brightened color scheme mixture behind your main name layout */
+    width: 125%;
+    height: 85%;
     background: linear-gradient(90deg, rgba(0, 163, 255, 0.45), rgba(168, 85, 247, 0.65), rgba(255, 102, 0, 0.45));
     filter: blur(28px);
     border-radius: 50px;
@@ -112,10 +118,12 @@ body {
 }
 
 .hero-tagline {
+    display: block;
     font-size: 1.15rem;
     color: #94a3b8;
     max-width: 580px;
     margin: 0 auto;
+    width: 100%;
 }
 
 /* Minimalist Plugin Catalog Layout */
@@ -138,9 +146,8 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     gap: 2.5rem;
-    /* Smooth transitions optimized for mouse exits and touch lift-offs */
     transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
-    -webkit-tap-highlight-color: transparent; /* Clean up selection boxes on mobile */
+    -webkit-tap-highlight-color: transparent;
 }
 
 /* Modest custom backlights layer setup */
@@ -155,16 +162,11 @@ body {
     opacity: 0.3;
 }
 
-/* ==========================================
-   FIXED: DEDICATED HOVER & MOBILE ACTIVE TRIMS
-   ========================================== */
-
 /* Card 1: Spectral Agent (Electric Blue - #00A3FF) */
 .plugin-card:nth-of-type(1) { border-color: rgba(0, 163, 255, 0.15); }
 .plugin-card:nth-of-type(1)::before {
     background: radial-gradient(circle, rgba(0, 163, 255, 0.22) 0%, transparent 70%);
 }
-/* Desktop Hover & Mobile Press Response */
 .plugin-card:nth-of-type(1):hover,
 .plugin-card:nth-of-type(1):active {
     border-color: rgba(0, 163, 255, 0.65);
@@ -182,7 +184,6 @@ body {
 .plugin-card:nth-of-type(2)::before {
     background: radial-gradient(circle, rgba(255, 102, 0, 0.18) 0%, transparent 70%);
 }
-/* Desktop Hover & Mobile Press Response */
 .plugin-card:nth-of-type(2):hover,
 .plugin-card:nth-of-type(2):active {
     border-color: rgba(255, 102, 0, 0.6);
@@ -200,7 +201,6 @@ body {
 .plugin-card:nth-of-type(3)::before {
     background: radial-gradient(circle, rgba(0, 255, 204, 0.18) 0%, transparent 70%);
 }
-/* Desktop Hover & Mobile Press Response */
 .plugin-card:nth-of-type(3):hover,
 .plugin-card:nth-of-type(3):active {
     border-color: rgba(0, 255, 204, 0.6);
@@ -213,13 +213,11 @@ body {
     background: radial-gradient(circle, rgba(0, 255, 204, 0.32) 0%, transparent 65%);
 }
 
-/* Global Universal Card Movement Modifiers on Focus/Press */
 .plugin-card:hover,
 .plugin-card:active {
     transform: translateY(-4px);
 }
 
-/* Highlighted flag cleaner adjustments */
 .plugin-card.highlighted {
     background: rgba(10, 10, 15, 0.85);
 }
@@ -245,7 +243,6 @@ body {
     padding: 1rem;
 }
 
-/* Frame boundary coloring tweaks */
 .plugin-card:nth-of-type(1) .plugin-image-wrapper { border-color: rgba(0, 163, 255, 0.15); }
 .plugin-card:nth-of-type(2) .plugin-image-wrapper { border-color: rgba(255, 102, 0, 0.1); }
 .plugin-card:nth-of-type(3) .plugin-image-wrapper { border-color: rgba(0, 255, 204, 0.1); }

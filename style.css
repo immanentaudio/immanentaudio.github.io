@@ -48,8 +48,9 @@ body {
 .hero {
     position: relative;
     text-align: center;
-    padding: 8rem 0 5rem 0;
-    background: radial-gradient(circle at bottom center, rgba(19, 15, 38, 0) 0%, #040407 100%);
+    padding: 8rem 0 6rem 0;
+    background: #040407; /* Clear dark anchor for the header element */
+    border-bottom: 1px solid #161624; /* Intentional gray demarcation line */
 }
 
 .cosmic-glow {
@@ -92,7 +93,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 3.5rem;
-    margin-top: 2rem;
+    margin-top: 3.5rem; /* Pushes content cleanly past the demarcation line */
 }
 
 .plugin-card {
@@ -157,7 +158,7 @@ body {
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.9), 0 0 50px rgba(168, 85, 247, 0.2);
 }
 
-/* FIXED: Image Wrappers and Scaling to Prevent Vertical Clipping */
+/* Image Wrappers and Scaling to Prevent Vertical Clipping */
 .plugin-image-wrapper {
     width: 100%;
     display: flex;
@@ -167,19 +168,60 @@ body {
     border: 1px solid rgba(168, 85, 247, 0.2);
     border-radius: 10px;
     overflow: hidden;
-    padding: 1rem; /* Padding prevents the UI edges from kissing the frame border */
+    padding: 1rem;
 }
 
 .plugin-screenshot {
     width: 100%;
     height: auto;
     max-height: 240px;
-    object-fit: contain; /* Ensures entire window scales without ever cropping */
+    object-fit: contain;
     transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .plugin-card:hover .plugin-screenshot {
     transform: scale(1.04);
+}
+
+/* Subpage Dedicated Media Scaling Layout */
+.showcase-large-wrapper {
+    width: 100%;
+    background-color: rgba(10, 10, 15, 0.6);
+    border: 1px solid rgba(168, 85, 247, 0.25);
+    border-radius: 14px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+}
+
+.showcase-large-image {
+    max-width: 100%;
+    height: auto;
+    max-height: 500px; /* Gives the subpage screenshot a massive vertical clearance */
+    object-fit: contain;
+}
+
+/* Video Wrapper Container Scaling */
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* Fixed 16:9 responsive display frame */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+    border-radius: 12px;
+    border: 1px solid rgba(168, 85, 247, 0.25);
+    margin: 2.5rem 0;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 /* Cosmic Placeholder Art for Unreleased Tools */

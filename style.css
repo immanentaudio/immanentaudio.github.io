@@ -7,31 +7,33 @@
 
 body {
     background-color: #040407;
-    /* Multilayered background: Shifting stars + Ambient Nebulae */
+    /* Multilayered background: Dynamic stars, cosmic deep purples, and shifting nebulae */
     background-image: 
-        radial-gradient(1px 1px at 20px 30px, #ffffff, transparent),
-        radial-gradient(1.5px 1.5px at 150px 80px, rgba(255, 255, 255, 0.4), transparent),
-        radial-gradient(1px 1px at 80px 240px, #ffffff, transparent),
-        radial-gradient(2px 2px at 280px 120px, rgba(168, 85, 247, 0.3), transparent),
-        radial-gradient(circle at 20% 30%, rgba(88, 28, 135, 0.12) 0%, transparent 50%),
-        radial-gradient(circle at 80% 70%, rgba(124, 58, 237, 0.08) 0%, transparent 50%);
-    background-size: 350px 350px, 400px 400px, 250px 250px, 500px 500px, 100% 100%, 100% 100%;
+        radial-gradient(1.5px 1.5px at 40px 60px, #ffffff, transparent),
+        radial-gradient(2px 2px at 210px 140px, rgba(255, 255, 255, 0.7), transparent),
+        radial-gradient(1.5px 1.5px at 90px 320px, #ffffff, transparent),
+        radial-gradient(3px 3px at 420px 220px, rgba(168, 85, 247, 0.5), transparent),
+        radial-gradient(circle at 15% 25%, rgba(107, 33, 168, 0.22) 0%, transparent 45%),
+        radial-gradient(circle at 85% 75%, rgba(147, 51, 234, 0.18) 0%, transparent 50%),
+        radial-gradient(circle at 50% 90%, rgba(88, 28, 135, 0.25) 0%, transparent 60%);
+    background-size: 300px 300px, 360px 360px, 280px 280px, 450px 450px, 100% 100%, 100% 100%, 100% 100%;
     background-attachment: fixed;
     color: #e2e8f0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
-    animation: nebulaPulse 20s ease-in-out infinite alternate;
+    animation: nebulaPulse 16s ease-in-out infinite alternate;
 }
 
-/* Tasteful background parallax and nebula drift animation */
+/* Enhanced background parallax and cosmic shifting animation */
 @keyframes nebulaPulse {
     0% {
-        background-position: 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0% 0%, 0% 0%;
+        background-position: 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0% 0%, 0% 0%, 0% 0%;
+        background-color: #040407;
     }
     100% {
-        background-position: 10px 20px, -15px 10px, 5px -25px, 20px -10px, 4% 2%, -2% 3%;
-        background-color: #06050b;
+        background-position: 15px 25px, -20px 15px, 8px -30px, 30px -15px, 6% 3%, -4% 5%, 2% -3%;
+        background-color: #080511;
     }
 }
 
@@ -95,10 +97,10 @@ body {
 
 .plugin-card {
     position: relative;
-    background-color: rgba(12, 12, 18, 0.75);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(38, 38, 62, 0.7);
+    background-color: rgba(10, 10, 15, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(168, 85, 247, 0.15);
     padding: 2.5rem;
     border-radius: 16px;
     display: grid;
@@ -107,17 +109,17 @@ body {
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Backlit Dynamic Glow Layer behind cards */
+/* Noticeable Backlit Cosmic Aura behind cards */
 .plugin-card::before {
     content: '';
     position: absolute;
-    top: 10%; left: 10%; right: 10%; bottom: 10%;
-    background: radial-gradient(circle, rgba(168, 85, 247, 0.06) 0%, transparent 70%);
+    top: 5%; left: 5%; right: 5%; bottom: 5%;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, transparent 70%);
     border-radius: 16px;
     z-index: -1;
     pointer-events: none;
     transition: opacity 0.4s ease, transform 0.4s ease;
-    opacity: 0.5;
+    opacity: 0.6;
 }
 
 /* Two-column layout on desktops */
@@ -129,68 +131,65 @@ body {
 }
 
 .plugin-card:hover {
-    border-color: rgba(168, 85, 247, 0.35);
+    border-color: rgba(168, 85, 247, 0.5);
     transform: translateY(-4px);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(168, 85, 247, 0.02);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.9), 0 0 40px rgba(168, 85, 247, 0.05);
 }
 
 .plugin-card:hover::before {
     opacity: 1;
-    transform: scale(1.15);
-    background: radial-gradient(circle, rgba(192, 132, 252, 0.12) 0%, transparent 70%);
+    transform: scale(1.1);
+    background: radial-gradient(circle, rgba(192, 132, 252, 0.25) 0%, transparent 65%);
 }
 
 .plugin-card.highlighted {
-    border-color: rgba(168, 85, 247, 0.35);
-    background: linear-gradient(145deg, rgba(18, 14, 36, 0.85) 0%, rgba(12, 12, 18, 0.85) 100%);
+    border-color: rgba(168, 85, 247, 0.4);
+    background: linear-gradient(145deg, rgba(20, 15, 40, 0.9) 0%, rgba(10, 10, 15, 0.9) 100%);
 }
 
 .plugin-card.highlighted::before {
-    background: radial-gradient(circle, rgba(168, 85, 247, 0.1) 0%, transparent 70%);
-    opacity: 0.8;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.22) 0%, transparent 70%);
+    opacity: 0.9;
 }
 
 .plugin-card.highlighted:hover {
-    border-color: rgba(168, 85, 247, 0.6);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.85), 0 0 50px rgba(168, 85, 247, 0.12);
+    border-color: rgba(168, 85, 247, 0.75);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.9), 0 0 50px rgba(168, 85, 247, 0.2);
 }
 
-.plugin-card.highlighted:hover::before {
-    background: radial-gradient(circle, rgba(168, 85, 247, 0.18) 0%, transparent 70%);
-}
-
-/* Image Wrappers and Scaling */
+/* FIXED: Image Wrappers and Scaling to Prevent Vertical Clipping */
 .plugin-image-wrapper {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #07070a;
-    border: 1px solid rgba(46, 46, 79, 0.8);
+    background-color: rgba(5, 5, 8, 0.9);
+    border: 1px solid rgba(168, 85, 247, 0.2);
     border-radius: 10px;
     overflow: hidden;
-    aspect-ratio: 16 / 10;
-    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8);
+    padding: 1rem; /* Padding prevents the UI edges from kissing the frame border */
 }
 
 .plugin-screenshot {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    max-height: 240px;
+    object-fit: contain; /* Ensures entire window scales without ever cropping */
     transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .plugin-card:hover .plugin-screenshot {
-    transform: scale(1.03);
+    transform: scale(1.04);
 }
 
 /* Cosmic Placeholder Art for Unreleased Tools */
 .cosmic-placeholder-art {
     width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, #0c0c12, #18122b, #0c0c12);
+    height: 160px;
+    background: linear-gradient(45deg, #0c0c12, #241442, #0c0c12);
     position: relative;
-    opacity: 0.5;
+    opacity: 0.6;
+    border-radius: 6px;
 }
 
 /* Typography & Tags */

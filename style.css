@@ -1,4 +1,4 @@
-/* Core Styling & Reset */
+/* Minimalist Cosmic Style & Reset */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -6,137 +6,198 @@
 }
 
 body {
-    background-color: #0b0b0d;
+    background-color: #050508;
     color: #e2e8f0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 .container {
     width: 90%;
-    max-width: 1000px;
+    max-width: 900px;
     margin: 0 auto;
-    padding: 2rem 0;
+    padding: 1rem 0;
 }
 
-/* Hero Section */
+/* Subdued Spacey Hero Section */
 .hero {
-    background: linear-gradient(180deg, #16161a 0%, #0b0b0d 100%);
+    position: relative;
     text-align: center;
-    padding: 5rem 0 3rem 0;
-    border-bottom: 1px solid #1e1e24;
+    padding: 7rem 0 4rem 0;
+    background: radial-gradient(circle at top center, #130f26 0%, #050508 70%);
+}
+
+.cosmic-glow {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #a855f7, transparent);
+    box-shadow: 0 0 40px #a855f7;
 }
 
 .brand-tag {
-    color: #3b82f6;
+    color: #a855f7;
     font-weight: 700;
-    letter-spacing: 0.15em;
-    font-size: 0.9rem;
+    letter-spacing: 0.25em;
+    font-size: 0.85rem;
     text-transform: uppercase;
 }
 
 .hero h1 {
-    font-size: 3.5rem;
-    font-weight: 800;
+    font-size: 3rem;
+    font-weight: 900;
     color: #ffffff;
-    margin: 0.5rem 0 1.5rem 0;
-    letter-spacing: -0.02em;
+    margin: 0.75rem 0 1.25rem 0;
+    letter-spacing: 0.05em;
 }
 
 .hero-tagline {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     color: #94a3b8;
-    max-width: 600px;
-    margin: 0 auto 2.5rem auto;
+    max-width: 580px;
+    margin: 0 auto;
 }
 
-/* Button */
-.cta-button {
+/* Minimalist Plugin Catalog Layout */
+.catalog {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.plugin-card {
+    background-color: #0c0c12;
+    border: 1px solid #1e1e2f;
+    padding: 2.5rem;
+    border-radius: 12px;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.plugin-card:hover {
+    border-color: #3b3b4f;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.plugin-card.highlighted {
+    border-color: rgba(168, 85, 247, 0.3);
+    background: linear-gradient(145deg, #0e0c1a 0%, #0c0c12 100%);
+}
+
+.plugin-card.highlighted:hover {
+    border-color: rgba(168, 85, 247, 0.6);
+}
+
+/* Typography & Tags Inside Cards */
+.status-tag {
     display: inline-block;
-    background-color: #3b82f6;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.status-tag.premium { background-color: rgba(168, 85, 247, 0.15); color: #c084fc; }
+.status-tag.free { background-color: rgba(34, 197, 94, 0.15); color: #4ade80; }
+.status-tag.upcoming { background-color: rgba(148, 163, 184, 0.15); color: #94a3b8; }
+
+.plugin-info h2 {
     color: #ffffff;
-    text-decoration: none;
-    padding: 1rem 2.5rem;
-    font-weight: 600;
-    font-size: 1.1rem;
-    border-radius: 6px;
-    transition: background 0.2s ease;
-    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
 }
 
-.cta-button:hover {
-    background-color: #2563eb;
-}
-
-.sub-text {
-    font-size: 0.85rem;
-    color: #64748b;
-    margin-top: 1rem;
-}
-
-/* Plugin UI Screenshot */
-.plugin-preview {
-    text-align: center;
-    margin: 2rem 0 4rem 0;
-}
-
-.ui-screenshot {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    border: 1px solid #1e1e24;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-}
-
-/* Features Layout */
-.features h2, .demos h2 {
-    text-align: center;
-    font-size: 2rem;
-    color: #ffffff;
-    margin-bottom: 2rem;
-}
-
-.feature-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    margin-bottom: 4rem;
-}
-
-.feature-card {
-    background-color: #16161a;
-    border: 1px solid #1e1e24;
-    padding: 2rem;
-    border-radius: 8px;
-}
-
-.feature-card h3 {
-    color: #ffffff;
-    margin-bottom: 0.75rem;
+.price {
     font-size: 1.25rem;
+    color: #a855f7;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
 }
 
-.feature-card p {
+.description {
     color: #94a3b8;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    max-width: 750px;
+}
+
+/* Classy Minimalist Action Buttons */
+.card-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 0.75rem 1.75rem;
+    font-weight: 600;
     font-size: 0.95rem;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    cursor: pointer;
 }
 
-/* Demo Placeholder */
-.demo-placeholder {
-    background-color: #16161a;
-    border: 2px dashed #1e1e24;
+.btn-primary {
+    background-color: #a855f7;
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: #9333ea;
+}
+
+.btn-secondary {
+    background-color: #1e1e2f;
+    color: #e2e8f0;
+    border: 1px solid #2e2e4f;
+}
+
+.btn-secondary:hover {
+    background-color: #2e2e4f;
+}
+
+.btn-disabled {
+    background-color: #161622;
+    color: #475569;
+    cursor: not-allowed;
+    border: 1px solid #1e1e2f;
+}
+
+/* Video Styling for Details Page */
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
     border-radius: 8px;
-    padding: 4rem 2rem;
-    text-align: center;
-    color: #64748b;
+    border: 1px solid #1e1e2f;
+    margin: 2rem 0;
 }
 
-/* Footer */
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Footer layout */
 footer {
     text-align: center;
-    padding: 4rem 0;
+    padding: 5rem 0;
     color: #475569;
-    font-size: 0.85rem;
-    border-top: 1px solid #1e1e24;
-    margin-top: 4rem;
+    font-size: 0.8rem;
 }

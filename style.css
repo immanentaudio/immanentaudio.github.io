@@ -50,7 +50,6 @@ body {
     text-align: center;
     padding: 8rem 0 6rem 0;
     background: #040407;
-    /* FIXED: Considerably wider, real gray demarcation line */
     border-bottom: 5px solid #1a1a2e;
     box-shadow: inset 0 -3px 10px rgba(0, 0, 0, 0.8);
 }
@@ -75,7 +74,7 @@ body {
     text-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
 }
 
-/* FIXED: Vibrant, multi-color glowing design behind the main title */
+/* FIXED: Text-stroke borders around letters and ultra-bright multi-color background glow */
 .hero h1 {
     font-size: 3.25rem;
     font-weight: 900;
@@ -84,8 +83,10 @@ body {
     letter-spacing: 0.08em;
     position: relative;
     display: inline-block;
-    padding: 0.2rem 2.5rem;
     z-index: 1;
+    /* Clean individual letter border outlines */
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.6);
+    text-stroke: 1px rgba(255, 255, 255, 0.6);
 }
 
 .hero h1::before {
@@ -94,10 +95,11 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 110%;
-    height: 70%;
-    background: linear-gradient(90deg, rgba(0, 163, 255, 0.25), rgba(168, 85, 247, 0.4), rgba(255, 102, 0, 0.25));
-    filter: blur(24px);
+    width: 120%;
+    height: 80%;
+    /* Brightened color scheme mixture behind your main name layout */
+    background: linear-gradient(90deg, rgba(0, 163, 255, 0.45), rgba(168, 85, 247, 0.65), rgba(255, 102, 0, 0.45));
+    filter: blur(28px);
     border-radius: 50px;
     z-index: -1;
     pointer-events: none;
@@ -105,8 +107,8 @@ body {
 }
 
 @keyframes titleGlowShift {
-    0% { filter: blur(20px); opacity: 0.8; transform: translate(-50%, -50%) scale(0.95); }
-    100% { filter: blur(28px); opacity: 1; transform: translate(-50%, -50%) scale(1.05); }
+    0% { filter: blur(24px); opacity: 0.85; transform: translate(-50%, -50%) scale(0.96); }
+    100% { filter: blur(32px); opacity: 1; transform: translate(-50%, -50%) scale(1.04); }
 }
 
 .hero-tagline {
@@ -124,7 +126,7 @@ body {
     margin-top: 4rem;
 }
 
-/* Base configuration matching all standard cards */
+/* Base configuration matching all cards uniformly by default */
 .plugin-card {
     position: relative;
     background-color: rgba(10, 10, 15, 0.85);
@@ -136,64 +138,93 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     gap: 2.5rem;
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+    /* Smooth transitions optimized for mouse exits and touch lift-offs */
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+    -webkit-tap-highlight-color: transparent; /* Clean up selection boxes on mobile */
 }
 
-/* Default modest custom backlights behind cards */
+/* Modest custom backlights layer setup */
 .plugin-card::before {
     content: '';
     position: absolute;
-    top: 8%; left: 8%; right: 8%; bottom: 8%;
+    top: 6%; left: 6%; right: 6%; bottom: 6%;
     border-radius: 16px;
     z-index: -1;
     pointer-events: none;
-    transition: opacity 0.4s ease, transform 0.4s ease, background 0.4s ease;
-    opacity: 0.35;
+    transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease;
+    opacity: 0.3;
 }
 
-/* 1. Custom Electric Blue Trims (Spectral Agent) */
+/* ==========================================
+   FIXED: DEDICATED HOVER & MOBILE ACTIVE TRIMS
+   ========================================== */
+
+/* Card 1: Spectral Agent (Electric Blue - #00A3FF) */
 .plugin-card:nth-of-type(1) { border-color: rgba(0, 163, 255, 0.15); }
 .plugin-card:nth-of-type(1)::before {
-    background: radial-gradient(circle, rgba(0, 163, 255, 0.2) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(0, 163, 255, 0.22) 0%, transparent 70%);
+}
+/* Desktop Hover & Mobile Press Response */
+.plugin-card:nth-of-type(1):hover,
+.plugin-card:nth-of-type(1):active {
+    border-color: rgba(0, 163, 255, 0.65);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.9), 0 0 45px rgba(0, 163, 255, 0.15);
+}
+.plugin-card:nth-of-type(1):hover::before,
+.plugin-card:nth-of-type(1):active::before {
+    opacity: 1;
+    transform: scale(1.08);
+    background: radial-gradient(circle, rgba(0, 163, 255, 0.35) 0%, transparent 65%);
 }
 
-/* 2. Custom Neon Orange Trims (Vibrancy) */
+/* Card 2: Vibrancy (Neon Orange - #FF6600) */
 .plugin-card:nth-of-type(2) { border-color: rgba(255, 102, 0, 0.12); }
 .plugin-card:nth-of-type(2)::before {
-    background: radial-gradient(circle, rgba(255, 102, 0, 0.15) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(255, 102, 0, 0.18) 0%, transparent 70%);
+}
+/* Desktop Hover & Mobile Press Response */
+.plugin-card:nth-of-type(2):hover,
+.plugin-card:nth-of-type(2):active {
+    border-color: rgba(255, 102, 0, 0.6);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.9), 0 0 45px rgba(255, 102, 0, 0.12);
+}
+.plugin-card:nth-of-type(2):hover::before,
+.plugin-card:nth-of-type(2):active::before {
+    opacity: 1;
+    transform: scale(1.08);
+    background: radial-gradient(circle, rgba(255, 102, 0, 0.32) 0%, transparent 65%);
 }
 
-/* 3. Custom Seafoam Cyan Trims (Harmonic Saturator) */
+/* Card 3: Harmonic Saturator (Seafoam Cyan - #00FFCC) */
 .plugin-card:nth-of-type(3) { border-color: rgba(0, 255, 204, 0.12); }
 .plugin-card:nth-of-type(3)::before {
-    background: radial-gradient(circle, rgba(0, 255, 204, 0.15) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(0, 255, 204, 0.18) 0%, transparent 70%);
+}
+/* Desktop Hover & Mobile Press Response */
+.plugin-card:nth-of-type(3):hover,
+.plugin-card:nth-of-type(3):active {
+    border-color: rgba(0, 255, 204, 0.6);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.9), 0 0 45px rgba(0, 255, 204, 0.12);
+}
+.plugin-card:nth-of-type(3):hover::before,
+.plugin-card:nth-of-type(3):active::before {
+    opacity: 1;
+    transform: scale(1.08);
+    background: radial-gradient(circle, rgba(0, 255, 204, 0.32) 0%, transparent 65%);
 }
 
-/* Unified Overrides for Highlighted/Flagship cards on idle */
+/* Global Universal Card Movement Modifiers on Focus/Press */
+.plugin-card:hover,
+.plugin-card:active {
+    transform: translateY(-4px);
+}
+
+/* Highlighted flag cleaner adjustments */
 .plugin-card.highlighted {
-    border-color: rgba(0, 163, 255, 0.15);
     background: rgba(10, 10, 15, 0.85);
 }
 
-/* Hover Interaction Configurations: Turns vibrant purple across all variants */
-.plugin-card:hover {
-    border-color: rgba(168, 85, 247, 0.55);
-    transform: translateY(-4px);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.9), 0 0 40px rgba(168, 85, 247, 0.05);
-}
-
-.plugin-card:hover::before {
-    opacity: 1;
-    transform: scale(1.1);
-    background: radial-gradient(circle, rgba(192, 132, 252, 0.28) 0%, transparent 65%);
-}
-
-.plugin-card.highlighted:hover {
-    border-color: rgba(168, 85, 247, 0.75);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.9), 0 0 50px rgba(168, 85, 247, 0.2);
-}
-
-/* Two-column layout on desktops */
+/* Two-column desktop alignment */
 @media (min-width: 768px) {
     .plugin-card {
         grid-template-columns: 320px 1fr;
@@ -214,7 +245,7 @@ body {
     padding: 1rem;
 }
 
-/* Custom individual frame inner tints to complement default colors */
+/* Frame boundary coloring tweaks */
 .plugin-card:nth-of-type(1) .plugin-image-wrapper { border-color: rgba(0, 163, 255, 0.15); }
 .plugin-card:nth-of-type(2) .plugin-image-wrapper { border-color: rgba(255, 102, 0, 0.1); }
 .plugin-card:nth-of-type(3) .plugin-image-wrapper { border-color: rgba(0, 255, 204, 0.1); }
@@ -227,7 +258,8 @@ body {
     transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.plugin-card:hover .plugin-screenshot {
+.plugin-card:hover .plugin-screenshot,
+.plugin-card:active .plugin-screenshot {
     transform: scale(1.04);
 }
 

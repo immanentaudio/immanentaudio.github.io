@@ -20,7 +20,7 @@ body {
     color: #e2e8f0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.6;
-    overflow-x: hidden; /* Keeps viewport absolutely locked horizontally on mobile */
+    overflow-x: hidden;
     animation: nebulaPulse 16s ease-in-out infinite alternate;
 }
 
@@ -54,7 +54,7 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    overflow: hidden; /* Prevents background graphics and glows from creating an outer scrollbar */
+    overflow: hidden;
 }
 
 /* Brings typography clean contrast layer above background graphic grids */
@@ -87,29 +87,32 @@ body {
     width: 100%;
     height: 100%;
     z-index: 1;
-    opacity: 0.18; /* Retains clean minimalism without clashing with branding */
     display: flex;
     justify-content: space-between;
     padding: 0 2rem;
     pointer-events: none;
-    /* Clean linear step DAW style layout background grid hashes */
+    /* Clean background grid hashes lines */
     background-image: 
         linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
         linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
     background-size: 40px 100%, 100% 16px;
 }
 
-/* Randomly Overlapping Sine Waves Style */
+/* Pristine Uniform Sine Waves */
 .daw-vocal-wave {
     position: absolute;
     top: 50%;
     left: 0;
     transform: translateY(-50%);
     width: 100%;
-    height: 50%; /* Center alignment parameters spanning horizontally */
-    z-index: 1;   /* Stays tucked entirely behind the MIDI stacks */
-    opacity: 0.4; /* Faded, elegant mixing into grid matrix */
-    filter: drop-shadow(0 0 4px rgba(168, 85, 247, 0.1));
+    height: 60%;
+    z-index: 1; /* Sits completely behind midi-chord-stacks */
+    opacity: 0.75; /* Cranked up brightness to cut through the dark background canvas cleanly */
+}
+
+/* Gives the vector stroke lines an authentic glowing electronic instrument feel */
+.bright-wave {
+    filter: drop-shadow(0 0 6px currentColor);
 }
 
 .midi-chord-stack {
@@ -121,10 +124,11 @@ body {
     gap: 2px;
     align-content: center;
     height: 100%;
+    opacity: 0.25; /* Kept subtle to blend nicely with the grid system */
     transition: opacity 0.3s ease;
 }
 
-/* Wide desktop structural alignment nodes */
+/* Wide desktop structural alignment nodes restored */
 .left-chords { margin-left: 2rem; }
 .right-chords { margin-right: 2rem; }
 
@@ -145,13 +149,10 @@ body {
 /* Responsive break settings to optimize mobile scaling without clipping margins */
 @media (max-width: 820px) {
     .midi-chord-stack {
-        display: none; /* Safely hides MIDI block towers to prevent screen crowding on small screens */
-    }
-    .midi-grid-container {
-        opacity: 0.08; /* Softens grid line opacity slightly on small viewports for better text clarity */
+        display: none;
     }
     .daw-vocal-wave {
-        opacity: 0.2;  /* Drops wave prominence so text remains readable on compact smartphone screen widths */
+        opacity: 0.3; /* Lowers brightness slightly on mobile text spaces */
     }
 }
 

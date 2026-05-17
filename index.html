@@ -8,12 +8,37 @@
 </head>
 <body>
 
-    <!-- Spacey, minimalist Header with DAW MIDI Chords Background -->
+    <!-- Spacey, minimalist Header with DAW MIDI Chords & Waveform Background -->
     <header class="hero">
         <div class="cosmic-glow"></div>
         
-        <!-- Faux DAW MIDI Grid & Chords Layout -->
+        <!-- Faux DAW MIDI Grid, Waveform & Chords Layout -->
         <div class="midi-grid-container">
+            
+            <!-- Stylized Full-Width Recorded Vocal Waveform (Deep Background) -->
+            <svg class="daw-vocal-wave" viewBox="0 0 1400 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="waveGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#00A3FF" stop-opacity="0.25" />
+                        <stop offset="35%" stop-color="#a855f7" stop-opacity="0.4" />
+                        <stop offset="70%" stop-color="#FF6600" stop-opacity="0.3" />
+                        <stop offset="100%" stop-color="#00FFCC" stop-opacity="0.2" />
+                    </linearGradient>
+                </defs>
+                <!-- Upper Channel Reflection Profile -->
+                <path d="M 0,100 
+                         Q 50,25 100,100 T 200,100 T 300,45 T 400,100 T 500,10 T 600,100 
+                         T 700,55 T 800,100 T 900,15 T 1000,100 T 1100,65 T 1200,100 
+                         T 1300,30 T 1400,100" 
+                      fill="none" stroke="url(#waveGlow)" stroke-width="2.5" stroke-linecap="round"/>
+                <!-- Lower Micro-Transient Detail Profile -->
+                <path d="M 0,100 
+                         Q 40,150 80,100 T 180,100 T 280,135 T 380,100 T 480,175 T 580,100 
+                         T 680,125 T 780,100 T 880,165 T 980,100 T 1080,140 T 1180,100 
+                         T 1280,155 T 1400,100" 
+                      fill="none" stroke="url(#waveGlow)" stroke-width="1.5" stroke-opacity="0.6" stroke-linecap="round"/>
+            </svg>
+
             <!-- Left Chord Stack -->
             <div class="midi-chord-stack left-chords">
                 <div class="midi-note note-purple" style="--row: 2; --start: 1; --span: 5;"></div>

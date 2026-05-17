@@ -5,20 +5,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spectral Agent | Immanent Audio</title>
     <link rel="stylesheet" href="../style.css">
+    <style>
+        /* Interactive Hover Transitions for the Purchase Button */
+        .btn-interactive-buy {
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, background-color 0.2s ease !important;
+        }
+        .btn-interactive-buy:hover {
+            transform: translateY(-3px);
+            background-color: #00b3ff !important;
+            box-shadow: 0 12px 24px rgba(0, 163, 255, 0.5), 0 0 20px rgba(0, 163, 255, 0.3) !important;
+        }
+        .btn-interactive-buy:active {
+            transform: translateY(-1px);
+        }
+
+        /* Fixes the sizing metrics for the image card frame */
+        .showcase-large-wrapper {
+            border: 1px solid rgba(0, 163, 255, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-sizing: border-box;
+            max-width: 850px;
+            margin: 1.5rem 0;
+            display: flex;
+            justify-content: center;
+        }
+        .showcase-large-image {
+            width: 100%;
+            height: auto;
+            max-width: 780px;
+            object-fit: contain;
+            border-radius: 6px;
+        }
+
+        /* Enforces a mathematically perfect responsive 16:9 widescreen theater mode frame */
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 850px;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio Rule */
+            height: 0;
+            overflow: hidden;
+            border: 1px solid rgba(0, 163, 255, 0.25);
+            border-radius: 12px;
+            margin-top: 1.5rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 11px;
+        }
+    </style>
 </head>
 <body>
 
     <main class="container" style="padding-top: 5rem; padding-bottom: 5rem;">
         <a href="../" class="btn btn-secondary" style="margin-bottom: 3rem;">&larr; Back to Catalog</a>
         
-        <!-- FIXED: Aligned content elements cleanly to the left margin -->
+        <!-- Aligned content elements cleanly to the left margin -->
         <div class="plugin-info" style="display: flex; flex-direction: column; align-items: flex-start; text-align: left;">
             <span class="status-tag premium">Flagship System</span>
             <h1 style="color:#fff; font-size: 3.5rem; font-weight:900; letter-spacing: 0.02em; margin-bottom: 1.5rem; text-align: left;">Spectral Agent</h1>
             
-            <!-- FIXED: Left-aligned buy bar matching the title baseline -->
+            <!-- Left-aligned buy bar matching the title baseline -->
             <div class="card-actions" style="margin-bottom: 3rem; justify-content: flex-start; background: rgba(10,10,15,0.5); padding: 1.5rem 2rem; border-radius: 12px; border: 1px solid rgba(0, 163, 255, 0.2); width: 100%; max-width: 650px; backdrop-filter: blur(8px);">
-                <a href="https://immanentaudio.gumroad.com/l/bejaxg" class="btn btn-primary" style="padding: 0.75rem 2rem; font-size: 1rem; background-color: #00A3FF; box-shadow: 0 4px 14px rgba(0, 163, 255, 0.3);" target="_blank">Purchase Full Version ($20)</a>
+                <!-- Added btn-interactive-buy class for structural pop and shadow enhancements -->
+                <a href="https://immanentaudio.gumroad.com/l/bejaxg" class="btn btn-primary btn-interactive-buy" style="padding: 0.75rem 2rem; font-size: 1rem; background-color: #00A3FF; box-shadow: 0 4px 14px rgba(0, 163, 255, 0.3);" target="_blank">Purchase Full Version ($20)</a>
                 <a href="https://immanentaudio.gumroad.com/l/cveia" class="btn btn-secondary" style="padding: 0.75rem 2rem; font-size: 1rem;" target="_blank">Download Free Demo</a>
             </div>
             
@@ -26,8 +82,8 @@
                 By deploying networked dynamic processing nodes across your mix, Spectral Agent builds an active ecosystem that automatically strips away acoustic masking. Master nodes continually communicate dominant tracking metrics directly to yielding filters, carving absolute surgical spatial depth instantly when conflicts trigger. No manual tracking logic or sidechain matrices required.
             </p>
 
-            <!-- Large Scale Image Display -->
-            <div class="showcase-large-wrapper" style="border-color: rgba(0, 163, 255, 0.3); background-color: rgba(5, 5, 8, 0.9); width: 100%;">
+            <!-- Large Scale Image Display (Bounded within constraints) -->
+            <div class="showcase-large-wrapper" style="background-color: rgba(5, 5, 8, 0.9);">
                 <img src="https://i.imgur.com/1nH8HRc.png" alt="Spectral Agent UI Interface Large Display" class="showcase-large-image">
             </div>
 
@@ -35,8 +91,8 @@
                 Watch the implementation walkthrough below to see how Spectral Agent dynamically handles complex frequency overlapping across diverse stems in real time.
             </p>
 
-            <!-- Expanded Video Frame -->
-            <div class="video-wrapper" style="border-color: rgba(0, 163, 255, 0.25); width: 100%;">
+            <!-- Expanded Video Frame (Now pristine 16:9 theater scaling) -->
+            <div class="video-wrapper">
                 <iframe src="https://www.youtube.com/embed/7LhRCo0Xt-A" title="Spectral Agent Demonstration Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>

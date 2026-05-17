@@ -20,7 +20,7 @@ body {
     color: #e2e8f0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.6;
-    overflow-x: hidden; /* Added to keep viewport absolutely locked horizontally */
+    overflow-x: hidden; /* Keeps viewport absolutely locked horizontally on mobile */
     animation: nebulaPulse 16s ease-in-out infinite alternate;
 }
 
@@ -42,7 +42,7 @@ body {
     padding: 1rem 0;
 }
 
-/* FIXED & IMPROVED: Hard-centered landing header + DAW background container configuration */
+/* Hard-centered landing header + DAW background container configuration */
 .hero {
     position: relative;
     background: #040407;
@@ -54,7 +54,7 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    overflow: hidden; /* FIXED: Prevents cosmic dynamic highlights and midi art out-scaling screens */
+    overflow: hidden; /* Prevents background graphics and glows from creating an outer scrollbar */
 }
 
 /* Brings typography clean contrast layer above background graphic grids */
@@ -99,7 +99,22 @@ body {
     background-size: 40px 100%, 100% 16px;
 }
 
+/* Faux Vocal Track Waveform properties */
+.daw-vocal-wave {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 60%; /* Anchors the transient peaks right around the title card height */
+    z-index: 1; /* Sits completely behind midi-chord-stacks */
+    opacity: 0.45; /* Clean, subtle blend into the grid lines */
+    filter: drop-shadow(0 0 8px rgba(168, 85, 247, 0.15));
+}
+
 .midi-chord-stack {
+    position: relative;
+    z-index: 2; /* Forces MIDI blocks to sit explicitly on top of the wave track line */
     display: grid;
     grid-template-columns: repeat(6, 25px);
     grid-template-rows: repeat(12, 14px);
@@ -127,58 +142,19 @@ body {
 .note-cyan   { background-color: rgba(0, 255, 204, 0.65); border: 1px solid #00FFCC; }
 .note-purple { background-color: rgba(168, 85, 247, 0.75); border: 1px solid #a855f7; }
 
-/* Scale out cleanly on compressed mobile screen shapes */
+/* Responsive break settings to optimize mobile scaling without clipping margins */
 @media (max-width: 820px) {
     .midi-chord-stack {
-        display: none; /* Safely kills off-canvas stretching on smaller profiles */
+        display: none; /* Safely hides MIDI block towers to prevent screen crowding on small screens */
     }
-    /* Append these updated classes inside the DAW MIDI Grid area of your style.css */
-
-.midi-grid-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    opacity: 0.18;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 2rem;
-    pointer-events: none;
-    background-image: 
-        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-    background-size: 40px 100%, 100% 16px;
+    .midi-grid-container {
+        opacity: 0.08; /* Softens grid line opacity slightly on small viewports for better text clarity */
+    }
 }
 
-/* Faux Vocal Track Waveform properties */
-.daw-vocal-wave {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    width: 100%;
-    height: 60%; /* Anchors the transient peaks around the title card */
-    z-index: 1; /* Sits completely behind midi-chord-stacks */
-    opacity: 0.45; /* Clean, subtle blend into the grid lines */
-    filter: drop-shadow(0 0 8px rgba(168, 85, 247, 0.15));
-}
-
-.midi-chord-stack {
-    position: relative;
-    z-index: 2; /* Forces MIDI blocks to sit on top of the wave track */
-    display: grid;
-    grid-template-columns: repeat(6, 25px);
-    grid-template-rows: repeat(12, 14px);
-    gap: 2px;
-    align-content: center;
-    height: 100%;
-    transition: opacity 0.3s ease;
-}
-
-/* Rest of your CSS file continues perfectly unchanged below... */
-}
+/* -------------------------------------------------------------
+   TYPOGRAPHY & CATALOG STYLING
+---------------------------------------------------------------- */
 
 /* Brand tag updates */
 .brand-tag {
@@ -213,7 +189,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 110%; /* Slightly compressed from 125% to optimize viewport lock edge cases */
+    width: 110%; 
     height: 85%;
     background: linear-gradient(90deg, rgba(0, 163, 255, 0.4), rgba(168, 85, 247, 0.5), rgba(255, 102, 0, 0.4));
     filter: blur(28px);
@@ -350,6 +326,7 @@ body {
 .btn-secondary:hover { background-color: #2e2e4f; color: #ffffff; }
 .btn-disabled { background-color: #11111a; color: #475569; cursor: not-allowed; border: 1px solid #161624; padding: 0.75rem 1.5rem; font-size: 0.9rem; font-weight: 600; border-radius: 6px; }
 
+/* Footer */
 footer {
     text-align: center;
     padding: 5rem 0;

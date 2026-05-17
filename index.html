@@ -8,10 +8,32 @@
 </head>
 <body>
 
-    <!-- Spacey, minimalist Header -->
+    <!-- Spacey, minimalist Header with DAW MIDI Chords Background -->
     <header class="hero">
-        <div class="container">
-            <div class="cosmic-glow"></div>
+        <div class="cosmic-glow"></div>
+        
+        <!-- Faux DAW MIDI Grid & Chords Layout -->
+        <div class="midi-grid-container">
+            <!-- Left Chord Stack -->
+            <div class="midi-chord-stack left-chords">
+                <div class="midi-note note-purple" style="--row: 2; --start: 1; --span: 5;"></div>
+                <div class="midi-note note-blue" style="--row: 4; --start: 2; --span: 4;"></div>
+                <div class="midi-note note-cyan" style="--row: 5; --start: 1; --span: 6;"></div>
+                <div class="midi-note note-orange" style="--row: 7; --start: 3; --span: 3;"></div>
+                <div class="midi-note note-purple" style="--row: 9; --start: 2; --span: 5;"></div>
+            </div>
+            
+            <!-- Right Chord Stack -->
+            <div class="midi-chord-stack right-chords">
+                <div class="midi-note note-cyan" style="--row: 3; --start: 2; --span: 5;"></div>
+                <div class="midi-note note-orange" style="--row: 4; --start: 1; --span: 4;"></div>
+                <div class="midi-note note-purple" style="--row: 6; --start: 3; --span: 4;"></div>
+                <div class="midi-note note-blue" style="--row: 8; --start: 1; --span: 6;"></div>
+                <div class="midi-note note-cyan" style="--row: 10; --start: 2; --span: 4;"></div>
+            </div>
+        </div>
+
+        <div class="container hero-content">
             <span class="brand-tag">Ecosystems of Sound</span>
             <h1>IMMANENT AUDIO</h1>
             <p class="hero-tagline">Advanced spectral resolution and musical DSP architecture for modern audio engineering.</p>

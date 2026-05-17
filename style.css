@@ -99,22 +99,22 @@ body {
     background-size: 40px 100%, 100% 16px;
 }
 
-/* Faux Vocal Track Waveform properties */
+/* Randomly Overlapping Sine Waves Style */
 .daw-vocal-wave {
     position: absolute;
     top: 50%;
     left: 0;
     transform: translateY(-50%);
     width: 100%;
-    height: 60%; /* Anchors the transient peaks right around the title card height */
-    z-index: 1; /* Sits completely behind midi-chord-stacks */
-    opacity: 0.45; /* Clean, subtle blend into the grid lines */
-    filter: drop-shadow(0 0 8px rgba(168, 85, 247, 0.15));
+    height: 50%; /* Center alignment parameters spanning horizontally */
+    z-index: 1;   /* Stays tucked entirely behind the MIDI stacks */
+    opacity: 0.4; /* Faded, elegant mixing into grid matrix */
+    filter: drop-shadow(0 0 4px rgba(168, 85, 247, 0.1));
 }
 
 .midi-chord-stack {
     position: relative;
-    z-index: 2; /* Forces MIDI blocks to sit explicitly on top of the wave track line */
+    z-index: 2; /* Forces MIDI blocks to sit explicitly on top of the wave paths */
     display: grid;
     grid-template-columns: repeat(6, 25px);
     grid-template-rows: repeat(12, 14px);
@@ -124,7 +124,7 @@ body {
     transition: opacity 0.3s ease;
 }
 
-/* Absolute positioning tweaks on wide desktop nodes */
+/* Wide desktop structural alignment nodes */
 .left-chords { margin-left: 2rem; }
 .right-chords { margin-right: 2rem; }
 
@@ -149,6 +149,9 @@ body {
     }
     .midi-grid-container {
         opacity: 0.08; /* Softens grid line opacity slightly on small viewports for better text clarity */
+    }
+    .daw-vocal-wave {
+        opacity: 0.2;  /* Drops wave prominence so text remains readable on compact smartphone screen widths */
     }
 }
 

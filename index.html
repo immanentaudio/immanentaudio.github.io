@@ -15,25 +15,28 @@
         <!-- Faux DAW MIDI Grid, Waveform & Chords Layout -->
         <div class="midi-grid-container">
             
-            <!-- Handful of Overlapping, Faded Sine Waves (Deep Background) -->
+            <!-- Handful of Perfect Uniform Sine Waves (Boosted Brightness) -->
             <svg class="daw-vocal-wave" viewBox="0 0 1400 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-                <!-- Cyan/Blue High Frequency Wave -->
-                <path d="M 0,100 C 150,40 200,160 350,100 C 500,40 550,160 700,100 C 850,40 900,160 1050,100 C 1200,40 1250,160 1400,100" 
-                      fill="none" stroke="rgba(0, 255, 204, 0.25)" stroke-width="1.5"/>
                 
-                <!-- Deep Purple Mid-Frequency Wave -->
-                <path d="M 0,100 C 250,180 300,20 600,100 C 900,180 950,20 1200,100 C 1300,140 1350,80 1400,100" 
-                      fill="none" stroke="rgba(168, 85, 247, 0.35)" stroke-width="2"/>
+                <!-- Wave 1: Cyan (Tight wavelength, constant 30px amplitude) -->
+                <path d="M 0,100 
+                         Q 50,70 100,100 T 200,100 T 300,100 T 400,100 T 500,100 T 600,100 T 700,100 
+                         T 800,100 T 900,100 T 1000,100 T 1100,100 T 1200,100 T 1300,100 T 1400,100" 
+                      fill="none" stroke="#00FFCC" stroke-width="2" class="bright-wave"/>
                 
-                <!-- Orange Low Frequency/Sub Wave -->
-                <path d="M 0,100 C 100,130 150,70 300,100 C 450,130 600,30 800,100 C 1000,170 1150,60 1400,100" 
-                      fill="none" stroke="rgba(255, 102, 0, 0.2)" stroke-width="1.5"/>
+                <!-- Wave 2: Purple (Medium wavelength, constant 45px amplitude, offset phase) -->
+                <path d="M 0,70 
+                         Q 75,115 150,70 T 300,70 T 450,70 T 600,70 T 750,70 T 900,70 T 1050,70 T 1200,70 T 1350,70 L 1400,85" 
+                      fill="none" stroke="#a855f7" stroke-width="2" class="bright-wave"/>
                 
-                <!-- Central Bright Horizon Line -->
-                <line x1="0" y1="100" x2="1400" y2="100" stroke="rgba(255, 255, 255, 0.05)" stroke-width="1" stroke-dasharray="4 8" />
+                <!-- Wave 3: Orange (Wide wavelength, constant 25px amplitude, lower placement) -->
+                <path d="M 0,125 
+                         Q 100,100 200,125 T 400,125 T 600,125 T 800,125 T 1000,125 T 1200,125 T 1400,125" 
+                      fill="none" stroke="#FF6600" stroke-width="2" class="bright-wave"/>
+
             </svg>
 
-            <!-- Left Chord Stack (Restored to its wide desktop position) -->
+            <!-- Left Chord Stack (Wide desktop position restored) -->
             <div class="midi-chord-stack left-chords">
                 <div class="midi-note note-purple" style="--row: 2; --start: 1; --span: 5;"></div>
                 <div class="midi-note note-blue" style="--row: 4; --start: 2; --span: 4;"></div>

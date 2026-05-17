@@ -107,7 +107,7 @@ body {
     width: 100%;
     height: 60%;
     z-index: 1; /* Sits completely behind midi-chord-stacks */
-    opacity: 0.75; /* Cranked up brightness to cut through the dark background canvas cleanly */
+    opacity: 0.2; /* Cranked up brightness to cut through the dark background canvas cleanly */
 }
 
 /* Gives the vector stroke lines an authentic glowing electronic instrument feel */

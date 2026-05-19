@@ -59,6 +59,18 @@
             height: 100%;
             border-radius: 11px;
         }
+
+        /* Structured Copy Styles */
+        .description-list {
+            margin: 0 0 1.5rem 1.5rem;
+            padding: 0;
+        }
+        .description-list li {
+            margin-bottom: 0.5rem;
+            color: #94a3b8;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
     </style>
 </head>
 <body>
@@ -69,7 +81,10 @@
         <!-- Aligned content elements cleanly to the left margin -->
         <div class="plugin-info" style="display: flex; flex-direction: column; align-items: flex-start; text-align: left;">
             <span class="status-tag premium">Unmasking & Dynamic/Auto EQ</span>
-            <h1 style="color:#fff; font-size: 3.5rem; font-weight:900; letter-spacing: 0.02em; margin-bottom: 1.5rem; text-align: left;">Spectral Agent</h1>
+            <h1 style="color:#fff; font-size: 3.5rem; font-weight:900; letter-spacing: 0.02em; margin-bottom: 0.5rem; text-align: left;">Spectral Agent</h1>
+            
+            <!-- Price Display Element -->
+            <div style="font-size: 1.5rem; color: #c084fc; font-weight: 600; margin-bottom: 1.25rem;">$20</div>
             
             <!-- Left-aligned buy bar matching the title baseline -->
             <div class="card-actions" style="margin-bottom: 3rem; justify-content: flex-start; background: rgba(10,10,15,0.5); padding: 1.5rem 2rem; border-radius: 12px; border: 1px solid rgba(0, 163, 255, 0.2); width: 100%; max-width: 650px; backdrop-filter: blur(8px);">
@@ -78,8 +93,33 @@
                 <a href="https://immanentaudio.gumroad.com/l/cveia" class="btn btn-secondary" style="padding: 0.75rem 2rem; font-size: 1rem;" target="_blank">Download Free Demo</a>
             </div>
             
-            <p class="description" style="font-size: 1.05rem; line-height: 1.7; max-width: 750px; margin-bottom: 1rem;">
-                By deploying networked dynamic processing nodes across your mix, Spectral Agent builds an active ecosystem that automatically strips away acoustic masking. Master nodes continually communicate dominant tracking metrics directly to yielding filters, carving absolute surgical spatial depth instantly when conflicts trigger. No manual tracking logic or sidechain matrices required.
+            <!-- New Core Feature Copy Updates -->
+            <p class="description" style="font-size: 1.05rem; line-height: 1.7; max-width: 750px; margin-bottom: 0.5rem;">
+                From a top-level, <strong>Spectral Agent</strong>:
+            </p>
+            <ol class="description-list">
+                <li>Compares frequency data between tracks.</li>
+                <li>Determines frequency clashes.</li>
+                <li>Dynamically implements notch filters to favor lead tracks.</li>
+            </ol>
+            <p class="description" style="font-size: 1.05rem; line-height: 1.7; max-width: 750px; margin-bottom: 1.5rem;">
+                Structurally, the plugin works as a <strong>full-mix unmasking manager</strong> by giving you the power to create an ecosystem of Master/Yielding interactions across all your tracks.
+            </p>
+
+            <p class="description" style="font-size: 1.05rem; line-height: 1.7; max-width: 750px; margin-bottom: 1.5rem;">
+                Put up to <strong>64 instances</strong> of <strong>Spectral Agent</strong> on the tracks or buses in your mix, and they will <strong>automatically broadcast data</strong> to each other (no sidechaining necessary). Select one of the other tracks, and the analyzer window will display an overlay of the tracks' frequency data. The plugin will <strong>identify peaks, as well as frequency collision points</strong> between the two tracks.
+            </p>
+
+            <p class="description" style="font-size: 1.05rem; line-height: 1.7; max-width: 750px; margin-bottom: 1.5rem;">
+                You can then begin to determine which tracks should <strong>lead</strong> (by setting them to Master), or <strong>yield</strong> (by setting them to Yielding). The analyzer window will display a new Green curve displaying <strong>post-processed data</strong> on the Yielding track. Even if a track is Yielding to another, it can still be Master in another interaction. This is where the <strong>"ecosystem" concept</strong> starts to come alive - with the <strong>layering of priority settings</strong> and complex hierarchy structure.
+            </p>
+
+            <p class="description" style="font-size: 1.05rem; line-height: 1.7; max-width: 750px; margin-bottom: 1.5rem;">
+                Each per-pair interaction <strong>gets its own parameters to dial in: notch depth, sensitivity, Atk/Rel, freq band, etc.</strong> <strong>Spectral Agent</strong> limits the number of notches and uses a <strong>weighted priority algorithm</strong> to determine the <strong>most optimal placement</strong> of the notches at any given time - this is to prevent a track from getting completely crushed if it's Yielding to several others.
+            </p>
+
+            <p class="description" style="font-size: 1.05rem; line-height: 1.7; max-width: 750px; margin-bottom: 2rem; font-style: italic;">
+                Whether you're overhauling your mix for clarity on vocals, or subtly edging guitars over pianos, Spectral Agent offers a scalable solution for prioritized unmasking.
             </p>
 
             <!-- Large Scale Image Display (Bounded within constraints) -->

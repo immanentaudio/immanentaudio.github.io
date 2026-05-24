@@ -31,17 +31,50 @@
             margin: 0 auto;
         }
 
-        .nav-back {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.9rem;
+        /* Restored Button Styles for Back Link */
+        .btn {
             display: inline-block;
-            margin-bottom: 1rem;
-            transition: color 0.2s ease;
+            text-decoration: none;
+            padding: 0.6rem 1.2rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            cursor: pointer;
         }
 
-        .nav-back:hover {
+        .btn-secondary {
+            background-color: rgba(30, 30, 47, 0.5);
+            color: #e2e8f0;
+            border: 1px solid #2e2e4f;
+        }
+
+        .btn-secondary:hover {
+            background-color: #2e2e4f;
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        /* Restored Premium Status Tag Styles - Adapted for Vibrancy's Purple */
+        .status-tag {
+            display: inline-block;
+            padding: 0.35rem 0.85rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 1rem;
+            margin-top: 1.5rem;
+            display: block;
+            width: fit-content;
+        }
+
+        .status-tag.premium {
+            background: linear-gradient(90deg, rgba(124, 92, 255, 0.15), rgba(124, 92, 255, 0.05));
             color: var(--accent-color);
+            border: 1px solid rgba(124, 92, 255, 0.3);
+            box-shadow: 0 0 10px rgba(124, 92, 255, 0.1);
         }
 
         h1 {
@@ -51,19 +84,13 @@
             margin: 0 0 0.5rem 0;
         }
 
-        .tagline {
-            color: var(--text-muted);
-            font-size: 1.2rem;
-            margin: 0;
-        }
-
         main {
             max-width: 1100px;
             margin: 0 auto;
             padding: 2rem;
         }
 
-        /* 2-Column Responsive Layout matching Spectral Agent */
+        /* 2-Column Responsive Layout */
         .grid-container {
             display: grid;
             grid-template-columns: 1fr;
@@ -141,11 +168,24 @@
             text-decoration: none;
             font-weight: 600;
             border-radius: 6px;
-            transition: opacity 0.2s ease;
+            margin-bottom: 1rem;
+            transition: opacity 0.2s ease, transform 0.2s ease;
         }
 
         .cta-button:hover {
             opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        .cta-demo {
+            background-color: transparent;
+            border: 1px solid var(--accent-color);
+            color: var(--accent-color);
+            margin-bottom: 0;
+        }
+        
+        .cta-demo:hover {
+            background-color: rgba(124, 92, 255, 0.1);
         }
 
         footer {
@@ -162,9 +202,9 @@
 <body>
 
     <header>
-        <a href="../index.html" class="nav-back">← Back to Plugins</a>
+        <a href="../index.html" class="btn btn-secondary">&larr; Back to Plugins</a>
+        <span class="status-tag premium">Parallel Processing with Unique Clarity</span>
         <h1>Vibrancy</h1>
-        <p class="tagline">Parallel Processing with Unique Clarity</p>
     </header>
 
     <main>
@@ -221,8 +261,8 @@
 
                     <p style="margin: 0 0 1rem 0; font-size: 1.4rem; font-weight: bold;">$10 <span style="font-size: 0.9rem; color: var(--text-muted); font-weight: normal;">USD</span></p>
                     
-                    <!-- Link directly to your Gumroad checkout for this product -->
                     <a href="https://immanentaudio.gumroad.com/l/mlqfwn" class="cta-button" target="_blank">Buy (via Gumroad)</a>
+                    <a href="https://immanentaudio.gumroad.com/l/harvff" class="cta-button cta-demo" target="_blank">Download Free Demo</a>
                 </div>
             </aside>
 

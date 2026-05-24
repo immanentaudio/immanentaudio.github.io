@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Immanent Audio | Spectral Agent</title>
     <style>
-        /* Modern, minimalist cosmic aesthetic styling from Vibrancy layout */
+        /* Modern, minimalist cosmic aesthetic styling */
         :root {
             --bg-color: #0d0f12;
             --card-bg: #14181f;
             --text-main: #f0f2f5;
             --text-muted: #8a99ad;
-            --accent-color: #00A3FF; /* Changed to match Spectral Agent's branding */
+            --accent-color: #00A3FF; 
             --border-color: #222933;
         }
 
@@ -31,17 +31,50 @@
             margin: 0 auto;
         }
 
-        .nav-back {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.9rem;
+        /* Restored Button Styles for Back Link */
+        .btn {
             display: inline-block;
-            margin-bottom: 1rem;
-            transition: color 0.2s ease;
+            text-decoration: none;
+            padding: 0.6rem 1.2rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            cursor: pointer;
         }
 
-        .nav-back:hover {
-            color: var(--accent-color);
+        .btn-secondary {
+            background-color: rgba(30, 30, 47, 0.5);
+            color: #e2e8f0;
+            border: 1px solid #2e2e4f;
+        }
+
+        .btn-secondary:hover {
+            background-color: #2e2e4f;
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        /* Restored Premium Status Tag Styles */
+        .status-tag {
+            display: inline-block;
+            padding: 0.35rem 0.85rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 1rem;
+            margin-top: 1.5rem;
+            display: block;
+            width: fit-content;
+        }
+
+        .status-tag.premium {
+            background: linear-gradient(90deg, rgba(0, 163, 255, 0.15), rgba(0, 163, 255, 0.05));
+            color: #00b3ff;
+            border: 1px solid rgba(0, 163, 255, 0.3);
+            box-shadow: 0 0 10px rgba(0, 163, 255, 0.1);
         }
 
         h1 {
@@ -55,20 +88,6 @@
             color: var(--text-muted);
             font-size: 1.2rem;
             margin: 0;
-        }
-        
-        .status-tag {
-            display: inline-block;
-            background: rgba(0, 163, 255, 0.1);
-            color: var(--accent-color);
-            padding: 0.25rem 0.75rem;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 1rem;
-            border: 1px solid rgba(0, 163, 255, 0.2);
         }
 
         main {
@@ -133,7 +152,7 @@
             margin-top: 0;
         }
 
-        /* Right Column Content styling (The Sidebar) */
+        /* Right Column Content styling */
         .sidebar-card {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -195,8 +214,10 @@
 <body>
 
     <header>
-        <a href="../index.html" class="nav-back">← Back to Plugins</a>
-        <div class="status-tag">Unmasking & Dynamic/Auto EQ</div>
+        <a href="../" class="btn btn-secondary">&larr; Back to Catalog</a>
+        
+        <span class="status-tag premium">Unmasking & Dynamic/Auto EQ</span>
+        
         <h1>Spectral Agent</h1>
         <p class="tagline">Priority-Driven Dynamic Spectral Resolution</p>
     </header>

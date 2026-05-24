@@ -3,224 +3,221 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Immanent Audio | Vibrancy</title>
+    <title>Vibrancy | Immanent Audio</title>
+    <link rel="stylesheet" href="../style.css">
     <style>
-        /* Modern, minimalist cosmic aesthetic styling */
-        :root {
-            --bg-color: #0d0f12;
-            --card-bg: #14181f;
-            --text-main: #f0f2f5;
-            --text-muted: #8a99ad;
-            --accent-color: #7c5cff; /* Vibrancy theme color */
-            --border-color: #222933;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
+        /* Minimalist Cosmic Style & Reset */
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
-        header {
-            padding: 2rem;
-            border-bottom: 1px solid var(--border-color);
-            max-width: 1100px;
-            margin: 0 auto;
+        body {
+            background-color: #040407;
+            background-image: 
+                radial-gradient(1.5px 1.5px at 40px 60px, #ffffff, transparent),
+                radial-gradient(2px 2px at 210px 140px, rgba(255, 255, 255, 0.7), transparent),
+                radial-gradient(1.5px 1.5px at 90px 320px, #ffffff, transparent),
+                radial-gradient(3px 3px at 420px 220px, rgba(168, 85, 247, 0.5), transparent),
+                radial-gradient(circle at 15% 25%, rgba(107, 33, 168, 0.22) 0%, transparent 45%),
+                radial-gradient(circle at 85% 75%, rgba(147, 51, 234, 0.18) 0%, transparent 50%),
+                radial-gradient(circle at 50% 90%, rgba(88, 28, 135, 0.25) 0%, transparent 60%);
+            background-size: 300px 300px, 360px 360px, 280px 280px, 450px 450px, 100% 100%, 100% 100%, 100% 100%;
+            background-attachment: fixed;
+            color: #e2e8f0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        .nav-back {
-            color: var(--text-muted);
+        .container {
+            width: 90%;
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        header {
+            padding: 4rem 0 2rem 0;
+            text-align: center;
+        }
+
+        .back-link {
+            color: #a855f7;
             text-decoration: none;
             font-size: 0.9rem;
+            font-weight: 600;
             display: inline-block;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             transition: color 0.2s ease;
         }
 
-        .nav-back:hover {
-            color: var(--accent-color);
+        .back-link:hover {
+            color: #c084fc;
         }
 
         h1 {
-            font-size: 2.5rem;
+            font-size: 3rem;
+            font-weight: 900;
+            color: #ffffff;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .price {
+            font-size: 1.5rem;
+            color: #c084fc;
             font-weight: 700;
-            letter-spacing: -0.03em;
-            margin: 0 0 0.5rem 0;
-        }
-
-        .tagline {
-            color: var(--text-muted);
-            font-size: 1.2rem;
-            margin: 0;
-        }
-
-        main {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        /* 2-Column Responsive Layout matching Spectral Agent */
-        .grid-container {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2.5rem;
-        }
-
-        @media (min-width: 768px) {
-            .grid-container {
-                grid-template-columns: 3fr 2fr;
-            }
-        }
-
-        /* Left Column Content styling */
-        .video-placeholder {
-            width: 100%;
-            aspect-ratio: 16 / 9;
-            background-color: #1a1f26;
-            border: 1px dashed var(--accent-color);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-muted);
             margin-bottom: 2rem;
         }
 
-        .product-section {
-            margin-bottom: 2.5rem;
-        }
-
-        h2 {
-            font-size: 1.5rem;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 0.5rem;
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
             margin-top: 2rem;
-            color: var(--text-main);
         }
 
-        h2:first-of-type {
-            margin-top: 0;
+        @media (min-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr 1fr;
+            }
         }
 
-        /* Right Column Content styling (The Sidebar) */
-        .sidebar-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 1.5rem;
-            position: sticky;
-            top: 2rem;
+        /* Responsive Video Container */
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            background: #000;
+            border: 1px solid rgba(255, 102, 0, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
         }
 
-        .plugin-screenshot {
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: auto;
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            margin-bottom: 1.5rem;
-            display: block;
+            height: 100%;
+            border: 0;
         }
 
-        .cta-button {
-            display: block;
-            background-color: var(--accent-color);
-            color: #ffffff;
-            text-align: center;
-            padding: 0.8rem;
+        .plugin-details {
+            background-color: rgba(10, 10, 15, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 102, 0, 0.15);
+            padding: 2.5rem;
+            border-radius: 16px;
+        }
+
+        .status-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            background-color: rgba(255, 102, 0, 0.1);
+            color: #ffaa73;
+            border: 1px solid rgba(255, 102, 0, 0.2);
+        }
+
+        p.description {
+            color: #94a3b8;
+            font-size: 1.05rem;
+            margin-bottom: 2rem;
+        }
+
+        .card-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
             text-decoration: none;
+            padding: 0.75rem 1.5rem;
             font-weight: 600;
+            font-size: 0.9rem;
             border-radius: 6px;
-            transition: opacity 0.2s ease;
+            transition: all 0.2s ease;
+            cursor: pointer;
         }
 
-        .cta-button:hover {
-            opacity: 0.9;
+        .btn-primary {
+            background-color: #a855f7;
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(168, 85, 247, 0.25);
+        }
+
+        .btn-primary:hover {
+            background-color: #9333ea;
+            box-shadow: 0 6px 16px rgba(168, 85, 247, 0.4);
+        }
+
+        .btn-secondary {
+            background-color: rgba(30, 30, 47, 0.5);
+            color: #e2e8f0;
+            border: 1px solid #2e2e4f;
+        }
+
+        .btn-secondary:hover {
+            background-color: #2e2e4f;
+            color: #ffffff;
         }
 
         footer {
-            max-width: 1100px;
-            margin: 4rem auto 0 auto;
-            padding: 2rem;
-            border-top: 1px solid var(--border-color);
             text-align: center;
-            font-size: 0.85rem;
-            color: var(--text-muted);
+            padding: 5rem 0;
+            color: #475569;
+            font-size: 0.8rem;
+            letter-spacing: 0.05em;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <a href="../index.html" class="nav-back">← Back to Plugins</a>
-        <h1>Vibrancy</h1>
-        <p class="tagline">Parallel Processing with Unique Clarity</p>
-    </header>
+    <div class="container">
+        <header>
+            <a href="../" class="back-link">&larr; Back to Plugins</a>
+            <h1>Vibrancy</h1>
+            <p class="price">$10</p>
+        </header>
 
-    <main>
-        <div class="grid-container">
-            
-            <!-- LEFT COLUMN: Main Presentation & Copy -->
-            <section>
-                <!-- YouTube Video Container. Replace with <iframe> when ready -->
-                <div class="video-placeholder">
-                    <span>📺 YouTube Video Placeholder (Paste your embed code here)</span>
+        <main class="content-grid">
+            <div class="video-wrapper">
+                <iframe 
+                    src="https://www.youtube.com/embed/xMuZOJLVahU" 
+                    title="Vibrancy: Reverb, Saturation, Delay, Pulse with Unique Clarity" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <div class="plugin-details">
+                <span class="status-tag">Multi-Effect Parallel Processor</span>
+                <p class="description">
+                    A specialized parallel processor with a focus on clarity. Combines reverb, saturation, delay, and pulsing effects with an integrated unmasking architecture. Features carefully chosen defaults to bring out-of-the-box polish and definition to your tracks without clashing in the mix.
+                </p>
+                <div class="card-actions">
+                    <a href="https://immanentaudio.gumroad.com/l/mlqfwn" class="btn btn-primary" target="_blank">Buy (via Gumroad)</a>
+                    <a href="https://youtu.be/xMuZOJLVahU" class="btn btn-secondary" target="_blank">Watch on YouTube</a>
                 </div>
+            </div>
+        </main>
 
-                <div class="product-section">
-                    <p>Vibrancy is a streamlined, reactive parallel processor that effortlessly adds lush reverbs, rhythmic delays, and rich saturation to your tracks while uniquely preserving the clarity of your original audio.</p>
-                    <p style="color: var(--text-muted); font-size: 0.95rem;">Windows and MacOS-compatible (VST3 and AU)</p>
-                </div>
-
-                <div class="product-section">
-                    <h2>The Controls</h2>
-                    <ul>
-                        <li><strong>Mix:</strong> The large central control that seamlessly blends your pristine dry signal with the dynamically processed wet layer.</li>
-                        <li><strong>Space:</strong> Dial in a lush, optimized reverb tail to push your sound into a massive acoustic environment.</li>
-                        <li><strong>Echo:</strong> Add feedback delay to create trailing, BPM-synced repeats.</li>
-                        <li><strong>Saturate:</strong> Push the wet layer through warm, analog-style harmonic waveshaping (from Immanent Audio: Harmonic Saturator) for added grit and presence.</li>
-                        <li><strong>Pulse:</strong> BPM-synced pumping and rhythmic ducking envelopes for instant movement.</li>
-                        <li><strong>Clarify:</strong> The secret weapon— dynamic unmasking algorithm (from Immanent Audio: Spectral Agent) that automatically carves frequency space in the wet layer so your dry signal always cuts through.</li>
-                        <li><strong>Band:</strong> A variable band-pass filter to tightly focus the frequency footprint of the wet layer.</li>
-                        <li><strong>Rhythm:</strong> Instantly switch the tempo multiplier (from 1/4 up to 4x) to lock the Echo and Pulse effects perfectly to your track's groove.</li>
-                        <li><strong>Offset:</strong> Apply a slight entrance delay (up to 100ms) to the wet layer, creating a natural chorusing effect that adds immediate width and separation.</li>
-                        <li><strong>Gain Adjust:</strong> A horizontal trim slider to maintain perfect gain staging on your way out.</li>
-                    </ul>
-                </div>
-
-                <div class="product-section">
-                    <h2>In-Depth: Effortless Atmosphere Meets Ultimate Clarity</h2>
-                    <p>Vibrancy was designed to be a central home for several effects - allowing you to implement reverb, saturation, delay, and a BPM-synced pulse with a serious emphasis on maintaining clarity and integrity on the original signal. With a simple, easy-to-use UI, Vibrancy will help you dial in the perfect combination of effects on a wet layer to mix into your dry signal with the perfect touch.</p>
-                    <p>As you turn up the <em>Clarify</em> knob, Vibrancy analyzes your dry audio in real-time, finds the most dominant frequencies, and actively carves targeted EQ notches out of the wet layer. This spectral unmasking means your reverb and delay sit perfectly <em>around</em> your audio, rather than on top of it.</p>
-                    <p>Combined with the <em>Band</em> knob—which smoothly sweeps the wet signal into a focused, mid-range bandpass filter—you have unprecedented control over keeping your mix clean. You can push the saturation, crank the reverb, and add rhythmic pumping with the <em>Pulse</em> knob, all without sacrificing the punch and intelligibility of your lead track.</p>
-                    <p>Finally, the <em>Offset</em> control allows you to delay the entire wet signal by just a few milliseconds. This simple addition creates a psychoacoustic chorusing effect, pushing the entire "feel" of the track wider and more full.</p>
-                    <p>Wrapped in a highly reactive interface that responds to your audio with pulsing halos and a dynamic starfield, Vibrancy makes dialing in complex, professional atmospheres faster and more intuitive than ever.</p>
-                </div>
-            </section>
-
-            <!-- RIGHT COLUMN: Purchase Card & Image -->
-            <aside>
-                <div class="sidebar-card">
-                    <!-- Plugin UI Image Container -->
-                    <img src="https://i.imgur.com/93QOcDf.png" alt="Vibrancy Plugin GUI Screenshot" class="plugin-screenshot">
-
-                    <p style="margin: 0 0 1rem 0; font-size: 1.4rem; font-weight: bold;">$10 <span style="font-size: 0.9rem; color: var(--text-muted); font-weight: normal;">USD</span></p>
-                    
-                    <!-- Link directly to your Gumroad checkout for this product -->
-                    <a href="https://immanentaudio.gumroad.com/l/mlqfwn" class="cta-button" target="_blank">Buy (via Gumroad)</a>
-                </div>
-            </aside>
-
-        </div>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 Immanent Audio. All rights reserved.</p>
-        <p>Contact at immanentaudio@gmail.com</p>
-    </footer>
+        <footer>
+            <p>&copy; 2026 Immanent Audio. All rights reserved.</p>
+        </footer>
+    </div>
 
 </body>
 </html>

@@ -3,142 +3,256 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spectral Agent | Immanent Audio</title>
-    <link rel="stylesheet" href="../style.css">
+    <title>Immanent Audio | Spectral Agent</title>
     <style>
-        /* Interactive Hover Transitions for the Purchase Button */
-        .btn-interactive-buy {
-            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, background-color 0.2s ease !important;
-        }
-        .btn-interactive-buy:hover {
-            transform: translateY(-3px);
-            background-color: #00b3ff !important;
-            box-shadow: 0 12px 24px rgba(0, 163, 255, 0.5), 0 0 20px rgba(0, 163, 255, 0.3) !important;
-        }
-        .btn-interactive-buy:active {
-            transform: translateY(-1px);
+        /* Modern, minimalist cosmic aesthetic styling from Vibrancy layout */
+        :root {
+            --bg-color: #0d0f12;
+            --card-bg: #14181f;
+            --text-main: #f0f2f5;
+            --text-muted: #8a99ad;
+            --accent-color: #00A3FF; /* Changed to match Spectral Agent's branding */
+            --border-color: #222933;
         }
 
-        /* Fixes the sizing metrics for the image card frame */
-        .showcase-large-wrapper {
-            border: 1px solid rgba(0, 163, 255, 0.3);
-            border-radius: 12px;
-            padding: 1.5rem;
-            box-sizing: border-box;
-            max-width: 850px;
-            margin: 1.5rem 0;
-            display: flex;
-            justify-content: center;
-        }
-        .showcase-large-image {
-            width: 100%;
-            height: auto;
-            max-width: 780px;
-            object-fit: contain;
-            border-radius: 6px;
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
         }
 
-        /* Enforces a mathematically perfect responsive 16:9 widescreen theater mode frame */
-        .video-wrapper {
+        header {
+            padding: 2rem;
+            border-bottom: 1px solid var(--border-color);
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .nav-back {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+            transition: color 0.2s ease;
+        }
+
+        .nav-back:hover {
+            color: var(--accent-color);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            margin: 0 0 0.5rem 0;
+        }
+
+        .tagline {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            margin: 0;
+        }
+        
+        .status-tag {
+            display: inline-block;
+            background: rgba(0, 163, 255, 0.1);
+            color: var(--accent-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(0, 163, 255, 0.2);
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* 2-Column Responsive Layout */
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .grid-container {
+                grid-template-columns: 3fr 2fr;
+            }
+        }
+
+        /* Responsive Video Container */
+        .video-container {
             position: relative;
-            width: 100%;
-            max-width: 850px;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio Rule */
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
             height: 0;
             overflow: hidden;
-            border: 1px solid rgba(0, 163, 255, 0.25);
-            border-radius: 12px;
-            margin-top: 1.5rem;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            border-radius: 8px;
+            background-color: #1a1f26;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
-        .video-wrapper iframe {
+
+        .video-container iframe {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            border-radius: 11px;
+            border: 0;
         }
 
-        /* Structured Copy Styles */
-        .description-list {
-            margin: 0 0 1.5rem 1.5rem;
-            padding: 0;
+        .product-section {
+            margin-bottom: 2.5rem;
         }
-        .description-list li {
-            margin-bottom: 0.5rem;
-            color: #94a3b8;
-            font-size: 1.05rem;
-            line-height: 1.7;
+        
+        .product-section ol {
+            margin-left: 1.5rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
+            color: var(--text-main);
+        }
+
+        h2:first-of-type {
+            margin-top: 0;
+        }
+
+        /* Right Column Content styling (The Sidebar) */
+        .sidebar-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            position: sticky;
+            top: 2rem;
+        }
+
+        .plugin-screenshot {
+            width: 100%;
+            height: auto;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .cta-button {
+            display: block;
+            background-color: var(--accent-color);
+            color: #ffffff;
+            text-align: center;
+            padding: 0.8rem;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+
+        .cta-button:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+        
+        .cta-demo {
+            background-color: transparent;
+            border: 1px solid var(--accent-color);
+            color: var(--accent-color);
+            margin-bottom: 0;
+        }
+        
+        .cta-demo:hover {
+            background-color: rgba(0, 163, 255, 0.1);
+        }
+
+        footer {
+            max-width: 1100px;
+            margin: 4rem auto 0 auto;
+            padding: 2rem;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
         }
     </style>
 </head>
 <body>
 
-    <main class="container" style="padding-top: 5rem; padding-bottom: 5rem;">
-        <a href="../" class="btn btn-secondary" style="margin-bottom: 3rem;">&larr; Back to Catalog</a>
-        
-        <!-- Aligned content elements cleanly to the left margin -->
-        <div class="plugin-info" style="display: flex; flex-direction: column; align-items: flex-start; text-align: left;">
-            <span class="status-tag premium">Unmasking & Dynamic/Auto EQ</span>
-            <h1 style="color:#fff; font-size: 3.5rem; font-weight:900; letter-spacing: 0.02em; margin-bottom: 0.5rem; text-align: left;">Spectral Agent</h1>
+    <header>
+        <a href="../index.html" class="nav-back">← Back to Plugins</a>
+        <div class="status-tag">Unmasking & Dynamic/Auto EQ</div>
+        <h1>Spectral Agent</h1>
+        <p class="tagline">Priority-Driven Dynamic Spectral Resolution</p>
+    </header>
+
+    <main>
+        <div class="grid-container">
             
-            <!-- Price Display Element -->
-            <div style="font-size: 1.5rem; color: #c084fc; font-weight: 600; margin-bottom: 1.25rem;">$20</div>
-            
-            <!-- Left-aligned buy bar matching the title baseline -->
-            <div class="card-actions" style="margin-bottom: 3rem; justify-content: flex-start; background: rgba(10,10,15,0.5); padding: 1.5rem 2rem; border-radius: 12px; border: 1px solid rgba(0, 163, 255, 0.2); width: 100%; max-width: 650px; backdrop-filter: blur(8px);">
-                <!-- Added btn-interactive-buy class for structural pop and shadow enhancements -->
-                <a href="https://immanentaudio.gumroad.com/l/bejaxg" class="btn btn-primary btn-interactive-buy" style="padding: 0.75rem 2rem; font-size: 1rem; background-color: #00A3FF; box-shadow: 0 4px 14px rgba(0, 163, 255, 0.3);" target="_blank">Buy (via Gumroad)</a>
-                <a href="https://immanentaudio.gumroad.com/l/cveia" class="btn btn-secondary" style="padding: 0.75rem 2rem; font-size: 1rem;" target="_blank">Download Free Demo</a>
-            </div>
-            
-            <!-- New Core Feature Copy Updates -->
-            <p class="description" style="font-size: 1.05rem; line-height: 1.7; max-width: 750px; margin-bottom: 0.5rem;">
-                From a top-level, <strong>Spectral Agent</strong>:
-            </p>
-            <ol class="description-list">
-                <li>Compares frequency data between tracks.</li>
-                <li>Determines frequency clashes.</li>
-                <li>Dynamically implements notch filters to favor lead tracks.</li>
-            </ol>
-            <p class="description" style="font-size: 1.05rem; line-height: 1.7; max-width: 750px; margin-bottom: 1.5rem;">
-                Structurally, the plugin works as a <strong>full-mix unmasking manager</strong> by giving you the power to create an ecosystem of Master/Yielding interactions across all your tracks.
-            </p>
+            <section>
+                <div class="video-container">
+                    <iframe 
+                        src="https://www.youtube.com/embed/7LhRCo0Xt-A" 
+                        title="Spectral Agent Demonstration Video" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
 
-            <!-- Large Scale Image Display (Bounded within constraints) -->
-            <div class="showcase-large-wrapper" style="background-color: rgba(5, 5, 8, 0.9);">
-                <img src="https://i.imgur.com/1nH8HRc.png" alt="Spectral Agent UI Interface Large Display" class="showcase-large-image">
-            </div>
+                <div class="product-section">
+                    <p>From a top-level, <strong>Spectral Agent</strong>:</p>
+                    <ol>
+                        <li>Compares frequency data between tracks.</li>
+                        <li>Determines frequency clashes.</li>
+                        <li>Dynamically implements notch filters to favor lead tracks.</li>
+                    </ol>
+                    <p>Structurally, the plugin works as a <strong>full-mix unmasking manager</strong> by giving you the power to create an ecosystem of Master/Yielding interactions across all your tracks.</p>
+                </div>
 
-            <p class="description" style="font-size: 1.05rem; line-height: 1.7; max-width: 750px; margin-bottom: 1.5rem;">
-                Put up to <strong>64 instances</strong> of <strong>Spectral Agent</strong> on the tracks or buses in your mix, and they will <strong>automatically broadcast data</strong> to each other (no sidechaining necessary). Select one of the other tracks, and the analyzer window will display an overlay of the tracks' frequency data. The plugin will <strong>identify peaks, as well as frequency collision points</strong> between the two tracks.
-            </p>
+                <div class="product-section">
+                    <h2>The Ecosystem Concept</h2>
+                    <p>Put up to <strong>64 instances</strong> of Spectral Agent on the tracks or buses in your mix, and they will <strong>automatically broadcast data</strong> to each other (no sidechaining necessary). Select one of the other tracks, and the analyzer window will display an overlay of the tracks' frequency data. The plugin will <strong>identify peaks, as well as frequency collision points</strong> between the two tracks.</p>
+                    
+                    <p>You can then begin to determine which tracks should <strong>lead</strong> (by setting them to Master), or <strong>yield</strong> (by setting them to Yielding). The analyzer window will display a new Green curve displaying <strong>post-processed data</strong> on the Yielding track. Even if a track is Yielding to another, it can still be Master in another interaction. This is where the <strong>"ecosystem" concept</strong> starts to come alive - with the <strong>layering of priority settings</strong> and complex hierarchy structure.</p>
+                    
+                    <p>Each per-pair interaction <strong>gets its own parameters to dial in: notch depth, sensitivity, Atk/Rel, freq band, etc.</strong> Spectral Agent limits the number of notches and uses a <strong>weighted priority algorithm</strong> to determine the <strong>most optimal placement</strong> of the notches at any given time - to prevent a track from getting completely crushed if it's Yielding to several others.</p>
+                    
+                    <p style="font-style: italic; margin-top: 2rem;">Whether you're overhauling your mix for clarity on vocals, or subtly edging guitars over pianos, Spectral Agent offers a scalable solution for prioritized unmasking.</p>
+                </div>
+            </section>
 
-            <p class="description" style="font-size: 1.05rem; line-height: 1.7; max-width: 750px; margin-bottom: 1.5rem;">
-                You can then begin to determine which tracks should <strong>lead</strong> (by setting them to Master), or <strong>yield</strong> (by setting them to Yielding). The analyzer window will display a new Green curve displaying <strong>post-processed data</strong> on the Yielding track. Even if a track is Yielding to another, it can still be Master in another interaction. This is where the <strong>"ecosystem" concept</strong> starts to come alive - with the <strong>layering of priority settings</strong> and complex hierarchy structure.
-            </p>
+            <aside>
+                <div class="sidebar-card">
+                    <img src="https://i.imgur.com/1nH8HRc.png" alt="Spectral Agent UI Interface Large Display" class="plugin-screenshot">
 
-            <p class="description" style="font-size: 1.05rem; line-height: 1.7; max-width: 750px; margin-bottom: 1.5rem;">
-                Each per-pair interaction <strong>gets its own parameters to dial in: notch depth, sensitivity, Atk/Rel, freq band, etc.</strong> <strong>Spectral Agent</strong> limits the number of notches and uses a <strong>weighted priority algorithm</strong> to determine the <strong>most optimal placement</strong> of the notches at any given time - to prevent a track from getting completely crushed if it's Yielding to several others.
-            </p>
+                    <p style="margin: 0 0 1rem 0; font-size: 1.4rem; font-weight: bold;">$20 <span style="font-size: 0.9rem; color: var(--text-muted); font-weight: normal;">USD</span></p>
+                    
+                    <a href="https://immanentaudio.gumroad.com/l/bejaxg" class="cta-button" target="_blank">Buy (via Gumroad)</a>
+                    <a href="https://immanentaudio.gumroad.com/l/cveia" class="cta-button cta-demo" target="_blank">Download Free Demo</a>
+                </div>
+            </aside>
 
-            <!-- Expanded Video Frame (Now pristine 16:9 theater scaling) -->
-            <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/7LhRCo0Xt-A" title="Spectral Agent Demonstration Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-
-            <!-- FIXED: Removed the broken spacing tag and cleanly set a 3rem top margin below the video frame -->
-            <p class="description" style="font-size: 1.05rem; line-height: 1.7; max-width: 750px; margin-top: 3rem; margin-bottom: 2rem; font-style: italic;">
-                Whether you're overhauling your mix for clarity on vocals, or subtly edging guitars over pianos, Spectral Agent offers a scalable solution for prioritized unmasking.
-            </p>
         </div>
     </main>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2026 Immanent Audio. All rights reserved.</p>
-        </div>
+        <p>&copy; 2026 Immanent Audio. All rights reserved.</p>
+        <p>Contact at immanentaudio@gmail.com</p>
     </footer>
 
 </body>

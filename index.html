@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary SEO -->
+    <title>Immanent Audio | VST3 &amp; AU Plugins for Mixing — Auto EQ, Parallel FX &amp; Free Saturation</title>
+    <meta name="description" content="Boutique audio plugins for mixing: Spectral Agent (auto EQ &amp; unmasking), Vibrancy (parallel reverb, delay &amp; saturation), and a free saturation plugin. VST3 &amp; AU for Mac and Windows.">
+    <link rel="canonical" href="https://immanentaudio.com/">
+
+    <!-- Icons -->
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
+    <link rel="icon" type="image/png" sizes="100x100" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <!-- Open Graph / social previews -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Immanent Audio">
+    <meta property="og:title" content="Immanent Audio — VST3 & AU Plugins for Mixing">
+    <meta property="og:description" content="Boutique audio plugins for mixing: auto EQ & unmasking, clarity-focused parallel FX, and a free saturation plugin. Mac & Windows.">
+    <meta property="og:url" content="https://immanentaudio.com/">
+    <meta property="og:image" content="https://i.imgur.com/1nH8HRc.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Immanent Audio — VST3 & AU Plugins for Mixing">
+    <meta name="twitter:description" content="Auto EQ & unmasking, clarity-focused parallel FX, and a free saturation plugin. Mac & Windows.">
+    <meta name="twitter:image" content="https://i.imgur.com/1nH8HRc.png">
+
+    <link rel="stylesheet" href="/style.css">
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://immanentaudio.com/#org",
+          "name": "Immanent Audio",
+          "url": "https://immanentaudio.com/",
+          "logo": "https://immanentaudio.com/apple-touch-icon.png",
+          "email": "immanentaudio@gmail.com",
+          "sameAs": ["https://immanentaudio.gumroad.com/"]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://immanentaudio.com/#website",
+          "url": "https://immanentaudio.com/",
+          "name": "Immanent Audio",
+          "publisher": { "@id": "https://immanentaudio.com/#org" }
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+
+    <!-- Animated deep-space backdrop (shared across all pages) -->
+    <div class="cosmos" aria-hidden="true"></div>
+
+    <!-- Navigation -->
+    <nav class="site-nav">
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">
+                <img src="/favicon.png" alt="Immanent Audio logo">
+                <span>Immanent Audio</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="/spectral-agent/">Spectral Agent</a></li>
+                <li><a href="/vibrancy/">Vibrancy</a></li>
+                <li><a href="/harmonic-saturator/">Harmonic Saturator</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero: DAW timeline with a live playhead sweeping across MIDI chords -->
+    <header class="hero">
+        <div class="daw-grid" aria-hidden="true"></div>
+        <div class="cosmic-glow" aria-hidden="true"></div>
+        <div class="playhead" aria-hidden="true"></div>
+
+        <div class="midi-grid-container" aria-hidden="true">
+            <!-- Left chord stack — lights up as the playhead passes -->
+            <div class="midi-chord-stack left-chords">
+                <div class="midi-note note-purple" style="--row: 2; --start: 1; --span: 5; --hit: 0.25s;"></div>
+                <div class="midi-note note-blue"   style="--row: 4; --start: 2; --span: 4; --hit: 0.35s;"></div>
+                <div class="midi-note note-cyan"   style="--row: 5; --start: 1; --span: 6; --hit: 0.25s;"></div>
+                <div class="midi-note note-orange" style="--row: 7; --start: 3; --span: 3; --hit: 0.45s;"></div>
+                <div class="midi-note note-purple" style="--row: 9; --start: 2; --span: 5; --hit: 0.35s;"></div>
+            </div>
+
+            <!-- Right chord stack -->
+            <div class="midi-chord-stack right-chords">
+                <div class="midi-note note-cyan"   style="--row: 3; --start: 2; --span: 5; --hit: 7.35s;"></div>
+                <div class="midi-note note-orange" style="--row: 4; --start: 1; --span: 4; --hit: 7.25s;"></div>
+                <div class="midi-note note-purple" style="--row: 6; --start: 3; --span: 4; --hit: 7.45s;"></div>
+                <div class="midi-note note-blue"   style="--row: 8; --start: 1; --span: 6; --hit: 7.25s;"></div>
+                <div class="midi-note note-cyan"   style="--row: 10; --start: 2; --span: 4; --hit: 7.35s;"></div>
+            </div>
+        </div>
+
+        <div class="container hero-content">
+            <span class="brand-tag">Audio Plugins</span>
+            <h1>IMMANENT AUDIO</h1>
+            <p class="hero-tagline">VST3 and AU plugins designed to accelerate your mixing workflow</p>
+            <div class="chip-row">
+                <span class="chip">VST3</span>
+                <span class="chip">AU</span>
+                <span class="chip">macOS</span>
+                <span class="chip">Windows</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Plugin catalog -->
+    <main class="container">
+        <section class="catalog" aria-label="Plugin catalog">
+
+            <!-- Plugin 1: Spectral Agent -->
+            <article class="plugin-card card-blue">
+                <span class="card-index">01</span>
+                <div class="plugin-image-wrapper">
+                    <a href="/spectral-agent/"><img src="https://i.imgur.com/1nH8HRc.png" alt="Spectral Agent auto EQ and unmasking plugin interface with frequency analyzer" class="plugin-screenshot" loading="lazy"></a>
+                </div>
+                <div class="plugin-info">
+                    <span class="status-tag premium">Unmasking &amp; Dynamic/Auto EQ</span>
+                    <h2><a href="/spectral-agent/" style="color: inherit; text-decoration: none;">Spectral Agent</a></h2>
+                    <p class="price">$20</p>
+                    <p class="description">Priority-driven unmasking ecosystem. An auto EQ that resolves clashing frequencies across your entire mix — no sidechain routing needed. Supports up to 64 networked instances.</p>
+                    <div class="mini-chips">
+                        <span class="chip">Auto EQ</span>
+                        <span class="chip">Unmasking</span>
+                        <span class="chip">Mix Bus</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://immanentaudio.gumroad.com/l/bejaxg" class="btn btn-primary" target="_blank" rel="noopener">Buy (via Gumroad)</a>
+                        <a href="/spectral-agent/" class="btn btn-secondary">View Details &amp; Video</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Plugin 2: Vibrancy -->
+            <article class="plugin-card card-orange">
+                <span class="card-index">02</span>
+                <div class="plugin-image-wrapper">
+                    <a href="/vibrancy/"><img src="https://i.imgur.com/93QOcDf.png" alt="Vibrancy parallel reverb, delay and saturation plugin interface" class="plugin-screenshot" loading="lazy"></a>
+                </div>
+                <div class="plugin-info">
+                    <span class="status-tag upcoming">Unique Parallel Processing</span>
+                    <h2><a href="/vibrancy/" style="color: inherit; text-decoration: none;">Vibrancy</a></h2>
+                    <p class="price">$10</p>
+                    <p class="description">A parallel reverb, delay, and saturation processor with a focus on clarity. Carefully chosen defaults for out-of-the-box polish.</p>
+                    <div class="mini-chips">
+                        <span class="chip">Reverb</span>
+                        <span class="chip">Delay</span>
+                        <span class="chip">Saturation</span>
+                        <span class="chip">Pulse</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://immanentaudio.gumroad.com/l/mlqfwn" class="btn btn-primary" target="_blank" rel="noopener">Buy (via Gumroad)</a>
+                        <a href="/vibrancy/" class="btn btn-secondary">View Details &amp; Video</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Plugin 3: Harmonic Saturator -->
+            <article class="plugin-card card-cyan">
+                <span class="card-index">03</span>
+                <div class="plugin-image-wrapper">
+                    <a href="/harmonic-saturator/"><img src="https://i.imgur.com/b7U20cQ.jpeg" alt="Harmonic Saturator free saturation plugin interface" class="plugin-screenshot" loading="lazy"></a>
+                </div>
+                <div class="plugin-info">
+                    <span class="status-tag free">Saturation</span>
+                    <h2><a href="/harmonic-saturator/" style="color: inherit; text-decoration: none;">Harmonic Saturator</a></h2>
+                    <p class="price">FREE</p>
+                    <p class="description">A free saturation plugin built on soft clipping with a gain-compensated output stage. Shape tone from low-end mass to upper-harmonic edge.</p>
+                    <div class="mini-chips">
+                        <span class="chip">Soft Clip</span>
+                        <span class="chip">Warmth</span>
+                        <span class="chip">Free</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://immanentaudio.gumroad.com/l/vuncqe" class="btn btn-primary" target="_blank" rel="noopener">Get (via Gumroad)</a>
+                        <a href="/harmonic-saturator/" class="btn btn-secondary">View Details</a>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+
+        <!-- About / SEO copy -->
+        <section class="info-band">
+            <div class="section-head">
+                <span class="section-kicker">About</span>
+                <h2>Boutique plugins, built around one idea: clarity</h2>
+            </div>
+            <p><strong>Immanent Audio</strong> is a small, independent plugin shop. Every plugin here started as a tool I wanted in my own sessions — practical mixing plugins that solve real problems like frequency masking, cluttered parallel FX chains, and lifeless digital tone.</p>
+            <p>Everything ships as <strong>VST3 and AU for macOS and Windows</strong>, so it drops straight into Ableton Live, FL Studio, Logic Pro, Reaper, Cubase, Studio One, Bitwig, or whatever DAW you call home. <a href="/spectral-agent/">Spectral Agent</a> and <a href="/vibrancy/">Vibrancy</a> both have free demos, and <a href="/harmonic-saturator/">Harmonic Saturator</a> is completely free — try them in your own mix before spending a dime.</p>
+        </section>
+
+        <!-- FAQ -->
+        <section class="info-band" aria-label="Frequently asked questions">
+            <div class="section-head">
+                <span class="section-kicker">FAQ</span>
+                <h2>Common questions</h2>
+            </div>
+            <div class="faq-list">
+                <details>
+                    <summary>Will these plugins work in my DAW?</summary>
+                    <p>Almost certainly. All Immanent Audio plugins come in VST3 and AU formats for both macOS and Windows, which covers Ableton Live, FL Studio, Reaper, Cubase, Studio One, Bitwig, and more. Logic Pro users: grab the AU version.</p>
+                </details>
+                <details>
+                    <summary>Can I try before I buy?</summary>
+                    <p>Yep. Spectral Agent and Vibrancy both have free demos you can download from their pages, and Harmonic Saturator is 100% free. No email gymnastics required — everything is delivered instantly through Gumroad.</p>
+                </details>
+                <details>
+                    <summary>How is Spectral Agent different from a regular dynamic EQ?</summary>
+                    <p>A dynamic EQ only reacts to the track it's sitting on. Spectral Agent instances talk to each other across your whole mix — comparing frequency data between tracks, finding collisions, and automatically carving space so your lead elements cut through. No sidechain routing, no manual notch hunting.</p>
+                </details>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand">
+                    <img src="/favicon.png" alt="Immanent Audio logo">
+                    Immanent Audio
+                </div>
+                <p>Boutique VST3 &amp; AU audio plugins for mixing — made independently, with a serious emphasis on clarity.</p>
+            </div>
+            <div>
+                <h4>Plugins</h4>
+                <ul>
+                    <li><a href="/spectral-agent/">Spectral Agent — Auto EQ</a></li>
+                    <li><a href="/vibrancy/">Vibrancy — Parallel FX</a></li>
+                    <li><a href="/harmonic-saturator/">Harmonic Saturator — Free</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="https://immanentaudio.gumroad.com/" target="_blank" rel="noopener">Gumroad Store</a></li>
+                    <li><a href="mailto:immanentaudio@gmail.com">immanentaudio@gmail.com</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 Immanent Audio. All rights reserved.</span>
+            <span>VST is a trademark of Steinberg Media Technologies GmbH.</span>
+        </div>
+    </footer>
+
+</body>
+</html>

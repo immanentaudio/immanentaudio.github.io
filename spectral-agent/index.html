@@ -33,7 +33,7 @@
 
     <link rel="stylesheet" href="/style.css">
     <style>
-        body { --accent: #2d5fc4; --accent-rgb: 45, 95, 196; }
+        body { --accent: #33d6c4; --accent-rgb: 51, 214, 196; }
     </style>
 
     <!-- Structured data -->
@@ -72,6 +72,9 @@
 </head>
 <body>
 
+    <!-- Animated deep-space backdrop -->
+    <div class="cosmos" aria-hidden="true"></div>
+
     <!-- Navigation -->
     <nav class="site-nav">
         <div class="nav-inner">
@@ -89,6 +92,7 @@
 
     <!-- Product hero -->
     <header class="product-hero">
+        <div class="daw-grid" aria-hidden="true"></div>
         <div class="container-wide">
             <nav class="breadcrumbs" aria-label="Breadcrumb">
                 <a href="/">Home</a><span>/</span>Spectral Agent
@@ -139,24 +143,6 @@
                     <p>Each per-pair interaction <strong>gets its own parameters to dial in: notch depth, sensitivity, Atk/Rel, freq band, etc.</strong> Spectral Agent limits the number of notches and uses a <strong>weighted priority algorithm</strong> to determine the <strong>most optimal placement</strong> of the notches at any given time — to prevent a track from getting completely crushed if it's Yielding to several others.</p>
                     <p style="font-style: italic; margin-top: 2rem;">Whether you're overhauling your mix for clarity on vocals, or subtly edging guitars over pianos, Spectral Agent offers a scalable solution for prioritized unmasking.</p>
                 </div>
-
-                <div class="product-section">
-                    <h2>FAQ</h2>
-                    <div class="faq-list">
-                        <details>
-                            <summary>How is this different from a dynamic EQ or sidechain EQ?</summary>
-                            <p>A dynamic EQ only listens to its own track, and sidechain EQ setups need manual routing for every pair of tracks. Spectral Agent instances find each other automatically and compare frequency data across your whole session — so fixing frequency masking between vocals, guitars, synths, and drums becomes a matter of setting priorities, not patching cables.</p>
-                        </details>
-                        <details>
-                            <summary>Will it work in my DAW?</summary>
-                            <p>Spectral Agent ships as VST3 and AU for macOS and Windows, which covers Ableton Live, FL Studio, Logic Pro (AU), Reaper, Cubase, Studio One, Bitwig, and most other modern DAWs.</p>
-                        </details>
-                        <details>
-                            <summary>Is there a demo?</summary>
-                            <p>Yes — there's a free demo you can grab from the sidebar and run in your own sessions before buying.</p>
-                        </details>
-                    </div>
-                </div>
             </section>
 
             <!-- RIGHT COLUMN: purchase card -->
@@ -168,13 +154,6 @@
 
                     <a href="https://immanentaudio.gumroad.com/l/bejaxg" class="cta-button" target="_blank" rel="noopener">Buy (via Gumroad)</a>
                     <a href="https://immanentaudio.gumroad.com/l/cveia" class="cta-button cta-demo" target="_blank" rel="noopener">Download Free Demo</a>
-
-                    <div class="sidebar-meta">
-                        <strong>Formats:</strong> VST3, AU<br>
-                        <strong>Platforms:</strong> macOS, Windows<br>
-                        <strong>Instances:</strong> Up to 64, networked<br>
-                        <strong>Delivery:</strong> Instant via Gumroad
-                    </div>
                 </div>
             </aside>
 

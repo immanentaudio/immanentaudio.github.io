@@ -60,6 +60,9 @@
 </head>
 <body>
 
+    <!-- Animated deep-space backdrop (shared across all pages) -->
+    <div class="cosmos" aria-hidden="true"></div>
+
     <!-- Navigation -->
     <nav class="site-nav">
         <div class="nav-inner">
@@ -75,16 +78,36 @@
         </div>
     </nav>
 
-    <!-- Hero -->
+    <!-- Hero: DAW timeline with a live playhead sweeping across MIDI chords -->
     <header class="hero">
+        <div class="daw-grid" aria-hidden="true"></div>
+        <div class="cosmic-glow" aria-hidden="true"></div>
+        <div class="playhead" aria-hidden="true"></div>
+
+        <div class="midi-grid-container" aria-hidden="true">
+            <!-- Left chord stack — lights up as the playhead passes -->
+            <div class="midi-chord-stack left-chords">
+                <div class="midi-note note-amber" style="--row: 2; --start: 1; --span: 5; --hit: 0.25s;"></div>
+                <div class="midi-note note-teal"  style="--row: 4; --start: 2; --span: 4; --hit: 0.35s;"></div>
+                <div class="midi-note note-lime"  style="--row: 5; --start: 1; --span: 6; --hit: 0.25s;"></div>
+                <div class="midi-note note-rose"  style="--row: 7; --start: 3; --span: 3; --hit: 0.45s;"></div>
+                <div class="midi-note note-amber" style="--row: 9; --start: 2; --span: 5; --hit: 0.35s;"></div>
+            </div>
+
+            <!-- Right chord stack -->
+            <div class="midi-chord-stack right-chords">
+                <div class="midi-note note-lime"  style="--row: 3; --start: 2; --span: 5; --hit: 7.35s;"></div>
+                <div class="midi-note note-rose"  style="--row: 4; --start: 1; --span: 4; --hit: 7.25s;"></div>
+                <div class="midi-note note-amber" style="--row: 6; --start: 3; --span: 4; --hit: 7.45s;"></div>
+                <div class="midi-note note-teal"  style="--row: 8; --start: 1; --span: 6; --hit: 7.25s;"></div>
+                <div class="midi-note note-lime"  style="--row: 10; --start: 2; --span: 4; --hit: 7.35s;"></div>
+            </div>
+        </div>
+
         <div class="container hero-content">
             <span class="brand-tag">Audio Plugins</span>
-            <h1>Immanent Audio</h1>
+            <h1>IMMANENT AUDIO</h1>
             <p class="hero-tagline">VST3 and AU plugins designed to accelerate your mixing workflow</p>
-            <svg class="hero-wave" width="420" height="36" viewBox="0 0 420 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M0 18 H70 Q80 18 85 8 T100 18 Q105 28 110 18 H150 Q158 18 162 4 T178 18 Q184 34 192 18 H240 Q248 18 252 10 T266 18 Q272 26 278 18 H420" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                <circle cx="178" cy="18" r="3" fill="currentColor"/>
-            </svg>
             <div class="chip-row">
                 <span class="chip">VST3</span>
                 <span class="chip">AU</span>
@@ -99,7 +122,7 @@
         <section class="catalog" aria-label="Plugin catalog">
 
             <!-- Plugin 1: Spectral Agent -->
-            <article class="plugin-card card-cobalt">
+            <article class="plugin-card card-teal">
                 <span class="card-index">01</span>
                 <div class="plugin-image-wrapper">
                     <a href="/spectral-agent/"><img src="https://i.imgur.com/1nH8HRc.png" alt="Spectral Agent auto EQ and unmasking plugin interface with frequency analyzer" class="plugin-screenshot" loading="lazy"></a>
@@ -122,7 +145,7 @@
             </article>
 
             <!-- Plugin 2: Vibrancy -->
-            <article class="plugin-card card-violet">
+            <article class="plugin-card card-rose">
                 <span class="card-index">02</span>
                 <div class="plugin-image-wrapper">
                     <a href="/vibrancy/"><img src="https://i.imgur.com/93QOcDf.png" alt="Vibrancy parallel reverb, delay and saturation plugin interface" class="plugin-screenshot" loading="lazy"></a>
@@ -146,7 +169,7 @@
             </article>
 
             <!-- Plugin 3: Harmonic Saturator -->
-            <article class="plugin-card card-moss">
+            <article class="plugin-card card-lime">
                 <span class="card-index">03</span>
                 <div class="plugin-image-wrapper">
                     <a href="/harmonic-saturator/"><img src="https://i.imgur.com/b7U20cQ.jpeg" alt="Harmonic Saturator free saturation plugin interface" class="plugin-screenshot" loading="lazy"></a>
@@ -168,38 +191,6 @@
                 </div>
             </article>
 
-        </section>
-
-        <!-- About / SEO copy -->
-        <section class="info-band">
-            <div class="section-head">
-                <span class="section-kicker">About</span>
-                <h2>Boutique plugins, built around one idea: clarity</h2>
-            </div>
-            <p><strong>Immanent Audio</strong> is a small, independent plugin shop. Every plugin here started as a tool I wanted in my own sessions — practical mixing plugins that solve real problems like frequency masking, cluttered parallel FX chains, and lifeless digital tone.</p>
-            <p>Everything ships as <strong>VST3 and AU for macOS and Windows</strong>, so it drops straight into Ableton Live, FL Studio, Logic Pro, Reaper, Cubase, Studio One, Bitwig, or whatever DAW you call home. <a href="/spectral-agent/">Spectral Agent</a> and <a href="/vibrancy/">Vibrancy</a> both have free demos, and <a href="/harmonic-saturator/">Harmonic Saturator</a> is completely free — try them in your own mix before spending a dime.</p>
-        </section>
-
-        <!-- FAQ -->
-        <section class="info-band" aria-label="Frequently asked questions">
-            <div class="section-head">
-                <span class="section-kicker">FAQ</span>
-                <h2>Common questions</h2>
-            </div>
-            <div class="faq-list">
-                <details>
-                    <summary>Will these plugins work in my DAW?</summary>
-                    <p>Almost certainly. All Immanent Audio plugins come in VST3 and AU formats for both macOS and Windows, which covers Ableton Live, FL Studio, Reaper, Cubase, Studio One, Bitwig, and more. Logic Pro users: grab the AU version.</p>
-                </details>
-                <details>
-                    <summary>Can I try before I buy?</summary>
-                    <p>Yep. Spectral Agent and Vibrancy both have free demos you can download from their pages, and Harmonic Saturator is 100% free. No email gymnastics required — everything is delivered instantly through Gumroad.</p>
-                </details>
-                <details>
-                    <summary>How is Spectral Agent different from a regular dynamic EQ?</summary>
-                    <p>A dynamic EQ only reacts to the track it's sitting on. Spectral Agent instances talk to each other across your whole mix — comparing frequency data between tracks, finding collisions, and automatically carving space so your lead elements cut through. No sidechain routing, no manual notch hunting.</p>
-                </details>
-            </div>
         </section>
     </main>
 

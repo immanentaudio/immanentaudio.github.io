@@ -85,26 +85,23 @@
         <div class="playhead" aria-hidden="true"></div>
 
         <div class="midi-grid-container" aria-hidden="true">
-            <!-- Left chord stack — lights up as the playhead passes.
-                 --hit is tuned so each note flashes (at the 2% keyframe,
-                 ~0.16s after --hit) right as the sweeping playhead reaches
-                 that column, for a standard desktop width. Leftmost columns
-                 (lower --start) fire first. -->
+            <!-- Left chord stack — each note is lit by JS the moment the
+                 sweeping playhead overlaps it (see script at end of body). -->
             <div class="midi-chord-stack left-chords">
-                <div class="midi-note note-amber" style="--row: 2; --start: 1; --span: 5; --hit: 0.74s;"></div>
-                <div class="midi-note note-teal"  style="--row: 4; --start: 2; --span: 4; --hit: 0.80s;"></div>
-                <div class="midi-note note-lime"  style="--row: 5; --start: 1; --span: 6; --hit: 0.80s;"></div>
-                <div class="midi-note note-rose"  style="--row: 7; --start: 3; --span: 3; --hit: 0.88s;"></div>
-                <div class="midi-note note-amber" style="--row: 9; --start: 2; --span: 5; --hit: 0.88s;"></div>
+                <div class="midi-note note-amber" style="--row: 2; --start: 1; --span: 5;"></div>
+                <div class="midi-note note-teal"  style="--row: 4; --start: 2; --span: 4;"></div>
+                <div class="midi-note note-lime"  style="--row: 5; --start: 1; --span: 6;"></div>
+                <div class="midi-note note-rose"  style="--row: 7; --start: 3; --span: 3;"></div>
+                <div class="midi-note note-amber" style="--row: 9; --start: 2; --span: 5;"></div>
             </div>
 
-            <!-- Right chord stack — playhead reaches it near the end of the sweep -->
+            <!-- Right chord stack -->
             <div class="midi-chord-stack right-chords">
-                <div class="midi-note note-lime"  style="--row: 3; --start: 2; --span: 5; --hit: 6.95s;"></div>
-                <div class="midi-note note-rose"  style="--row: 4; --start: 1; --span: 4; --hit: 6.72s;"></div>
-                <div class="midi-note note-amber" style="--row: 6; --start: 3; --span: 4; --hit: 7.02s;"></div>
-                <div class="midi-note note-teal"  style="--row: 8; --start: 1; --span: 6; --hit: 6.88s;"></div>
-                <div class="midi-note note-lime"  style="--row: 10; --start: 2; --span: 4; --hit: 6.88s;"></div>
+                <div class="midi-note note-lime"  style="--row: 3; --start: 2; --span: 5;"></div>
+                <div class="midi-note note-rose"  style="--row: 4; --start: 1; --span: 4;"></div>
+                <div class="midi-note note-amber" style="--row: 6; --start: 3; --span: 4;"></div>
+                <div class="midi-note note-teal"  style="--row: 8; --start: 1; --span: 6;"></div>
+                <div class="midi-note note-lime"  style="--row: 10; --start: 2; --span: 4;"></div>
             </div>
         </div>
 
@@ -226,6 +223,33 @@
             <span>VST is a trademark of Steinberg Media Technologies GmbH.</span>
         </div>
     </footer>
+
+    <!-- Light each hero MIDI note exactly while the sweeping playhead is over
+         it. Driven by the playhead's real position so it stays aligned at any
+         viewport width. Skipped when the user prefers reduced motion. -->
+    <script>
+    (function () {
+        if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        var playhead = document.querySelector('.playhead');
+        var notes = Array.prototype.slice.call(document.querySelectorAll('.midi-note'));
+        if (!playhead || !notes.length) return;
+
+        function frame() {
+            var pr = playhead.getBoundingClientRect();
+            // Skip while the playhead is hidden/offscreen (fades out at sweep ends).
+            if (pr.width > 0) {
+                var px = pr.left + pr.width / 2;
+                for (var i = 0; i < notes.length; i++) {
+                    var r = notes[i].getBoundingClientRect();
+                    var over = px >= r.left - 6 && px <= r.right + 6;
+                    notes[i].classList.toggle('lit', over);
+                }
+            }
+            requestAnimationFrame(frame);
+        }
+        requestAnimationFrame(frame);
+    })();
+    </script>
 
 </body>
 </html>

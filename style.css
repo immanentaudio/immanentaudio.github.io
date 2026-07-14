@@ -360,16 +360,18 @@ body {
     grid-column: var(--start) / span var(--span);
     border-radius: 3px;
     box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.3);
-    /* Notes pulse as the playhead passes; --hit staggers per note */
-    animation: noteHit 8s ease-out infinite;
-    animation-delay: var(--hit, 0s);
+    filter: brightness(1);
+    /* The `.lit` class is toggled by JS (see index.html) the instant the
+       sweeping playhead actually overlaps this note, so the flash tracks
+       the marker precisely at ANY viewport width. Fast attack, slow decay. */
+    transition: filter 0.45s ease-out, box-shadow 0.45s ease-out;
 }
 
-/* Bright flash + glow, then settle — like a note being triggered */
-@keyframes noteHit {
-    0%, 100% { filter: brightness(1); }
-    2%  { filter: brightness(2.1) saturate(1.4); box-shadow: 0 0 14px 2px currentColor, inset 0 0 6px rgba(255, 255, 255, 0.6); }
-    9%  { filter: brightness(1.05); }
+/* Bright flash + glow while the playhead is over the note */
+.midi-note.lit {
+    filter: brightness(2.1) saturate(1.4);
+    box-shadow: 0 0 14px 2px currentColor, inset 0 0 6px rgba(255, 255, 255, 0.6);
+    transition: filter 0.06s ease-out, box-shadow 0.06s ease-out;
 }
 
 .note-teal   { background-color: rgba(51, 214, 196, 0.7);  border: 1px solid #33d6c4; color: rgba(51, 214, 196, 0.85); }
@@ -967,9 +969,10 @@ body {
    -------------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
     .cosmos, .cosmos::before, .cosmos::after,
-    .playhead, .midi-note, .hero h1::before {
+    .playhead, .hero h1::before {
         animation: none;
     }
     .playhead { display: none; }
+    .midi-note { transition: none; }
     html { scroll-behavior: auto; }
 }

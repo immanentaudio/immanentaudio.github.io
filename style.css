@@ -598,6 +598,7 @@ body {
 .status-tag.premium  { background-color: rgba(51, 214, 196, 0.12); color: var(--teal); border: 1px solid rgba(51, 214, 196, 0.3); }
 .status-tag.free     { background-color: rgba(182, 217, 76, 0.12); color: var(--lime); border: 1px solid rgba(182, 217, 76, 0.3); }
 .status-tag.upcoming { background-color: rgba(245, 106, 156, 0.1); color: var(--rose); border: 1px solid rgba(245, 106, 156, 0.3); }
+.status-tag.amber    { background-color: rgba(240, 169, 76, 0.12); color: var(--amber); border: 1px solid rgba(240, 169, 76, 0.3); }
 
 .plugin-info h2, .plugin-info h3 {
     font-family: var(--serif);

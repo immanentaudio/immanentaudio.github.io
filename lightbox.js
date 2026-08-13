@@ -34,23 +34,12 @@
         }
     }
 
-    // Re-centre once the full-size file has actually loaded.
-    full.addEventListener('load', centre);
-
-    scroller.appendChild(full);
-    overlay.appendChild(scroller);
-    overlay.appendChild(close);
-    document.body.appendChild(overlay);
-
-    var lastTrigger = null;
     var NARROW = 700;   // below this, fit-to-screen isn't big enough to read
 
-    function open(img) {
-        lastTrigger = img.closest('.zoomable');
-        full.src = img.currentSrc || img.src;
-        full.alt = img.alt;
-
-        var native = img.naturalWidth || 0;
+    // Sized against the file actually on screen, so it has to run once the
+    // full-resolution version has loaded — its dimensions aren't the thumbnail's.
+    function fit() {
+        var native = full.naturalWidth || 0;
         var vw = window.innerWidth || document.documentElement.clientWidth || 0;
 
         if (native && vw && vw < NARROW && native > vw) {
@@ -65,14 +54,32 @@
             full.style.width = '';
             full.style.maxWidth = native ? 'min(' + native + 'px, 100%)' : '';
         }
+        centre();
+    }
+
+    full.addEventListener('load', fit);
+
+    scroller.appendChild(full);
+    overlay.appendChild(scroller);
+    overlay.appendChild(close);
+    document.body.appendChild(overlay);
+
+    var lastTrigger = null;
+
+    function open(img) {
+        lastTrigger = img.closest('.zoomable');
+        // data-full points at a higher-resolution copy, fetched only on open so
+        // the page itself still loads the small one.
+        full.src = img.getAttribute('data-full') || img.currentSrc || img.src;
+        full.alt = img.alt;
 
         overlay.classList.add('open');
         overlay.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
         close.focus();
 
-        // Start centred on the image when it's wider than the screen.
-        centre();
+        // Cached images fire no load event, so size them now.
+        if (full.complete) fit();
     }
 
     function hide() {

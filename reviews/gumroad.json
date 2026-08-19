@@ -1,12 +1,12 @@
 {
-  "updated": "2026-08-19T07:57:12Z",
+  "updated": "2026-08-19T21:06:54Z",
   "ratings": {
     "spectral-agent": {
       "count": 1,
       "average": 5.0
     },
     "de-esser": {
-      "count": 13,
+      "count": 14,
       "average": 4.8
     },
     "harmonic-saturator": {
@@ -15,6 +15,17 @@
     }
   },
   "reviews": [
+    {
+      "id": "6mI4SaInwxb_YC9MaiUl2A==",
+      "source": "gumroad",
+      "product": "de-esser",
+      "product_name": "IA De-Esser",
+      "rating": 5,
+      "name": "Peter Stratton",
+      "message": "Works great, definitely worth paying for!",
+      "response": "Thanks for the positive feedback and donation(s)!",
+      "date": "2026-08-19T18:47:53Z"
+    },
     {
       "id": "VLMh42Qs1c0Cb11rOu9z1Q==",
       "source": "gumroad",

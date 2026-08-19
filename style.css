@@ -1095,6 +1095,123 @@ body {
 .lightbox-close:hover { color: var(--accent); border-color: var(--accent); }
 
 /* --------------------------------------------------------------
+   REVIEWS — Gumroad reviews pulled in daily, rendered by reviews.js
+   -------------------------------------------------------------- */
+.review-summary {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 1.5rem;
+}
+
+.review-average {
+    font-family: var(--serif);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1;
+}
+
+.review-count {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+}
+
+.review-stars {
+    letter-spacing: 0.1em;
+    font-size: 0.95rem;
+    line-height: 1;
+    color: var(--accent);
+    white-space: nowrap;
+}
+
+.review-star.is-empty { color: rgba(var(--accent-rgb), 0.22); }
+
+.review-list {
+    display: grid;
+    gap: 1rem;
+}
+
+.review-card {
+    background: var(--bg-raised);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-left: 2px solid rgba(var(--accent-rgb), 0.45);
+    border-radius: 10px;
+    padding: 1.15rem 1.25rem;
+}
+
+.review-head {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin-bottom: 0.6rem;
+}
+
+.review-name {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: var(--text-muted);
+}
+
+.review-badge {
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid rgba(var(--accent-rgb), 0.35);
+    background: rgba(var(--accent-rgb), 0.09);
+    border-radius: 999px;
+    padding: 0.15rem 0.5rem;
+}
+
+.review-date {
+    font-family: var(--mono);
+    font-size: 0.66rem;
+    color: var(--text-faint);
+    margin-left: auto;
+}
+
+.review-body {
+    color: var(--text-main);
+    font-size: 0.95rem;
+    line-height: 1.65;
+    margin: 0;
+}
+
+.review-reply {
+    margin-top: 0.9rem;
+    padding-left: 0.9rem;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.review-reply-label {
+    display: block;
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin-bottom: 0.3rem;
+}
+
+.review-reply p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 560px) {
+    .review-date { margin-left: 0; width: 100%; }
+}
+
+/* --------------------------------------------------------------
    ACCESSIBILITY — respect users who turn animations off
    -------------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {

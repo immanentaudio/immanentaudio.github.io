@@ -1,0 +1,74 @@
+{
+  "updated": "2026-08-19T01:32:07Z",
+  "ratings": {
+    "spectral-agent": {
+      "count": 1,
+      "average": 5.0
+    },
+    "de-esser": {
+      "count": 10,
+      "average": 4.9
+    },
+    "harmonic-saturator": {
+      "count": 4,
+      "average": 4.5
+    }
+  },
+  "reviews": [
+    {
+      "id": "HZsCa6KOSI68VAsZIEBTZQ==",
+      "source": "gumroad",
+      "product": "de-esser",
+      "product_name": "IA De-Esser",
+      "rating": 5,
+      "name": "Anonymous",
+      "message": "Very good plugin",
+      "response": null,
+      "date": "2026-08-18T19:26:22Z"
+    },
+    {
+      "id": "J-pbBCCFBq9MI-FK_gX2QA==",
+      "source": "gumroad",
+      "product": "de-esser",
+      "product_name": "IA De-Esser",
+      "rating": 5,
+      "name": "Anonymous",
+      "message": "Mind Blowing",
+      "response": null,
+      "date": "2026-08-16T05:34:58Z"
+    },
+    {
+      "id": "2BbBtp-MGSQpbY0VLmMtSA==",
+      "source": "gumroad",
+      "product": "spectral-agent",
+      "product_name": "Spectral Agent 2",
+      "rating": 5,
+      "name": "Anonymous",
+      "message": "A very useful tool, particularly due to its quality and very low CPU usage—which is essential for multitrack work. In my opinion, the only thing missing is a comprehensive manual or video tutorials to make it easier to use, at least in the beginning.",
+      "response": "Thank you for the review! I'll work on getting a 'user's guide' out soon.",
+      "date": "2026-08-14T09:15:53Z"
+    },
+    {
+      "id": "2bk3puoNLT2Tg4dDQkpYzg==",
+      "source": "gumroad",
+      "product": "de-esser",
+      "product_name": "IA De-Esser",
+      "rating": 5,
+      "name": "Anonymous",
+      "message": "An outstanding plugin. Very easy to use and brilliantly executed. It is highly effective, whether for handling resonances across various instruments or, of course, processing vocal tracks. With zero latency and a very light CPU footprint, it is my go-to choice for live performance.\nThe only area for improvement, in my opinion, would be a comprehensive manual to better understand the different use cases—specifically the distinction between \"Auto\" and \"Smart\" modes—and to provide some tips, given that each band can operate in its own specific mode. \nIt works perfectly with reaper for me.\nBravo!",
+      "response": "Thank you for the positive feedback! I'll plan to put out a user's guide for this one as well.",
+      "date": "2026-08-14T09:09:59Z"
+    },
+    {
+      "id": "afraa-dLPKNnsf1pugFzdw==",
+      "source": "gumroad",
+      "product": "de-esser",
+      "product_name": "IA De-Esser",
+      "rating": 4,
+      "name": "SonicVibe",
+      "message": "not working in reaper",
+      "response": "Reaching out via email",
+      "date": "2026-08-07T05:03:50Z"
+    }
+  ]
+}

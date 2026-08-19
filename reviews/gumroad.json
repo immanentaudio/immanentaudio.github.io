@@ -1,13 +1,13 @@
 {
-  "updated": "2026-08-19T02:01:34Z",
+  "updated": "2026-08-19T07:57:12Z",
   "ratings": {
     "spectral-agent": {
       "count": 1,
       "average": 5.0
     },
     "de-esser": {
-      "count": 10,
-      "average": 4.9
+      "count": 13,
+      "average": 4.8
     },
     "harmonic-saturator": {
       "count": 4,
@@ -15,6 +15,39 @@
     }
   },
   "reviews": [
+    {
+      "id": "VLMh42Qs1c0Cb11rOu9z1Q==",
+      "source": "gumroad",
+      "product": "de-esser",
+      "product_name": "IA De-Esser",
+      "rating": 4,
+      "name": "Anonymous",
+      "message": "Good",
+      "response": null,
+      "date": "2026-08-19T07:06:57Z"
+    },
+    {
+      "id": "UGL_nxAtXIg0YJfhsp7YIg==",
+      "source": "gumroad",
+      "product": "de-esser",
+      "product_name": "IA De-Esser",
+      "rating": 5,
+      "name": "Anonymous",
+      "message": "The best De-esser plugin I've ever tried for sibilance and cymbals! Plus, it's free!!!",
+      "response": null,
+      "date": "2026-08-19T06:17:29Z"
+    },
+    {
+      "id": "763Yo6SR-3QTXHNvrSH6NQ==",
+      "source": "gumroad",
+      "product": "de-esser",
+      "product_name": "IA De-Esser",
+      "rating": 4,
+      "name": "Anonymous",
+      "message": "It's a good idea to create a great product. But it seemed like it either didn't work or had extremely soft signal processing.",
+      "response": "Thanks for the feedback. I will say- the analyzer (and bar along the bottom of each slot) shows you exactly how much filtering is taking place. Try cranking up the Depth knob or turning down the Q knob if you really want to push it!",
+      "date": "2026-08-19T03:07:14Z"
+    },
     {
       "id": "HZsCa6KOSI68VAsZIEBTZQ==",
       "source": "gumroad",

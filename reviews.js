@@ -76,6 +76,27 @@
 
             mount.innerHTML = head + '<div class="review-list">' + cards + '</div>';
             mount.classList.add('is-loaded');
+
+            // Clamp anything long enough to crowd out the reviews under it.
+            // Only bothers when the text actually overflows its 5 lines.
+            mount.querySelectorAll('.review-body').forEach(function (body) {
+                body.classList.add('is-clamped');
+                if (body.scrollHeight <= body.clientHeight + 2) {
+                    body.classList.remove('is-clamped');
+                    return;
+                }
+                var btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = 'review-more';
+                btn.textContent = 'Read more';
+                btn.setAttribute('aria-expanded', 'false');
+                btn.addEventListener('click', function () {
+                    var open = body.classList.toggle('is-clamped');
+                    btn.textContent = open ? 'Read more' : 'Show less';
+                    btn.setAttribute('aria-expanded', open ? 'false' : 'true');
+                });
+                body.insertAdjacentElement('afterend', btn);
+            });
         })
         .catch(function () { mount.remove(); });
 })();

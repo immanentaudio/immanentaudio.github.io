@@ -1,3 +1,4 @@
 # One Gumroad review id per line to hide it from the site.
 # Ids come from reviews/gumroad.json. Lines starting with # are ignored.
 # Use this sparingly - pulling only the glowing ones is obvious to readers.
+afraa-dLPKNnsf1pugFzdw==  # De-Esser "not working in reaper" - issue resolved

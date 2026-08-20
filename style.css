@@ -408,6 +408,7 @@ body {
 
 .hero h1 {
     font-family: var(--serif);
+    text-transform: uppercase;
     font-size: clamp(2.6rem, 7vw, 4.2rem);
     font-weight: 900;
     color: #ffffff;

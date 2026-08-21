@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary SEO -->
+    <title>IA De-Esser User Guide — De-Ess, Auto, Smart &amp; Manual Modes | Immanent Audio</title>
+    <meta name="description" content="The full IA De-Esser user guide: how the four slots work, what every knob does, and when to use De-Ess, Auto, Smart and manual mode for sibilance, boxiness, honk and resonance. Read it here or download the PDF.">
+    <link rel="canonical" href="https://immanentaudio.com/de-esser/user-guide/">
+
+    <!-- Icons -->
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
+    <link rel="icon" type="image/png" sizes="100x100" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <!-- Open Graph / social previews -->
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Immanent Audio">
+    <meta property="og:title" content="IA De-Esser User Guide — De-Ess, Auto, Smart &amp; Manual Modes">
+    <meta property="og:description" content="How the four slots work, what every knob does, and when to use each mode. Read the full guide or download the PDF.">
+    <meta property="og:url" content="https://immanentaudio.com/de-esser/user-guide/">
+    <meta property="og:image" content="https://immanentaudio.com/de-esser/user-guide/overview.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="IA De-Esser User Guide — De-Ess, Auto, Smart &amp; Manual Modes">
+    <meta name="twitter:description" content="How the four slots work, what every knob does, and when to use each mode. Read the full guide or download the PDF.">
+    <meta name="twitter:image" content="https://immanentaudio.com/de-esser/user-guide/overview.jpg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800;9..144,900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        body { --accent: #f0a94c; --accent-rgb: 240, 169, 76; }
+    </style>
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TechArticle",
+          "headline": "IA De-Esser User Guide",
+          "description": "How the four slots work, what every control does, and when to use De-Ess, Auto, Smart and manual mode.",
+          "url": "https://immanentaudio.com/de-esser/user-guide/",
+          "image": "https://immanentaudio.com/de-esser/user-guide/overview.jpg",
+          "inLanguage": "en",
+          "about": {
+            "@type": "SoftwareApplication",
+            "name": "IA De-Esser",
+            "url": "https://immanentaudio.com/de-esser/",
+            "applicationCategory": "MultimediaApplication",
+            "applicationSubCategory": "Audio Plugin (VST3, AU)",
+            "operatingSystem": "macOS, Windows"
+          },
+          "author": { "@type": "Organization", "name": "Immanent Audio", "url": "https://immanentaudio.com/" },
+          "publisher": { "@type": "Organization", "name": "Immanent Audio", "url": "https://immanentaudio.com/" },
+          "mainEntityOfPage": "https://immanentaudio.com/de-esser/user-guide/"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://immanentaudio.com/" },
+            { "@type": "ListItem", "position": 2, "name": "IA De-Esser", "item": "https://immanentaudio.com/de-esser/" },
+            { "@type": "ListItem", "position": 3, "name": "User Guide", "item": "https://immanentaudio.com/de-esser/user-guide/" }
+          ]
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+
+    <!-- Animated deep-space backdrop -->
+    <div class="cosmos" aria-hidden="true"></div>
+
+    <!-- Navigation -->
+    <nav class="site-nav">
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">
+                <img src="/favicon.png" alt="Immanent Audio logo">
+                <span>Immanent Audio</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="/spectral-agent/">Spectral Agent 2</a></li>
+                <li><a href="/de-esser/" class="active">IA De-Esser</a></li>
+                <li><a href="/vibrancy/">Vibrancy</a></li>
+                <li><a href="/harmonic-saturator/">Harmonic Saturator</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="product-hero">
+        <div class="daw-grid" aria-hidden="true"></div>
+        <div class="container-wide">
+            <nav class="breadcrumbs" aria-label="Breadcrumb">
+                <a href="/">Home</a><span>/</span><a href="/de-esser/">IA De-Esser</a><span>/</span>User Guide
+            </nav>
+            <h1>IA De-Esser User Guide</h1>
+            <p class="product-tagline">Four slot dynamic resonance suppressor and de-esser — what every control does, and which mode to reach for.</p>
+            <div class="chip-row">
+                <span class="chip">De-Ess</span>
+                <span class="chip">Auto</span>
+                <span class="chip">Smart</span>
+                <span class="chip">Manual</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container-wide">
+        <div class="grid-container">
+
+            <!-- LEFT COLUMN: the guide -->
+            <section class="guide">
+
+                <div class="product-section">
+                    <h2 id="overview">Overview</h2>
+                    <p><strong>IA De-Esser</strong> is four independent slots. Each slot is one bell shaped cut that sits at unity gain doing nothing until the frequency range it is watching gets too loud, then pulls that range down by as much as it overshot and lets go again.</p>
+                    <ul>
+                        <li><strong>Nothing is cut when nothing is wrong.</strong> Between esses, and between resonant notes, every slot is transparent.</li>
+                        <li><strong>It is level-independent.</strong> Detection is relative to the rest of the signal, not to a fixed threshold. Changing the fader, the mic distance or the gain staging ahead of it does not change how much it cuts.</li>
+                        <li><strong>It reports zero latency.</strong> No lookahead, no FFT in the audio path. Safe to record through, monitor through and use live.</li>
+                    </ul>
+
+                    <figure class="guide-figure">
+                        <img src="/de-esser/user-guide/overview.jpg" width="1400" height="844" data-full="/de-esser/user-guide/overview-full.jpg" alt="IA De-Esser with all four slots on: slot 1 manual, slot 2 in Auto, slot 3 in Smart, slot 4 in De-Ess" class="plugin-screenshot">
+                        <figcaption>All four modes ON. Slot 1 manual, slot 2 AUTO, slot 3 SMART, slot 4 DE-ESS.</figcaption>
+                    </figure>
+
+                    <h3 id="the-four-modes">The four modes</h3>
+                    <p>Every slot has four modes. Three are the buttons AUTO, DE-ESS and SMART. The fourth is full manual, which is what you get when none of the three are lit.</p>
+
+                    <div class="table-scroll">
+                        <table class="guide-table">
+                            <thead>
+                                <tr><th scope="col">Mode</th><th scope="col">You set</th><th scope="col">The plugin sets</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><th scope="row">SMART</th><td>Nothing</td><td>Where the problems are, plus width, depth and timing</td></tr>
+                                <tr><th scope="row">DE-ESS</th><td>Nothing</td><td>The sibilance band for this voice, plus everything about the cut</td></tr>
+                                <tr><th scope="row">AUTO</th><td>The frequency range</td><td>Exact frequency, width, depth and timing inside it</td></tr>
+                                <tr><th scope="row">Manual</th><td>Everything</td><td>Only when to move, and where inside your range</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <ul>
+                        <li><a href="#smart-mode">SMART</a> hunts the whole spectrum on its own and parks the slot on the worst thing it finds. Best place to start.</li>
+                        <li><a href="#de-ess-mode">DE-ESS</a> measures where the sibilance actually sits on this particular voice and tracks it.</li>
+                        <li><a href="#auto-mode">AUTO</a> works inside a range you set with LOW and HIGH, and decides everything else within it.</li>
+                        <li><a href="#manual-mode">Manual</a> is all yours: range, width, depth and timing, as absolute values.</li>
+                    </ul>
+
+                    <h3 id="when-to-use-the-plugin">When to use the plugin</h3>
+                    <p>Harsh vocals and sibilance, boxy or honky recordings, resonant acoustic guitars, room modes, ringing snares, cymbals and hi hats, dialogue and voiceover. Anything that sounds fine most of the time and unbearable on a few notes.</p>
+
+                    <h3 id="getting-started">Getting started</h3>
+                    <ol>
+                        <li>Insert it and turn on SLOT 1.</li>
+                        <li>Press SMART and play the loudest, harshest section.</li>
+                        <li>Watch the colored band that appears on the analyzer. That is where the plugin thinks the problem is, and the meter under the knobs shows how hard it is working.</li>
+                        <li>Turn on more slots in SMART if there is more than one problem. They spread out and never double up on the same spot.</li>
+                        <li>For more or less of the effect, turn DEPTH. Everything else can stay put.</li>
+                    </ol>
+                </div>
+
+                <div class="product-section">
+                    <h2 id="the-controls">The controls</h2>
+                    <p>Each slot has an ON switch, three mode buttons and six knobs. Every slot is identical.</p>
+
+                    <figure class="guide-figure is-slot">
+                        <img src="/de-esser/user-guide/slot-manual.jpg" width="433" height="520" alt="A single IA De-Esser slot: ON switch, the Auto, De-Ess and Smart buttons, and the Atk, Rel, Depth, Q, Low and High knobs">
+                        <figcaption>One slot, in manual: no mode button lit, all six knobs live.</figcaption>
+                    </figure>
+
+                    <h3 id="on-and-the-mode-buttons">ON and the mode buttons</h3>
+                    <p>ON engages the slot. The mode buttons can be armed while a slot is off, so you can set a mode up before you engage it. AUTO, DE-ESS and SMART are mutually exclusive: clicking one clears the others, and clicking the lit one turns it off, which drops the slot back into manual.</p>
+
+                    <h3 id="low-and-high">LOW and HIGH</h3>
+                    <p>40 Hz to 20 kHz. These define the region the slot watches and the range the bell is allowed to move inside. They gray out in DE-ESS and SMART, because those modes find the region for you.</p>
+
+                    <h3 id="depth">DEPTH</h3>
+                    <p>0 to 24 dB, default 6 dB. How hard it cuts. The default is the neutral point, where the cut simply tracks how far the band overshot. Turn it up and it cuts more than proportionally, turn it down and it cuts less. There is also a ceiling on any single event, so one stray transient never digs a hole.</p>
+
+                    <h3 id="q">Q</h3>
+                    <p>0.7 to 18, default 5. The width of the bell. Low numbers are wide and gentle, high numbers are surgical.</p>
+
+                    <h3 id="atk-and-rel">ATK and REL</h3>
+                    <p>Attack 0.1 to 100 ms, default 2 ms. Release 5 to 500 ms, default 80 ms. How quickly the cut engages and how quickly it lets go.</p>
+
+                    <aside class="guide-note">
+                        <h4>The knobs change meaning in the auto modes</h4>
+                        <p>In manual, the knobs are absolute values. In AUTO, DE-ESS and SMART, they become multipliers on what the analyzer decided, and the default position means "use exactly what the algorithm chose". This is the fastest way to tweak an auto mode.</p>
+                    </aside>
+
+                    <h3 id="the-live-readouts">The live readouts</h3>
+                    <ul>
+                        <li><strong>The gain-reduction meter</strong> is the bar under the knobs. It shows how much that slot is cutting right now.</li>
+                        <li><strong>The auto readout</strong> is the colored line under the meter, and it only appears in the auto modes. It is the attack, release, depth and Q the slot is actually running at that instant, after your multipliers have been applied.</li>
+                    </ul>
+
+                    <figure class="guide-figure is-wide-crop">
+                        <img src="/de-esser/user-guide/readouts.jpg" width="854" height="120" alt="Close-up of an IA De-Esser slot readout: a gain reduction meter showing minus 6.6 dB, and under it 5.1 ms, 51 ms, 16.0 dB and Q 13.4">
+                        <figcaption>Here the slot is running a 5.1 ms attack, 51 ms release, 16 dB of depth and a Q of 13.4.</figcaption>
+                    </figure>
+
+                    <h3 id="the-analyzer">The analyzer</h3>
+                    <ul>
+                        <li>The <strong>gray-filled trace</strong> is the input and the <strong>white line</strong> is the output. Wherever the two separate, that is your cut, drawn at the frequency it is happening.</li>
+                        <li>The <strong>shaded vertical band</strong> is an active slot's region, numbered in its top left corner with the slot number.</li>
+                        <li>The <strong>short colored tick</strong> hanging from the top sits at the exact frequency that slot's bell is parked on, and its length is the live gain reduction.</li>
+                    </ul>
+
+                    <figure class="guide-figure">
+                        <img src="/de-esser/user-guide/analyzer.jpg" width="1400" height="396" data-full="/de-esser/user-guide/analyzer-full.jpg" alt="The IA De-Esser analyzer showing the input trace, the output line, four shaded slot regions and a colored tick marking the bell frequency" class="plugin-screenshot">
+                        <figcaption>Four slot regions on the analyzer, with slot 2 cutting a resonance just under 500 Hz.</figcaption>
+                    </figure>
+                </div>
+
+                <div class="product-section">
+                    <h2 id="auto-mode">Auto mode</h2>
+                    <p>You set the territory with LOW and HIGH. The plugin does everything else inside it.</p>
+
+                    <figure class="guide-figure is-slot">
+                        <img src="/de-esser/user-guide/slot-auto.jpg" width="442" height="520" alt="An IA De-Esser slot in Auto mode, with Low set to 337 Hz and High to 981 Hz">
+                        <figcaption>AUTO working inside 337 Hz to 981 Hz.</figcaption>
+                    </figure>
+
+                    <h3 id="auto-how-it-works">How it works</h3>
+                    <ul>
+                        <li>Finds the loudest peak inside your region and parks the bell on it.</li>
+                        <li>Measures that peak's own width and sets Q from it. A narrow ring gets a narrow cut, a broad hump gets a broad one.</li>
+                        <li>Sets depth from how far the peak stands above the rest of the region, so a tall spike is cut harder than a small bump.</li>
+                        <li>Scales attack and release to the frequency it landed on, so a low band moves slower than a high one.</li>
+                        <li>Glides the bell to follow the peak as it moves rather than jumping, and never lets it leave your region.</li>
+                    </ul>
+
+                    <h3 id="auto-when-to-use-it">When to use it</h3>
+                    <ul>
+                        <li>You know roughly where the problem lives but not exactly what it is, or it moves from note to note.</li>
+                        <li>Boxiness somewhere in 200 to 500 Hz, nasal honk around 800 Hz to 1.5 kHz, harshness in 2 to 5 kHz.</li>
+                        <li>Any time you want to set the region and let the plugin handle the rest.</li>
+                    </ul>
+
+                    <h3 id="auto-notes">Notes</h3>
+                    <ul>
+                        <li>If nothing in the region really stands out, the bell parks in the middle of the region and waits.</li>
+                        <li>Narrow regions detect better than wide ones. Give it several octaves and a single resonance gets lost in the average. Tighten it around the ring and it triggers immediately.</li>
+                    </ul>
+                </div>
+
+                <div class="product-section">
+                    <h2 id="de-ess-mode">De-Ess mode</h2>
+                    <p>A dedicated sibilance mode. You do not set the band, and it is not fixed at a predetermined frequency either. It is measured from your actual audio, and it follows the voice.</p>
+
+                    <figure class="guide-figure is-slot">
+                        <img src="/de-esser/user-guide/slot-de-ess.jpg" width="444" height="520" alt="An IA De-Esser slot in De-Ess mode with Low and High grayed out, cutting 2.4 dB">
+                        <figcaption>In DE-ESS the region controls gray out — the band is measured, not dialled.</figcaption>
+                    </figure>
+
+                    <h3 id="de-ess-how-it-works">How it works</h3>
+                    <ul>
+                        <li>Continuously compares the energy up in the sibilant range against the body of the signal, and keeps a running average of that balance for this source.</li>
+                        <li>Calls it sibilance when that balance jumps well clear of the source's own norm. A naturally-bright singer does not get permanently filtered, only the esses that are hot for that voice get caught.</li>
+                        <li>Finds the center of the ess by where its energy actually sits, then opens a band around it.</li>
+                        <li>Uses a broad Q, because sibilance is broadband.</li>
+                        <li>Runs fast, because high frequencies allow it to.</li>
+                        <li>Sets depth from how harsh the ess is compared to the running norm.</li>
+                    </ul>
+
+                    <figure class="guide-figure">
+                        <img src="/de-esser/user-guide/de-ess-mode.jpg" width="1400" height="844" data-full="/de-esser/user-guide/de-ess-mode-full.jpg" alt="IA De-Esser in De-Ess mode, with the found sibilance band shaded between 5 and 11 kHz and the meter reading 2.4 dB of reduction" class="plugin-screenshot">
+                        <figcaption>DE-ESS mode active. The band it found sits around 5 to 11 kHz, the gray input trace pulls away from the white output trace inside it, and the meter reads 2.4 dB of reduction.</figcaption>
+                    </figure>
+
+                    <h3 id="de-ess-when-to-use-it">When to use it</h3>
+                    <ul>
+                        <li>Lead and backing vocals, doubles, voiceover, dialogue, podcast.</li>
+                    </ul>
+
+                    <h3 id="de-ess-notes">Notes</h3>
+                    <ul>
+                        <li>LOW and HIGH are disabled, but DEPTH, Q, ATK and REL still work as multipliers, so you can make it gentler, wider or slower without leaving the mode.</li>
+                        <li>It follows the singer. If a different vocalist comes in, it re-centers on them.</li>
+                    </ul>
+                </div>
+
+                <div class="product-section">
+                    <h2 id="smart-mode">Smart mode</h2>
+                    <p>The most hands-off mode. You give it a slot, and it goes and finds the worst thing in the spectrum by itself.</p>
+
+                    <figure class="guide-figure is-slot">
+                        <img src="/de-esser/user-guide/slot-smart.jpg" width="438" height="520" alt="An IA De-Esser slot in Smart mode, with a live readout of 2.6 ms attack, 30 ms release, 30 dB of depth and a Q of 16">
+                        <figcaption>A SMART slot holding its claim: 2.6 ms attack, 30 ms release, 30 dB of depth, Q 16.</figcaption>
+                    </figure>
+
+                    <h3 id="smart-how-it-works">How it works</h3>
+                    <ul>
+                        <li>Scans the whole spectrum for peaks that stand out above their own local neighborhood, and ranks them by how far they stick out.</li>
+                        <li>Each SMART slot claims one trouble spot and holds it.</li>
+                        <li>A slot will abandon its spot for a clearly worse one.</li>
+                        <li>Claims are exclusive. Slots keep well clear of each other, so four SMART slots land on the four worst spots instead of piling onto one.</li>
+                        <li>If a claimed peak disappears for long enough, the slot lets go and starts hunting again.</li>
+                        <li>One SMART slot can take on the sibilance band and behave exactly like DE-ESS, but only if no other slot is already running in DE-ESS. It will not double up on a de-esser you have already set.</li>
+                    </ul>
+
+                    <figure class="guide-figure">
+                        <img src="/de-esser/user-guide/smart-mode.jpg" width="1400" height="844" data-full="/de-esser/user-guide/smart-mode-full.jpg" alt="IA De-Esser with all four slots in Smart mode, spread across four separate trouble spots on the analyzer" class="plugin-screenshot">
+                        <figcaption>All four slots in SMART. They have spread onto four separate trouble spots, and slot 2 has taken the broadband sibilance claim at the top: note its Q of 1.1 and 30 ms release.</figcaption>
+                    </figure>
+
+                    <h3 id="smart-when-to-use-it">When to use it</h3>
+                    <ul>
+                        <li>If you need help finding the typical resonant areas.</li>
+                        <li>Unfamiliar material, live sound, broadcast.</li>
+                        <li>Sources with several problems at once: an over-bright acoustic that also honks, a vocal that is both nasal and sibilant.</li>
+                    </ul>
+
+                    <h3 id="smart-notes">Notes</h3>
+                    <ul>
+                        <li>Turn all four slots on in SMART to see the four worst spots at once. This is the diagnostic pass described in <a href="#tips">Tips</a>.</li>
+                    </ul>
+                </div>
+
+                <div class="product-section">
+                    <h2 id="manual-mode">Manual mode</h2>
+                    <p>No mode button lit. The region, the width, the depth and the timing are all yours, as absolute values.</p>
+                    <p>Manual is still dynamic. It is not a static EQ cut. The slot still watches the band, still only moves when that band gets louder than it ought to be, and still releases all the way back to unity.</p>
+
+                    <h3 id="manual-when-to-use-it">When to use it</h3>
+                    <ul>
+                        <li>You already know the exact frequency and want it treated identically every time.</li>
+                        <li>You want a specific character: a wide, gentle, slow cut that behaves like a dynamic tilt, or a very narrow fast one that only catches a single ringing note.</li>
+                        <li>You want to override the parameters the auto modes set.</li>
+                    </ul>
+
+                    <h3 id="manual-notes">Notes</h3>
+                    <ul>
+                        <li>The bell parks on the loudest peak inside your region rather than sitting dead center, so the frequency still tracks the note.</li>
+                        <li>Detection is still relative, compared to its surroundings.</li>
+                    </ul>
+                </div>
+
+                <div class="product-section">
+                    <h2 id="tips">Tips</h2>
+
+                    <h3 id="tip-smart-then-hone">Use SMART to find the problems, then hone in</h3>
+                    <p>Turn all four slots on in SMART, play the worst section, and watch where cuts go in most often and most intensely. Note those regions. Then switch the slots to AUTO with LOW and HIGH set tightly around what SMART found, or to manual if you want to hand-shape the cut. You get personalized, source-specific cuts.</p>
+
+                    <h3 id="tip-depth-first">Set DEPTH first, everything else second</h3>
+                    <p>In any auto mode, DEPTH is the master taste control. Many sessions often need nothing else.</p>
+
+                    <h3 id="tip-narrow-the-region">Narrow the region if it is not catching</h3>
+                    <p>Smaller regions make for more sensitive resonance detection. Widen the region for the opposite problem, when it is catching too eagerly.</p>
+
+                    <h3 id="tip-gain-stage-freely">Gain stage freely</h3>
+                    <p>Because detection is relative rather than threshold based, you can put a fader, a trim or a compressor in front of it and it behaves the same.</p>
+
+                    <h3 id="tip-sample-rate">Higher sample rates are marginally quicker</h3>
+                    <p>Envelope times are identical in real terms at any sample rate, but parts of the engine are tied to the sample clock, so 96 kHz is slightly more agile than 48 kHz. Never slower.</p>
+                </div>
+
+                <div class="product-section">
+                    <p class="muted">IA De-Esser is free — VST3 and AU, macOS and Windows. <a href="/de-esser/">Back to the plugin page</a>.</p>
+                </div>
+
+            </section>
+
+            <!-- RIGHT COLUMN: download + contents -->
+            <aside>
+                <div class="sidebar-sticky">
+                    <div class="sidebar-card">
+                        <p class="sidebar-price">User Guide<small>12 pages · PDF · 2.8 MB</small></p>
+                        <a href="/de-esser/ia-de-esser-user-guide.pdf" class="cta-button" download>Download the PDF</a>
+                        <a href="/de-esser/" class="cta-button cta-demo">Get the plugin (free)</a>
+                    </div>
+
+                    <nav class="guide-toc" aria-label="Guide contents">
+                        <h2>Contents</h2>
+                        <ol>
+                            <li><a href="#overview">Overview</a>
+                                <ul>
+                                    <li><a href="#the-four-modes">The four modes</a></li>
+                                    <li><a href="#when-to-use-the-plugin">When to use the plugin</a></li>
+                                    <li><a href="#getting-started">Getting started</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#the-controls">The controls</a>
+                                <ul>
+                                    <li><a href="#on-and-the-mode-buttons">ON and the mode buttons</a></li>
+                                    <li><a href="#low-and-high">LOW and HIGH</a></li>
+                                    <li><a href="#depth">DEPTH</a></li>
+                                    <li><a href="#q">Q</a></li>
+                                    <li><a href="#atk-and-rel">ATK and REL</a></li>
+                                    <li><a href="#the-live-readouts">The live readouts</a></li>
+                                    <li><a href="#the-analyzer">The analyzer</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#auto-mode">Auto mode</a></li>
+                            <li><a href="#de-ess-mode">De-Ess mode</a></li>
+                            <li><a href="#smart-mode">Smart mode</a></li>
+                            <li><a href="#manual-mode">Manual mode</a></li>
+                            <li><a href="#tips">Tips</a></li>
+                        </ol>
+                    </nav>
+                </div>
+            </aside>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand">
+                    <img src="/favicon.png" alt="Immanent Audio logo">
+                    Immanent Audio
+                </div>
+                <p>Boutique VST3 &amp; AU audio plugins for mixing — made independently, with a serious emphasis on clarity.</p>
+            </div>
+            <div>
+                <h4>Plugins</h4>
+                <ul>
+                    <li><a href="/spectral-agent/">Spectral Agent 2 — Auto EQ</a></li>
+                    <li><a href="/de-esser/">IA De-Esser — Free</a></li>
+                    <li><a href="/vibrancy/">Vibrancy — Parallel FX</a></li>
+                    <li><a href="/harmonic-saturator/">Harmonic Saturator — Free</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="https://immanentaudio.gumroad.com/" target="_blank" rel="noopener">Gumroad Store</a></li>
+                    <li><a href="mailto:immanentaudio@gmail.com">immanentaudio@gmail.com</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 Immanent Audio. All rights reserved.</span>
+            <span>VST is a trademark of Steinberg Media Technologies GmbH.</span>
+        </div>
+    </footer>
+
+    <script src="/lightbox.js" defer></script>
+
+</body>
+</html>

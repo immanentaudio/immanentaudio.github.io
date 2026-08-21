@@ -1,11 +1,12 @@
 /* ==============================================================
    IMMANENT AUDIO — screenshot lightbox
-   Any <img class="plugin-screenshot"> inside a product sidebar card
-   becomes a click-to-enlarge button. Progressive enhancement: with
-   JS off the page is exactly as it was.
+   Any <img class="plugin-screenshot"> in a product sidebar card or a
+   user-guide figure becomes a click-to-enlarge button. Progressive
+   enhancement: with JS off the page is exactly as it was.
    ============================================================== */
 (function () {
-    var shots = document.querySelectorAll('.sidebar-card .plugin-screenshot');
+    var shots = document.querySelectorAll(
+        '.sidebar-card .plugin-screenshot, .guide-figure .plugin-screenshot');
     if (!shots.length) return;
 
     // Overlay — built once, reused for every screenshot on the page.

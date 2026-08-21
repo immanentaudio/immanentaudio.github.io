@@ -152,15 +152,34 @@
         })
         .catch(function () { mount.remove(); });
 
-    /* The list scrolls through every review; this only decides how much of it
-       shows before you scroll. It takes all the room the sidebar has left,
-       then backs off just enough that the cut lands part-way down a card
-       rather than on a tidy card edge - a half-finished review is what tells
-       you the list keeps going.
+    /* How much of the list shows before you scroll. CSS already fits it into
+       whatever the card leaves; this only trims it further so the cut lands
+       part-way down a card rather than on a tidy card edge - a half-finished
+       review is what tells you the list keeps going. Nothing is ever dropped:
+       this is the height of the window, not of the list.
 
-       Everything here is measured with offsetTop and the sidebar's max-height
-       rather than live viewport rects, so re-running it while the list is
-       scrolled (or already clipped) gives the same answer. */
+       If the card is so tall that no useful window is left, the whole column
+       stops floating instead, and rides down the page with the rest of the
+       content. Either way the column itself never scrolls - one scrollbar.
+
+       Everything is measured with offsetTop and a viewport figure rather than
+       live rects, so re-running it while the list is scrolled (or already
+       clipped) gives the same answer. */
+    var MIN_WINDOW = 120;   // below this a scrolling list is more nuisance than help
+    var reserve = null;     // viewport the sticky column gives up: top offset plus breathing room
+
+    // The cap is only readable off the element while the column is still
+    // floating, so remember what it costs and derive it from there on.
+    function capFor(style) {
+        var viewport = document.documentElement.clientHeight;
+        if (reserve === null) {
+            var declared = parseFloat(style.maxHeight);
+            if (isNaN(declared) || !viewport) return NaN;   // narrow screen, or not laid out yet
+            reserve = viewport - declared;
+        }
+        return viewport - reserve;
+    }
+
     function sizeScroller(mount) {
         var scroll = mount.querySelector('.review-scroll');
         var list = mount.querySelector('.review-list');
@@ -168,35 +187,39 @@
         if (!scroll || !list || !sidebar) return;
 
         var style = getComputedStyle(sidebar);
-        var cap = parseFloat(style.maxHeight);  // NaN under 768px, where nothing is capped
+        var cap = capFor(style);
+        var listTop = list.offsetTop + scroll.offsetTop;
         var natural = list.scrollHeight;
-        var top = list.offsetTop + scroll.offsetTop;
-        var avail = cap - top - (parseFloat(style.paddingBottom) || 0);
+        var room = cap - listTop - (parseFloat(style.paddingBottom) || 0);
 
-        var height = 0;
-        if (cap && natural > avail && avail > 120) {
-            height = Math.round(avail);
+        var mode = 'open', height = 0;
+        if (isNaN(cap)) mode = 'open';              // under 768px nothing is capped
+        else if (natural <= room) mode = 'open';    // it all fits, leave it alone
+        else if (room >= MIN_WINDOW) {
+            mode = 'window';
+            height = Math.floor(room);
 
-            // Find the card the cut lands in and make sure enough of it shows
-            // to read as an interrupted review. Nothing is dropped either way -
-            // this is the height of the window, not of the list.
             var cards = list.children;
             for (var i = 0; i < cards.length; i++) {
                 var top = cards[i].offsetTop - list.offsetTop;
                 var bottom = top + cards[i].offsetHeight;
                 if (bottom <= height) continue;
                 var slice = Math.min(cards[i].offsetHeight * 0.45, 40);
-                if (height - top < slice) height = Math.round(top + slice);
+                if (height - top < slice) height = Math.floor(top + slice);
                 break;
             }
+        } else {
+            mode = 'unstuck';
         }
 
         // Re-running on our own resize would otherwise loop forever.
-        var sig = cap + ':' + top + ':' + natural + ':' + height;
+        var sig = cap + ':' + listTop + ':' + natural + ':' + mode + ':' + height;
         if (sig === scroll.dataset.sig) return;
         scroll.dataset.sig = sig;
 
-        if (!height) {
+        sidebar.classList.toggle('is-unstuck', mode === 'unstuck');
+
+        if (mode !== 'window') {
             scroll.style.maxHeight = '';
             scroll.classList.remove('is-scrollable', 'is-end');
             scroll.removeAttribute('tabindex');
@@ -206,6 +229,17 @@
         }
 
         scroll.style.maxHeight = height + 'px';
+
+        // Whatever rounding is left over comes off the window. With no scrollbar
+        // on the column, a stray pixel or two would spill instead of scrolling -
+        // and an almost-empty scrollbar next to the list is exactly the
+        // confusion this is meant to avoid.
+        var spill = sidebar.scrollHeight - sidebar.clientHeight;
+        if (spill > 0 && height - spill >= MIN_WINDOW) {
+            height -= spill;
+            scroll.style.maxHeight = height + 'px';
+        }
+
         scroll.classList.add('is-scrollable');
         scroll.setAttribute('tabindex', '0');
         scroll.setAttribute('role', 'group');

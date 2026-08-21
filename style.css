@@ -1149,9 +1149,9 @@ body {
    SIDEBAR — purchase card + reviews travel together as one sticky unit
    -------------------------------------------------------------- */
 .sidebar-sticky {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: 1.1rem;
-    align-content: start;
 }
 
 @media (min-width: 768px) {
@@ -1159,26 +1159,46 @@ body {
         position: sticky;
         top: 4.5rem;
         /* Card + reviews can outgrow the viewport, and a sticky block taller
-           than the screen strands its own bottom off-screen. Cap it and let
-           the overflow scroll inside instead. */
+           than the screen strands its own bottom off-screen. Cap it - but the
+           column itself never scrolls: one list inside it does, so there is
+           only ever a single scrollbar to notice. */
         max-height: calc(100vh - 5.6rem);
-        overflow-y: auto;
-        overscroll-behavior: contain;
-        /* Breathing room so the card's drop shadow isn't clipped by the
-           scroll box; pulled back out with the negative margin. */
+        overflow: visible;
         padding: 0.35rem 0.6rem 1rem;
         margin: -0.35rem -0.6rem 0;
-        scrollbar-width: thin;
-        scrollbar-color: rgba(var(--accent-rgb), 0.3) transparent;
     }
 
-    .sidebar-sticky::-webkit-scrollbar { width: 6px; }
-    .sidebar-sticky::-webkit-scrollbar-track { background: transparent; }
-    .sidebar-sticky::-webkit-scrollbar-thumb {
-        background: rgba(var(--accent-rgb), 0.28);
-        border-radius: 3px;
+    /* The card keeps its full height; whatever is left goes to the list. */
+    .sidebar-sticky > .sidebar-card { flex: 0 0 auto; }
+
+    .sidebar-sticky > .sidebar-reviews {
+        flex: 1 1 auto;
+        min-height: 0;
+        display: flex;
+        flex-direction: column;
     }
-    .sidebar-sticky:hover::-webkit-scrollbar-thumb { background: rgba(var(--accent-rgb), 0.45); }
+
+    .sidebar-reviews > h2,
+    .sidebar-reviews > .review-summary { flex: 0 0 auto; }
+
+    /* Sized here so the list still scrolls with JS off; reviews.js only trims
+       it further, to land the cut part-way down a card. */
+    .sidebar-reviews > .review-scroll {
+        flex: 1 1 auto;
+        min-height: 0;
+        overflow-y: auto;
+    }
+
+    /* When the card alone is nearly as tall as the screen there is no useful
+       room to scroll a list in, so the column gives up floating and rides
+       down the page with everything else. */
+    /* relative, not static: it still lays out as an ordinary block, but stays
+       the box the measurements inside it are taken against, so widening the
+       window can hand it back its sticky behaviour. */
+    .sidebar-sticky.is-unstuck {
+        position: relative;
+        max-height: none;
+    }
 }
 
 /* Reviews sit in a ~400px column here, so everything tightens up a step. */
@@ -1508,14 +1528,6 @@ a.review-badge:hover {
    full height and the list scrolls in whatever is left over, so the sticky
    column never strands its own bottom off-screen. */
 @media (min-width: 768px) {
-    .sidebar-sticky.is-guide {
-        display: flex;
-        flex-direction: column;
-        overflow: visible;
-    }
-
-    .sidebar-sticky.is-guide .sidebar-card { flex: 0 0 auto; }
-
     .sidebar-sticky.is-guide .guide-toc {
         flex: 1 1 auto;
         min-height: 0;

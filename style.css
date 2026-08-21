@@ -1169,10 +1169,9 @@ body {
        properties makes Chrome ignore the ::-webkit-scrollbar rules below and
        fall back to the macOS overlay scrollbar, which only appears mid-scroll
        - the very thing that made this list look like it had one review. */
-    .review-scroll.is-scrollable {
-        overflow-y: auto;
-        overscroll-behavior: contain;
-    }
+    /* No overscroll containment: reaching the last review should hand the
+       scroll back to the page instead of parking the cursor in a dead zone. */
+    .review-scroll.is-scrollable { overflow-y: auto; }
 
     /* Fade + label over the cut-off card: on macOS the scrollbar is an overlay
        that only shows up mid-scroll, so it can't be the only hint. */

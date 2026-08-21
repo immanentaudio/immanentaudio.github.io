@@ -115,10 +115,11 @@
         })
         .catch(function () { mount.remove(); });
 
-    /* The sidebar is only so tall, so the list gets cut off somewhere no
-       matter what. Cut it deliberately - two whole cards plus a slice of the
-       third - so it's obvious the list keeps going, instead of looking like a
-       one-review column with a scrollbar nobody notices.
+    /* The list scrolls through every review; this only decides how much of it
+       shows before you scroll. It takes all the room the sidebar has left,
+       then backs off just enough that the cut lands part-way down a card
+       rather than on a tidy card edge - a half-finished review is what tells
+       you the list keeps going.
 
        Everything here is measured with offsetTop and the sidebar's max-height
        rather than live viewport rects, so re-running it while the list is
@@ -137,14 +138,20 @@
 
         var height = 0;
         if (cap && natural > avail && avail > 120) {
-            height = avail;
+            height = Math.round(avail);
+
+            // Find the card the cut lands in and make sure enough of it shows
+            // to read as an interrupted review. Nothing is dropped either way -
+            // this is the height of the window, not of the list.
             var cards = list.children;
-            if (cards.length > 2) {
-                // Bottom of card two, plus enough of card three to read as cut off.
-                height = Math.min(avail, cards[2].offsetTop - list.offsetTop +
-                                         cards[2].offsetHeight * 0.45);
+            for (var i = 0; i < cards.length; i++) {
+                var top = cards[i].offsetTop - list.offsetTop;
+                var bottom = top + cards[i].offsetHeight;
+                if (bottom <= height) continue;
+                var slice = Math.min(cards[i].offsetHeight * 0.45, 40);
+                if (height - top < slice) height = Math.round(top + slice);
+                break;
             }
-            height = Math.round(height);
         }
 
         // Re-running on our own resize would otherwise loop forever.

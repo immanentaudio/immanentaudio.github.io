@@ -17,7 +17,7 @@
     // What the badge on a card says, and what it means.
     var SOURCES = {
         gumroad: { label: 'Gumroad', title: 'Verified purchase on Gumroad' },
-        bpb: { label: 'BPB', title: 'Comment on Bedroom Producers Blog' }
+        bpb: { label: 'Bedroom Producers Blog', title: 'Comment on Bedroom Producers Blog' }
     };
 
     function stars(n) {

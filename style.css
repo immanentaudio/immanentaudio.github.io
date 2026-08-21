@@ -837,6 +837,50 @@ body {
     background: rgba(8, 6, 4, 0.9);
 }
 
+.sidebar-buy-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.9rem;
+    margin-bottom: 0.7rem;
+}
+
+.sidebar-buy-row .sidebar-price { margin-bottom: 0; }
+
+.sidebar-guide {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.sidebar-guide a { color: var(--accent); text-decoration: none; }
+.sidebar-guide a:hover { text-decoration: underline; }
+
+/* On the guide itself the label is where you already are. */
+.sidebar-guide .is-current { color: var(--text-faint); }
+
+.sidebar-guide-dl {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.2rem;
+    border: 1px solid rgba(var(--accent-rgb), 0.4);
+    border-radius: 4px;
+    color: var(--accent);
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.sidebar-guide-dl:hover {
+    background: rgba(var(--accent-rgb), 0.12);
+    border-color: var(--accent);
+    text-decoration: none;
+}
+
 .sidebar-price {
     margin: 0 0 0.7rem 0;
     font-family: var(--serif);
@@ -1451,35 +1495,45 @@ body {
 
 .guide-note p { margin: 0; color: var(--text-muted); }
 
-/* Pointer to the guide from the product page. */
-.guide-callout {
-    display: grid;
-    gap: 1.1rem;
-    background: var(--bg-raised);
-    border: 1px solid rgba(var(--accent-rgb), 0.24);
-    border-radius: 12px;
-    padding: 1.3rem 1.4rem;
+/* Contents list, sticky alongside the guide on desktop. The card keeps its
+   full height and the list scrolls in whatever is left over, so the sticky
+   column never strands its own bottom off-screen. */
+@media (min-width: 768px) {
+    .sidebar-sticky.is-guide {
+        display: flex;
+        flex-direction: column;
+        overflow: visible;
+    }
+
+    .sidebar-sticky.is-guide .sidebar-card { flex: 0 0 auto; }
+
+    .sidebar-sticky.is-guide .guide-toc {
+        flex: 1 1 auto;
+        min-height: 0;
+        overflow-y: auto;
+        position: relative;
+        padding-right: 0.5rem;
+    }
+
+    /* Same cue as the reviews: the list fades out where it is cut. */
+    .sidebar-sticky.is-guide .guide-toc::after {
+        content: '';
+        display: block;
+        position: sticky;
+        bottom: 0;
+        height: 2.5rem;
+        margin-top: -2.5rem;
+        pointer-events: none;
+        background: linear-gradient(to bottom, rgba(15, 13, 11, 0), var(--bg) 88%);
+    }
+
+    .sidebar-sticky.is-guide .guide-toc::-webkit-scrollbar { width: 6px; }
+    .sidebar-sticky.is-guide .guide-toc::-webkit-scrollbar-track { background: transparent; }
+    .sidebar-sticky.is-guide .guide-toc::-webkit-scrollbar-thumb {
+        background: rgba(var(--accent-rgb), 0.4);
+        border-radius: 3px;
+    }
 }
-
-@media (min-width: 620px) {
-    .guide-callout { grid-template-columns: 1fr auto; align-items: center; gap: 1.75rem; }
-}
-
-.guide-callout h2 { margin-top: 0; }
-.guide-callout p { color: var(--text-muted); margin: 0; font-size: 0.92rem; }
-
-.guide-callout-actions { display: grid; gap: 0.5rem; justify-items: center; }
-.guide-callout-actions .cta-button { margin-bottom: 0; padding: 0.7rem 1.4rem; white-space: nowrap; }
-
-.guide-callout-pdf {
-    font-family: var(--mono);
-    font-size: 0.66rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--text-faint);
-}
-
-.guide-callout-pdf:hover { color: var(--accent); }
 
 /* Contents list, sticky alongside the guide on desktop. */
 .guide-toc h2 {
@@ -1494,25 +1548,26 @@ body {
 
 .guide-toc ol, .guide-toc ul { list-style: none; margin: 0; padding: 0; }
 
-.guide-toc > ol > li { border-top: 1px solid var(--hairline); padding: 0.5rem 0; }
+.guide-toc > ol > li { border-top: 1px solid var(--hairline); padding: 0.4rem 0; }
 .guide-toc > ol > li:first-child { border-top: 0; padding-top: 0; }
 
 .guide-toc a {
     color: var(--text-muted);
     text-decoration: none;
-    font-size: 0.88rem;
+    font-size: 0.84rem;
+    line-height: 1.35;
 }
 
 .guide-toc > ol > li > a { color: var(--text-main); }
 .guide-toc a:hover { color: var(--accent); }
 
 .guide-toc ul {
-    margin: 0.35rem 0 0 0.85rem;
+    margin: 0.25rem 0 0 0.8rem;
     border-left: 1px solid var(--hairline);
 }
 
-.guide-toc ul li { padding: 0.15rem 0 0.15rem 0.7rem; }
-.guide-toc ul a { font-size: 0.8rem; }
+.guide-toc ul li { padding: 0.12rem 0 0.12rem 0.65rem; }
+.guide-toc ul a { font-size: 0.76rem; }
 
 /* Anchored headings shouldn't land under the sticky nav. */
 .guide [id] { scroll-margin-top: 5rem; }

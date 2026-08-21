@@ -372,11 +372,24 @@
 
             <!-- RIGHT COLUMN: download + contents -->
             <aside>
-                <div class="sidebar-sticky">
+                <div class="sidebar-sticky is-guide">
+                    <!-- Same card as the plugin page, minus the reviews. -->
                     <div class="sidebar-card">
-                        <p class="sidebar-price">User Guide<small>12 pages · PDF · 2.8 MB</small></p>
-                        <a href="/de-esser/ia-de-esser-user-guide.pdf" class="cta-button" download>Download the PDF</a>
-                        <a href="/de-esser/" class="cta-button cta-demo">Get the plugin (free)</a>
+                        <img src="/de-esser/ia-de-esser.jpg" data-full="/de-esser/ia-de-esser-full.jpg" alt="IA De-Esser plugin interface showing four filter slots and the spectrum analyzer" class="plugin-screenshot">
+
+                        <div class="sidebar-buy-row">
+                            <p class="sidebar-price">FREE</p>
+                            <span class="sidebar-guide">
+                                <span class="is-current" aria-current="page">User Guide</span>
+                                <a href="/de-esser/ia-de-esser-user-guide.pdf" class="sidebar-guide-dl" download title="Download the PDF" aria-label="Download the user guide as a PDF">
+                                    <svg viewBox="0 0 16 16" width="13" height="13" aria-hidden="true" focusable="false">
+                                        <path d="M8 1.5v8m0 0 3-3m-3 3-3-3M2.5 12v1.5A1 1 0 0 0 3.5 14.5h9a1 1 0 0 0 1-1V12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </a>
+                            </span>
+                        </div>
+
+                        <a href="https://immanentaudio.gumroad.com/l/hjuqeo" class="cta-button" target="_blank" rel="noopener">Get (via Gumroad)</a>
                     </div>
 
                     <nav class="guide-toc" aria-label="Guide contents">
@@ -400,10 +413,33 @@
                                     <li><a href="#the-analyzer">The analyzer</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#auto-mode">Auto mode</a></li>
-                            <li><a href="#de-ess-mode">De-Ess mode</a></li>
-                            <li><a href="#smart-mode">Smart mode</a></li>
-                            <li><a href="#manual-mode">Manual mode</a></li>
+                            <li><a href="#auto-mode">Auto mode</a>
+                                <ul>
+                                    <li><a href="#auto-how-it-works">How it works</a></li>
+                                    <li><a href="#auto-when-to-use-it">When to use it</a></li>
+                                    <li><a href="#auto-notes">Notes</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#de-ess-mode">De-Ess mode</a>
+                                <ul>
+                                    <li><a href="#de-ess-how-it-works">How it works</a></li>
+                                    <li><a href="#de-ess-when-to-use-it">When to use it</a></li>
+                                    <li><a href="#de-ess-notes">Notes</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#smart-mode">Smart mode</a>
+                                <ul>
+                                    <li><a href="#smart-how-it-works">How it works</a></li>
+                                    <li><a href="#smart-when-to-use-it">When to use it</a></li>
+                                    <li><a href="#smart-notes">Notes</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#manual-mode">Manual mode</a>
+                                <ul>
+                                    <li><a href="#manual-when-to-use-it">When to use it</a></li>
+                                    <li><a href="#manual-notes">Notes</a></li>
+                                </ul>
+                            </li>
                             <li><a href="#tips">Tips</a></li>
                         </ol>
                     </nav>

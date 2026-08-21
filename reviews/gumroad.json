@@ -1,12 +1,12 @@
 {
-  "updated": "2026-08-20T21:42:11Z",
+  "updated": "2026-08-21T08:01:18Z",
   "ratings": {
     "spectral-agent": {
       "count": 1,
       "average": 5.0
     },
     "de-esser": {
-      "count": 16,
+      "count": 18,
       "average": 4.8
     },
     "harmonic-saturator": {
@@ -15,6 +15,28 @@
     }
   },
   "reviews": [
+    {
+      "id": "j9m3x10N33JyyB0LnYnKCA==",
+      "source": "gumroad",
+      "product": "de-esser",
+      "product_name": "IA De-Esser",
+      "rating": 5,
+      "message": "The best de'esser hands down i honestly don't know how this is free, this is a steal, i had songs from my new album in working on and my S's and T's were bleeding through the mic. Which was my only problem with the songs. I got other De'essers but none that tracked them down and cleaned em up quite like this. Touche, \n\nRollThaTapeTv on YouTube",
+      "response": null,
+      "date": "2026-08-21T05:29:52Z",
+      "url": "https://immanentaudio.gumroad.com/l/hjuqeo"
+    },
+    {
+      "id": "X20dHFPZry97HvyGDnl7TQ==",
+      "source": "gumroad",
+      "product": "de-esser",
+      "product_name": "IA De-Esser",
+      "rating": 5,
+      "message": "Love it! Didn't watch a demo, so I was surprised to see the 'Auto' & 'Smart' as features for FREE. Thank you so much dev.",
+      "response": null,
+      "date": "2026-08-21T04:50:01Z",
+      "url": "https://immanentaudio.gumroad.com/l/hjuqeo"
+    },
     {
       "id": "dvM74lQaJxrpFDKrUhOseQ==",
       "source": "gumroad",

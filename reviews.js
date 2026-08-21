@@ -58,7 +58,6 @@
                     '<article class="review-card">' +
                         '<div class="review-head">' +
                             '<span class="review-stars">' + stars(r.rating) + '</span>' +
-                            '<span class="review-name">' + esc(r.name) + '</span>' +
                             '<span class="review-badge" title="Verified purchase on Gumroad">Gumroad</span>' +
                             (r.date ? '<time class="review-date" datetime="' + esc(r.date) + '">' +
                                 esc(when(r.date)) + '</time>' : '') +
@@ -74,7 +73,8 @@
                 return html + '</article>';
             }).join('');
 
-            mount.innerHTML = head + '<div class="review-list">' + cards + '</div>';
+            mount.innerHTML = head +
+                '<div class="review-scroll"><div class="review-list">' + cards + '</div></div>';
             mount.classList.add('is-loaded');
 
             // Clamp anything long enough to crowd out the reviews under it.
@@ -97,6 +97,83 @@
                 });
                 body.insertAdjacentElement('afterend', btn);
             });
+
+            sizeScroller(mount);
+
+            // Fonts, the sidebar screenshot and window resizes all change how
+            // much room is left for the list, so re-measure whenever the
+            // sidebar's box changes rather than guessing when that settles.
+            var sidebar = mount.closest('.sidebar-sticky');
+            if (sidebar && window.ResizeObserver) {
+                new ResizeObserver(function () { sizeScroller(mount); }).observe(sidebar);
+            }
+            var timer;
+            window.addEventListener('resize', function () {
+                clearTimeout(timer);
+                timer = setTimeout(function () { sizeScroller(mount); }, 120);
+            });
         })
         .catch(function () { mount.remove(); });
+
+    /* The sidebar is only so tall, so the list gets cut off somewhere no
+       matter what. Cut it deliberately - two whole cards plus a slice of the
+       third - so it's obvious the list keeps going, instead of looking like a
+       one-review column with a scrollbar nobody notices.
+
+       Everything here is measured with offsetTop and the sidebar's max-height
+       rather than live viewport rects, so re-running it while the list is
+       scrolled (or already clipped) gives the same answer. */
+    function sizeScroller(mount) {
+        var scroll = mount.querySelector('.review-scroll');
+        var list = mount.querySelector('.review-list');
+        var sidebar = mount.closest('.sidebar-sticky');
+        if (!scroll || !list || !sidebar) return;
+
+        var style = getComputedStyle(sidebar);
+        var cap = parseFloat(style.maxHeight);  // NaN under 768px, where nothing is capped
+        var natural = list.scrollHeight;
+        var top = list.offsetTop + scroll.offsetTop;
+        var avail = cap - top - (parseFloat(style.paddingBottom) || 0);
+
+        var height = 0;
+        if (cap && natural > avail && avail > 120) {
+            height = avail;
+            var cards = list.children;
+            if (cards.length > 2) {
+                // Bottom of card two, plus enough of card three to read as cut off.
+                height = Math.min(avail, cards[2].offsetTop - list.offsetTop +
+                                         cards[2].offsetHeight * 0.45);
+            }
+            height = Math.round(height);
+        }
+
+        // Re-running on our own resize would otherwise loop forever.
+        var sig = cap + ':' + top + ':' + natural + ':' + height;
+        if (sig === scroll.dataset.sig) return;
+        scroll.dataset.sig = sig;
+
+        if (!height) {
+            scroll.style.maxHeight = '';
+            scroll.classList.remove('is-scrollable', 'is-end');
+            scroll.removeAttribute('tabindex');
+            scroll.removeAttribute('role');
+            scroll.removeAttribute('aria-label');
+            return;
+        }
+
+        scroll.style.maxHeight = height + 'px';
+        scroll.classList.add('is-scrollable');
+        scroll.setAttribute('tabindex', '0');
+        scroll.setAttribute('role', 'group');
+        scroll.setAttribute('aria-label', 'Reviews, scroll for more');
+
+        // Drop the fade once there's nothing left below it.
+        if (!scroll.dataset.fadeBound) {
+            scroll.dataset.fadeBound = '1';
+            scroll.addEventListener('scroll', function () {
+                scroll.classList.toggle('is-end',
+                    scroll.scrollTop + scroll.clientHeight >= scroll.scrollHeight - 2);
+            });
+        }
+    }
 })();

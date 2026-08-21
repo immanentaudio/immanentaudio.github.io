@@ -111,13 +111,14 @@ def main():
             if not message:
                 continue  # star-only rating, nothing to show
             response = (r.get("response") or {}).get("message")
+            # Deliberately no reviewer name: people leave these on Gumroad, not
+            # here, and nobody should find their name republished on the site.
             collected.append({
                 "id": r["id"],
                 "source": "gumroad",
                 "product": entry["product"],
                 "product_name": entry["name"],
                 "rating": r.get("rating"),
-                "name": ((r.get("rater") or {}).get("name") or "Anonymous").strip(),
                 "message": message,
                 "response": (response or "").strip() or None,
                 "date": r.get("created_at"),

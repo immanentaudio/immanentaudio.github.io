@@ -1346,6 +1346,7 @@ body {
     margin-bottom: 0.6rem;
 }
 
+/* Also a link, back to wherever the review was left. */
 .review-badge {
     font-family: var(--mono);
     font-size: 0.6rem;
@@ -1356,6 +1357,13 @@ body {
     background: rgba(var(--accent-rgb), 0.09);
     border-radius: 999px;
     padding: 0.15rem 0.5rem;
+    text-decoration: none;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+a.review-badge:hover {
+    background: rgba(var(--accent-rgb), 0.2);
+    border-color: var(--accent);
 }
 
 .review-date {

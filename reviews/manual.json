@@ -1,0 +1,15 @@
+{
+  "_comment": "Reviews from anywhere that isn't Gumroad, added by hand. The daily sync rewrites gumroad.json wholesale, so nothing here can live in that file. Same shape as a Gumroad entry: 'rating' is optional, 'url' is where the review is published, and there are no names on purpose.",
+  "reviews": [
+    {
+      "id": "bpb-ia-de-esser-mdee",
+      "source": "bpb",
+      "product": "de-esser",
+      "product_name": "IA De-Esser",
+      "message": "Amazed by the work. Very Smart and very low cpu usage.",
+      "response": null,
+      "date": "2026-08-13T12:00:00Z",
+      "url": "https://bedroomproducersblog.com/2026/08/13/immanent-audio-ia-de-esser/"
+    }
+  ]
+}

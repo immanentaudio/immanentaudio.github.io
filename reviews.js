@@ -1,8 +1,10 @@
-/* Renders the Gumroad reviews for whichever product page we're on.
+/* Renders the reviews for whichever product page we're on.
  *
  * Markup contract: an empty <div data-reviews="de-esser"></div> somewhere on the
- * page. Everything else is built here from /reviews/gumroad.json, which the
- * daily GitHub Action refreshes. If a product has no written reviews yet the
+ * page. Everything else is built here from two files: /reviews/gumroad.json,
+ * which the daily GitHub Action rewrites wholesale, and /reviews/manual.json,
+ * for reviews from anywhere else - they have to live apart or the sync would
+ * erase the hand-written ones. If a product has no written reviews yet the
  * whole block removes itself - an empty "Reviews" heading looks worse than
  * nothing at all.
  */
@@ -11,6 +13,12 @@
     if (!mount) return;
 
     var product = mount.getAttribute('data-reviews');
+
+    // What the badge on a card says, and what it means.
+    var SOURCES = {
+        gumroad: { label: 'Gumroad', title: 'Verified purchase on Gumroad' },
+        bpb: { label: 'BPB', title: 'Comment on Bedroom Producers Blog' }
+    };
 
     function stars(n) {
         var full = Math.round(n || 0), out = '';
@@ -32,15 +40,33 @@
         return n.innerHTML;
     }
 
-    fetch('/reviews/gumroad.json', { cache: 'no-cache' })
-        .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
-        .then(function (data) {
-            var reviews = (data.reviews || []).filter(function (r) {
-                return r.product === product;
+    // manual.json is allowed to be missing; gumroad.json isn't.
+    function load(url, optional) {
+        return fetch(url, { cache: 'no-cache' })
+            .then(function (r) {
+                if (r.ok) return r.json();
+                if (optional) return {};
+                return Promise.reject(r.status);
+            })
+            .catch(function (err) {
+                if (optional) return {};
+                return Promise.reject(err);
+            });
+    }
+
+    Promise.all([load('/reviews/gumroad.json'), load('/reviews/manual.json', true)])
+        .then(function (sets) {
+            var reviews = sets.reduce(function (all, set) {
+                return all.concat((set.reviews || []).filter(function (r) {
+                    return r.product === product;
+                }));
+            }, []).sort(function (a, b) {
+                return String(b.date || '').localeCompare(String(a.date || ''));
             });
             if (!reviews.length) { mount.remove(); return; }
 
-            var agg = (data.ratings || {})[product];
+            // The star average stays a Gumroad figure - nowhere else rates out of five.
+            var agg = (sets[0].ratings || {})[product];
             var head = '<h2>What people are saying</h2>';
 
             if (agg && agg.count) {
@@ -54,11 +80,22 @@
             }
 
             var cards = reviews.map(function (r) {
+                var src = SOURCES[r.source] || { label: r.source || '', title: '' };
+                var title = src.title ? ' title="' + esc(src.title) + '"' : '';
+
+                // The badge links back to where the review was left, when we
+                // know the address - a claim about a review should be checkable.
+                var badge = r.url
+                    ? '<a class="review-badge" href="' + esc(r.url) + '" target="_blank"' +
+                          ' rel="noopener"' + title + '>' + esc(src.label) + '</a>'
+                    : '<span class="review-badge"' + title + '>' + esc(src.label) + '</span>';
+
                 var html =
                     '<article class="review-card">' +
                         '<div class="review-head">' +
-                            '<span class="review-stars">' + stars(r.rating) + '</span>' +
-                            '<span class="review-badge" title="Verified purchase on Gumroad">Gumroad</span>' +
+                            // Not every source rates out of five; BPB comments don't.
+                            (r.rating ? '<span class="review-stars">' + stars(r.rating) + '</span>' : '') +
+                            badge +
                             (r.date ? '<time class="review-date" datetime="' + esc(r.date) + '">' +
                                 esc(when(r.date)) + '</time>' : '') +
                         '</div>' +

@@ -122,6 +122,8 @@ def main():
                 "message": message,
                 "response": (response or "").strip() or None,
                 "date": r.get("created_at"),
+                # Where the badge on the site points back to.
+                "url": f"{STORE}/l/{slug}",
             })
 
     if failures and not collected:

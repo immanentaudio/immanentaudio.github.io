@@ -1164,9 +1164,19 @@ body {
            only ever a single scrollbar to notice. */
         max-height: calc(100vh - 5.6rem);
         overflow: visible;
-        padding: 0.35rem 0.6rem 1rem;
+        /* Side padding (pulled back out by the margin) keeps the card's drop
+           shadow off the edges. Nothing at the bottom: that space belongs to
+           the list. */
+        padding: 0.35rem 0.6rem 0;
         margin: -0.35rem -0.6rem 0;
     }
+
+    /* The column is capped to the screen, so on a page whose left column is
+       short the list stops well above the footer with dead space under it.
+       Bring the footer up to meet the column instead of stretching the list
+       past the screen, which would strand its own bottom off-view. */
+    main:has(.sidebar-sticky) { padding-bottom: 0; }
+    main:has(.sidebar-sticky) + .site-footer { margin-top: 0; }
 
     /* The card keeps its full height; whatever is left goes to the list. */
     .sidebar-sticky > .sidebar-card { flex: 0 0 auto; }

@@ -1,12 +1,12 @@
 {
-  "updated": "2026-08-23T07:51:03Z",
+  "updated": "2026-08-25T08:03:11Z",
   "ratings": {
     "spectral-agent": {
       "count": 1,
       "average": 5.0
     },
     "de-esser": {
-      "count": 19,
+      "count": 20,
       "average": 4.8
     },
     "harmonic-saturator": {

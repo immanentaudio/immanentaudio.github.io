@@ -1158,57 +1158,49 @@ body {
     .sidebar-sticky {
         position: sticky;
         top: 4.5rem;
-        /* Card + reviews can outgrow the viewport, and a sticky block taller
-           than the screen strands its own bottom off-screen. Cap it - but the
-           column itself never scrolls: one list inside it does, so there is
-           only ever a single scrollbar to notice. */
+        /* Card + reviews (or the contents list) can outgrow the viewport, and a
+           sticky block taller than the screen strands its own bottom off-screen.
+           Cap it to the screen and scroll the whole column as one unit: a single
+           full-height scrollbar for the floating block, rather than a short one
+           buried in a list inside it, which reads as the list ending there. */
         max-height: calc(100vh - 5.6rem);
-        overflow: visible;
+        overflow-y: auto;
+        overflow-x: hidden;
         /* Side padding (pulled back out by the margin) keeps the card's drop
-           shadow off the edges. Nothing at the bottom: that space belongs to
-           the list. */
-        padding: 0.35rem 0.6rem 0;
-        margin: -0.35rem -0.6rem 0;
+           shadow clear of the scroll container's edges, which would otherwise
+           clip it, and holds the scrollbar just off the card. The bottom
+           padding is the column's own breathing room at the end of the scroll. */
+        padding: 0.4rem 0.65rem 1.5rem;
+        margin: -0.4rem -0.65rem 0;
+    }
+
+    /* Nothing inside the column scrolls on its own - the column does. */
+    .sidebar-sticky > * { flex: 0 0 auto; }
+
+    /* Always drawn, in the accent, so it is obvious there is more below.
+       No scrollbar-width/-color here on purpose: setting the standard
+       properties makes Chrome ignore the ::-webkit-scrollbar rules and fall
+       back to the macOS overlay scrollbar, which only appears mid-scroll -
+       the very thing that made the contents look like they stopped short. */
+    .sidebar-sticky::-webkit-scrollbar { width: 9px; }
+    .sidebar-sticky::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.06);
+        border-radius: 5px;
+    }
+    .sidebar-sticky::-webkit-scrollbar-thumb {
+        background: rgba(var(--accent-rgb), 0.5);
+        border-radius: 5px;
+    }
+    .sidebar-sticky:hover::-webkit-scrollbar-thumb {
+        background: rgba(var(--accent-rgb), 0.7);
     }
 
     /* The column is capped to the screen, so on a page whose left column is
-       short the list stops well above the footer with dead space under it.
-       Bring the footer up to meet the column instead of stretching the list
-       past the screen, which would strand its own bottom off-view. */
+       short it stops well above the footer with dead space under it. Bring the
+       footer up to meet the column instead of stretching the column past the
+       screen, which would strand its own bottom off-view. */
     main:has(.sidebar-sticky) { padding-bottom: 0; }
     main:has(.sidebar-sticky) + .site-footer { margin-top: 0; }
-
-    /* The card keeps its full height; whatever is left goes to the list. */
-    .sidebar-sticky > .sidebar-card { flex: 0 0 auto; }
-
-    .sidebar-sticky > .sidebar-reviews {
-        flex: 1 1 auto;
-        min-height: 0;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .sidebar-reviews > h2,
-    .sidebar-reviews > .review-summary { flex: 0 0 auto; }
-
-    /* Sized here so the list still scrolls with JS off; reviews.js only trims
-       it further, to land the cut part-way down a card. */
-    .sidebar-reviews > .review-scroll {
-        flex: 1 1 auto;
-        min-height: 0;
-        overflow-y: auto;
-    }
-
-    /* When the card alone is nearly as tall as the screen there is no useful
-       room to scroll a list in, so the column gives up floating and rides
-       down the page with everything else. */
-    /* relative, not static: it still lays out as an ordinary block, but stays
-       the box the measurements inside it are taken against, so widening the
-       window can hand it back its sticky behaviour. */
-    .sidebar-sticky.is-unstuck {
-        position: relative;
-        max-height: none;
-    }
 }
 
 /* Reviews sit in a ~400px column here, so everything tightens up a step. */
@@ -1233,61 +1225,9 @@ body {
 .sidebar-reviews .review-reply { margin-top: 0.7rem; padding-left: 0.7rem; }
 .sidebar-reviews .review-reply p { font-size: 0.78rem; }
 
-/* The list scrolls inside the sidebar, cut mid-card by reviews.js so it's
-   plain that there's more below. The fade is a sticky pseudo-element rather
-   than a mask so it doesn't dim the scrollbar along with the text. */
+/* The list runs to its full height: the sticky column around it is what
+   scrolls, so every review is reachable on the column's own scrollbar. */
 .review-scroll { position: relative; }
-
-@media (min-width: 768px) {
-    /* Reserved whether or not it scrolls, so toggling the scrollbar can't
-       change the column width and reflow the text under our own measurements. */
-    .review-scroll { padding-right: 0.55rem; }
-
-    /* No scrollbar-width/-color here on purpose: setting the standard
-       properties makes Chrome ignore the ::-webkit-scrollbar rules below and
-       fall back to the macOS overlay scrollbar, which only appears mid-scroll
-       - the very thing that made this list look like it had one review. */
-    /* No overscroll containment: reaching the last review should hand the
-       scroll back to the page instead of parking the cursor in a dead zone. */
-    .review-scroll.is-scrollable { overflow-y: auto; }
-
-    /* Fade + label over the cut-off card: on macOS the scrollbar is an overlay
-       that only shows up mid-scroll, so it can't be the only hint. */
-    .review-scroll.is-scrollable::after {
-        content: 'Scroll for more ↓';
-        display: flex;
-        align-items: flex-end;
-        justify-content: center;
-        position: sticky;
-        bottom: 0;
-        height: 3.5rem;
-        margin-top: -3.5rem;
-        pointer-events: none;
-        font-family: var(--mono);
-        font-size: 0.58rem;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: var(--accent);
-        background: linear-gradient(to bottom, rgba(15, 13, 11, 0), var(--bg) 82%);
-        opacity: 1;
-        transition: opacity 0.2s ease;
-    }
-
-    .review-scroll.is-end::after { opacity: 0; }
-
-    .review-scroll.is-scrollable::-webkit-scrollbar { width: 8px; }
-    .review-scroll.is-scrollable::-webkit-scrollbar-track {
-        background: rgba(255, 255, 255, 0.06);
-        border-radius: 4px;
-    }
-    .review-scroll.is-scrollable::-webkit-scrollbar-thumb {
-        background: rgba(var(--accent-rgb), 0.5);
-        border-radius: 4px;
-    }
-    .review-scroll.is-scrollable:hover::-webkit-scrollbar-thumb {
-        background: rgba(var(--accent-rgb), 0.7);
-    }
-}
 
 /* One 300-word review shouldn't push everything else out of the column - a
    line shorter still in the narrow sidebar. */
@@ -1534,43 +1474,9 @@ a.review-badge:hover {
 
 .guide-note p { margin: 0; color: var(--text-muted); }
 
-/* Contents list, sticky alongside the guide on desktop. The card keeps its
-   full height and the list scrolls in whatever is left over, so the sticky
-   column never strands its own bottom off-screen. */
-@media (min-width: 768px) {
-    .sidebar-sticky.is-guide .guide-toc {
-        flex: 1 1 auto;
-        min-height: 0;
-        overflow-y: auto;
-        position: relative;
-        padding-right: 0.5rem;
-    }
-
-    /* Same cue as the reviews: the list fades out where it is cut. The list
-       ends with enough clear space under it for the fade to sit in, so the
-       last entry never scrolls to a stop underneath it. */
-    .sidebar-sticky.is-guide .guide-toc > ol { padding-bottom: 2.6rem; }
-
-    .sidebar-sticky.is-guide .guide-toc::after {
-        content: '';
-        display: block;
-        position: sticky;
-        bottom: 0;
-        height: 2.2rem;
-        margin-top: -2.2rem;
-        pointer-events: none;
-        background: linear-gradient(to bottom, rgba(15, 13, 11, 0), var(--bg) 88%);
-    }
-
-    .sidebar-sticky.is-guide .guide-toc::-webkit-scrollbar { width: 6px; }
-    .sidebar-sticky.is-guide .guide-toc::-webkit-scrollbar-track { background: transparent; }
-    .sidebar-sticky.is-guide .guide-toc::-webkit-scrollbar-thumb {
-        background: rgba(var(--accent-rgb), 0.4);
-        border-radius: 3px;
-    }
-}
-
-/* Contents list, sticky alongside the guide on desktop. */
+/* Contents list, sticky alongside the guide on desktop. It runs to its full
+   height - the sticky column around it is what scrolls, so the whole list is
+   on one scrollbar with the card above it rather than boxed off in its own. */
 .guide-toc h2 {
     font-family: var(--mono);
     font-size: 0.7rem;

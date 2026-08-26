@@ -1,13 +1,13 @@
 {
-  "updated": "2026-08-25T21:38:28Z",
+  "updated": "2026-08-26T21:33:54Z",
   "ratings": {
     "spectral-agent": {
       "count": 1,
       "average": 5.0
     },
     "de-esser": {
-      "count": 23,
-      "average": 4.8
+      "count": 28,
+      "average": 4.9
     },
     "harmonic-saturator": {
       "count": 4,
@@ -15,6 +15,17 @@
     }
   },
   "reviews": [
+    {
+      "id": "nBCvnlmeitIHM52Z4vyOHA==",
+      "source": "gumroad",
+      "product": "de-esser",
+      "product_name": "IA De-Esser",
+      "rating": 5,
+      "message": "Very useful Deeser pluguin! I suggest  put Paypal payment method",
+      "response": "Made PayPal available now- thanks for the suggestion!",
+      "date": "2026-08-26T17:45:48Z",
+      "url": "https://immanentaudio.gumroad.com/l/hjuqeo"
+    },
     {
       "id": "IThWAwtoGKemXx_FNL5ijg==",
       "source": "gumroad",

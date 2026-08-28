@@ -1,20 +1,42 @@
 {
-  "updated": "2026-08-27T18:19:29Z",
+  "updated": "2026-08-28T17:21:09Z",
   "ratings": {
     "spectral-agent": {
       "count": 1,
       "average": 5.0
     },
     "de-esser": {
-      "count": 31,
+      "count": 36,
       "average": 4.9
     },
     "harmonic-saturator": {
-      "count": 4,
-      "average": 4.5
+      "count": 5,
+      "average": 4.6
     }
   },
   "reviews": [
+    {
+      "id": "rGBJXowdvv1zHku99zAokg==",
+      "source": "gumroad",
+      "product": "de-esser",
+      "product_name": "IA De-Esser",
+      "rating": 5,
+      "message": "Superb.🤣",
+      "response": null,
+      "date": "2026-08-28T17:03:36Z",
+      "url": "https://immanentaudio.gumroad.com/l/hjuqeo"
+    },
+    {
+      "id": "vvPBLknwDif2nObFVMKlpw==",
+      "source": "gumroad",
+      "product": "de-esser",
+      "product_name": "IA De-Esser",
+      "rating": 5,
+      "message": "I sometimes have serious issues with sibilance and the IA De-esser is the best solution I've found.  I put it on a chorus with 12 tracks of vocals with both SH and CH challenges.  I pushed the IA De-esser very hard and it never once crossed over into the dreaded TH lisping sound.  I just downloaded the manual so I'm really looking forward to understanding everything this plugin does.  I have told all of my friends to give this awesome plugin a try!",
+      "response": null,
+      "date": "2026-08-28T13:53:29Z",
+      "url": "https://immanentaudio.gumroad.com/l/hjuqeo"
+    },
     {
       "id": "ysgRep6IiEq1v5bqlBZnUw==",
       "source": "gumroad",

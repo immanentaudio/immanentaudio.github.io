@@ -5,7 +5,7 @@
    Direction: dark studio-at-night. Warm charcoal, glowing accents,
    an animated DAW timeline hero. Jewel-tone accents (amber / teal /
    rose / lime) instead of the old purple-neon. The nav + footer keep
-   their clean mono-type treatment, recolored for the dark theme.
+   their clean letterspaced-caps treatment, recolored for the dark theme.
    ============================================================== */
 
 :root {
@@ -26,9 +26,13 @@
     --accent-rgb: 240, 169, 76;
     --accent-soft: rgba(240, 169, 76, 0.15);
 
-    --serif: "Fraunces", Georgia, "Times New Roman", serif;
-    --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
-    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    /* Three type roles. --label is the small letterspaced-caps role
+       (kickers, chips, badges, the review count). It used to be a
+       monospace face, which read as a terminal readout; a humanist
+       sans keeps the structure without the digital connotation. */
+    --serif: "Newsreader", Georgia, "Times New Roman", serif;
+    --label: "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --sans: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -140,7 +144,7 @@ body {
     gap: 0.65rem;
     text-decoration: none;
     color: #ffffff;
-    font-family: var(--mono);
+    font-family: var(--label);
     font-weight: 600;
     letter-spacing: 0.14em;
     font-size: 0.85rem;
@@ -168,7 +172,7 @@ body {
     display: block;
     color: var(--text-muted);
     text-decoration: none;
-    font-family: var(--mono);
+    font-family: var(--label);
     font-size: 0.78rem;
     font-weight: 500;
     padding: 0.4rem 0.7rem;
@@ -215,7 +219,7 @@ body {
 
 .section-kicker {
     display: block;
-    font-family: var(--mono);
+    font-family: var(--label);
     font-size: 0.72rem;
     font-weight: 600;
     letter-spacing: 0.28em;
@@ -397,7 +401,7 @@ body {
 .brand-tag {
     display: block;
     color: var(--amber);
-    font-family: var(--mono);
+    font-family: var(--label);
     font-weight: 600;
     letter-spacing: 0.3em;
     font-size: 0.78rem;
@@ -408,9 +412,8 @@ body {
 
 .hero h1 {
     font-family: var(--serif);
-    text-transform: uppercase;
     font-size: clamp(2.6rem, 7vw, 4.2rem);
-    font-weight: 900;
+    font-weight: 400;
     color: #ffffff;
     margin: 0 auto 1.1rem auto;
     letter-spacing: -0.01em;
@@ -458,7 +461,7 @@ body {
 }
 
 .chip {
-    font-family: var(--mono);
+    font-family: var(--label);
     font-size: 0.68rem;
     font-weight: 500;
     letter-spacing: 0.12em;
@@ -545,7 +548,7 @@ body {
     position: absolute;
     top: 1.2rem;
     right: 1.4rem;
-    font-family: var(--mono);
+    font-family: var(--label);
     font-size: 0.72rem;
     font-weight: 600;
     letter-spacing: 0.15em;
@@ -586,7 +589,7 @@ body {
 .status-tag {
     display: inline-block;
     width: fit-content;
-    font-family: var(--mono);
+    font-family: var(--label);
     font-size: 0.66rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -700,7 +703,7 @@ body {
 .product-hero .container-wide { position: relative; z-index: 2; padding-top: 0; padding-bottom: 0; }
 
 .breadcrumbs {
-    font-family: var(--mono);
+    font-family: var(--label);
     font-size: 0.72rem;
     letter-spacing: 0.06em;
     text-transform: uppercase;
@@ -715,7 +718,7 @@ body {
 .product-hero h1 {
     font-family: var(--serif);
     font-size: 2.7rem;
-    font-weight: 900;
+    font-weight: 400;
     letter-spacing: -0.015em;
     margin: 0 0 0.35rem 0;
     color: #ffffff;
@@ -749,7 +752,7 @@ body {
 .product-section { margin-bottom: 2.5rem; }
 
 .product-section > p { color: var(--text-main); margin-bottom: 1rem; }
-.product-section .muted { color: var(--text-faint); font-family: var(--mono); font-size: 0.8rem; }
+.product-section .muted { color: var(--text-faint); font-family: var(--label); font-size: 0.8rem; }
 
 .product-section h2 {
     font-family: var(--serif);
@@ -851,7 +854,7 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
-    font-family: var(--mono);
+    font-family: var(--label);
     font-size: 0.68rem;
     font-weight: 500;
     letter-spacing: 0.1em;
@@ -891,7 +894,7 @@ body {
 
 .sidebar-price small {
     display: block;
-    font-family: var(--mono);
+    font-family: var(--label);
     font-size: 0.68rem;
     font-weight: 500;
     color: var(--text-faint);
@@ -962,7 +965,7 @@ body {
     align-items: center;
     gap: 0.6rem;
     color: #ece7df;
-    font-family: var(--mono);
+    font-family: var(--label);
     font-weight: 600;
     letter-spacing: 0.14em;
     font-size: 0.82rem;
@@ -981,7 +984,7 @@ body {
 
 .footer-grid h4 {
     color: rgba(236, 231, 223, 0.5);
-    font-family: var(--mono);
+    font-family: var(--label);
     font-size: 0.68rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -1011,7 +1014,7 @@ body {
     flex-wrap: wrap;
     gap: 0.5rem;
     color: rgba(236, 231, 223, 0.45);
-    font-family: var(--mono);
+    font-family: var(--label);
     font-size: 0.7rem;
     letter-spacing: 0.05em;
 }
@@ -1042,7 +1045,7 @@ body {
     position: absolute;
     right: 0.5rem;
     bottom: 0.5rem;
-    font-family: var(--mono);
+    font-family: var(--label);
     font-size: 0.6rem;
     font-weight: 500;
     text-transform: uppercase;
@@ -1132,7 +1135,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: var(--mono);
+    font-family: var(--label);
     font-size: 1.4rem;
     line-height: 1;
     color: var(--text-main);
@@ -1246,7 +1249,7 @@ body {
     padding: 0;
     background: none;
     border: 0;
-    font-family: var(--mono);
+    font-family: var(--label);
     font-size: 0.65rem;
     letter-spacing: 0.07em;
     text-transform: uppercase;
@@ -1278,7 +1281,7 @@ body {
 }
 
 .review-count {
-    font-family: var(--mono);
+    font-family: var(--label);
     font-size: 0.72rem;
     letter-spacing: 0.06em;
     text-transform: uppercase;
@@ -1318,7 +1321,7 @@ body {
 
 /* Also a link, back to wherever the review was left. */
 .review-badge {
-    font-family: var(--mono);
+    font-family: var(--label);
     font-size: 0.6rem;
     letter-spacing: 0.09em;
     text-transform: uppercase;
@@ -1338,7 +1341,7 @@ a.review-badge:hover {
 }
 
 .review-date {
-    font-family: var(--mono);
+    font-family: var(--label);
     font-size: 0.66rem;
     color: var(--text-faint);
     margin-left: auto;
@@ -1359,7 +1362,7 @@ a.review-badge:hover {
 
 .review-reply-label {
     display: block;
-    font-family: var(--mono);
+    font-family: var(--label);
     font-size: 0.6rem;
     letter-spacing: 0.09em;
     text-transform: uppercase;
@@ -1411,7 +1414,7 @@ a.review-badge:hover {
 .guide-figure.is-slot img { width: auto; max-width: min(100%, 290px); }
 
 .guide-figure figcaption {
-    font-family: var(--mono);
+    font-family: var(--label);
     font-size: 0.72rem;
     line-height: 1.65;
     color: var(--text-faint);
@@ -1438,7 +1441,7 @@ a.review-badge:hover {
 }
 
 .guide-table thead th {
-    font-family: var(--mono);
+    font-family: var(--label);
     font-size: 0.66rem;
     font-weight: 600;
     letter-spacing: 0.14em;
@@ -1448,7 +1451,7 @@ a.review-badge:hover {
 }
 
 .guide-table tbody th {
-    font-family: var(--mono);
+    font-family: var(--label);
     font-size: 0.76rem;
     font-weight: 600;
     letter-spacing: 0.06em;
@@ -1478,7 +1481,7 @@ a.review-badge:hover {
    height - the sticky column around it is what scrolls, so the whole list is
    on one scrollbar with the card above it rather than boxed off in its own. */
 .guide-toc h2 {
-    font-family: var(--mono);
+    font-family: var(--label);
     font-size: 0.7rem;
     font-weight: 600;
     letter-spacing: 0.18em;

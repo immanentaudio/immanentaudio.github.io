@@ -1,12 +1,12 @@
 {
-  "updated": "2026-08-28T17:30:44Z",
+  "updated": "2026-08-29T12:23:34Z",
   "ratings": {
     "spectral-agent": {
       "count": 1,
       "average": 5.0
     },
     "de-esser": {
-      "count": 36,
+      "count": 38,
       "average": 4.9
     },
     "harmonic-saturator": {
@@ -15,6 +15,17 @@
     }
   },
   "reviews": [
+    {
+      "id": "chH6pP8ITqv88_VuvqTp3g==",
+      "source": "gumroad",
+      "product": "de-esser",
+      "product_name": "IA De-Esser",
+      "rating": 5,
+      "message": "What a plugin! Absolutely worth it! This might be asking too much but would it be possible to add a sidechain function into this like your other plugin?",
+      "response": "Not a bad idea! I’ll look into it…",
+      "date": "2026-08-29T08:25:58Z",
+      "url": "https://immanentaudio.gumroad.com/l/hjuqeo"
+    },
     {
       "id": "rGBJXowdvv1zHku99zAokg==",
       "source": "gumroad",

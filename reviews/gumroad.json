@@ -1,12 +1,12 @@
 {
-  "updated": "2026-08-30T12:59:19Z",
+  "updated": "2026-08-30T14:06:48Z",
   "ratings": {
     "spectral-agent": {
       "count": 1,
       "average": 5.0
     },
     "de-esser": {
-      "count": 40,
+      "count": 42,
       "average": 4.9
     },
     "harmonic-saturator": {
@@ -15,6 +15,28 @@
     }
   },
   "reviews": [
+    {
+      "id": "bNhtz8x4l6DOaRRdKhxtvw==",
+      "source": "gumroad",
+      "product": "de-esser",
+      "product_name": "IA De-Esser",
+      "rating": 5,
+      "message": "Wonderful VST.",
+      "response": null,
+      "date": "2026-08-30T14:04:52Z",
+      "url": "https://immanentaudio.gumroad.com/l/hjuqeo"
+    },
+    {
+      "id": "glHtiRHbwODhzllhkOIxqA==",
+      "source": "gumroad",
+      "product": "de-esser",
+      "product_name": "IA De-Esser",
+      "rating": 4,
+      "message": "Quick and astonishingly effective, but i need to spend more time with it and get to know the applications better. Great and useful plug-in! Big Thanks for the generosity 🍀",
+      "response": null,
+      "date": "2026-08-30T14:02:04Z",
+      "url": "https://immanentaudio.gumroad.com/l/hjuqeo"
+    },
     {
       "id": "RG6KbE66V56x57CTsqJDrg==",
       "source": "gumroad",

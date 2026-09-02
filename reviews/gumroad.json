@@ -1,12 +1,12 @@
 {
-  "updated": "2026-08-31T15:11:12Z",
+  "updated": "2026-09-02T03:28:43Z",
   "ratings": {
     "spectral-agent": {
       "count": 1,
       "average": 5.0
     },
     "de-esser": {
-      "count": 46,
+      "count": 48,
       "average": 4.9
     },
     "harmonic-saturator": {
@@ -15,6 +15,17 @@
     }
   },
   "reviews": [
+    {
+      "id": "K5AWwmJ-aHf8ygjtg6EqNA==",
+      "source": "gumroad",
+      "product": "de-esser",
+      "product_name": "IA De-Esser",
+      "rating": 5,
+      "message": "It's a real solution for hte voice troubles! I'm started to work to a knotty record: immediatly the essing problem is over. Now adding other band controls to work to resonances.",
+      "response": null,
+      "date": "2026-09-01T14:10:57Z",
+      "url": "https://immanentaudio.gumroad.com/l/hjuqeo"
+    },
     {
       "id": "kelxPwiJU6s3bFq56oyrFA==",
       "source": "gumroad",

@@ -1,12 +1,12 @@
 {
-  "updated": "2026-09-02T03:28:43Z",
+  "updated": "2026-09-03T01:31:07Z",
   "ratings": {
     "spectral-agent": {
       "count": 1,
       "average": 5.0
     },
     "de-esser": {
-      "count": 48,
+      "count": 50,
       "average": 4.9
     },
     "harmonic-saturator": {
@@ -15,6 +15,28 @@
     }
   },
   "reviews": [
+    {
+      "id": "HicDJEhJM-EtX4uaqEANqw==",
+      "source": "gumroad",
+      "product": "de-esser",
+      "product_name": "IA De-Esser",
+      "rating": 5,
+      "message": "Great AI De-Esser giving me great results and it's free\nAmazing!!!",
+      "response": null,
+      "date": "2026-09-03T01:07:52Z",
+      "url": "https://immanentaudio.gumroad.com/l/hjuqeo"
+    },
+    {
+      "id": "hXBrRJaogWhGGHA3btNwmg==",
+      "source": "gumroad",
+      "product": "de-esser",
+      "product_name": "IA De-Esser",
+      "rating": 5,
+      "message": "Plugin muito funcional, valeu a pena!",
+      "response": null,
+      "date": "2026-09-02T16:26:41Z",
+      "url": "https://immanentaudio.gumroad.com/l/hjuqeo"
+    },
     {
       "id": "K5AWwmJ-aHf8ygjtg6EqNA==",
       "source": "gumroad",

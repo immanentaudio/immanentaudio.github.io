@@ -1,12 +1,12 @@
 {
-  "updated": "2026-09-03T01:31:07Z",
+  "updated": "2026-09-04T12:10:12Z",
   "ratings": {
     "spectral-agent": {
       "count": 1,
       "average": 5.0
     },
     "de-esser": {
-      "count": 50,
+      "count": 51,
       "average": 4.9
     },
     "harmonic-saturator": {
@@ -15,6 +15,17 @@
     }
   },
   "reviews": [
+    {
+      "id": "XBp2VjlhHZOLFERf02J3TA==",
+      "source": "gumroad",
+      "product": "de-esser",
+      "product_name": "IA De-Esser",
+      "rating": 4,
+      "message": "The IA De-Esser pretty much covers the gamut of de-essing.\n\nIt has 4 \"Slots\" (frequency ranges) and 3 modes for each slot. It works like a 4 band compressor with 3 modes per band. \n\n1 AUTO: De-esses within frequency range set by you. \n\n2 DE-ESS: it will determined the frequency range.\n\n3 SMART: covers the spectrum automatically, a good starting point.\n\nEach slot has the settings: attack, release, and depth, that work in all modes. \n\nI see this plug-in being useful for a live vocal mix or recorded bounce.\n\nAlso, I wouldn't confine this baby \nto just vocals, it poses many possibilities!\n\nTony",
+      "response": null,
+      "date": "2026-09-03T20:44:19Z",
+      "url": "https://immanentaudio.gumroad.com/l/hjuqeo"
+    },
     {
       "id": "HicDJEhJM-EtX4uaqEANqw==",
       "source": "gumroad",

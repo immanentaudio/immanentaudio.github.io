@@ -31,6 +31,7 @@ PRODUCTS = [
     {"slug": "ozydcb", "product": "spectral-agent", "name": "Spectral Agent 2"},
     {"slug": "bejaxg", "product": "spectral-agent", "name": "Spectral Agent"},
     {"slug": "mlqfwn", "product": "vibrancy", "name": "Vibrancy"},
+    {"slug": "siqlqg", "product": "synth", "name": "IA Synth"},
     {"slug": "hjuqeo", "product": "de-esser", "name": "IA De-Esser"},
     {"slug": "vuncqe", "product": "harmonic-saturator", "name": "Harmonic Saturator"},
 ]

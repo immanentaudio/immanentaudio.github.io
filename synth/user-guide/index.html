@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary SEO -->
+    <title>IA Synth User Guide — Synth, Chords &amp; EQ Pages | Immanent Audio</title>
+    <meta name="description" content="The full IA Synth user guide: every control on the SYNTH, CHORDS and EQ pages, from oscillators and filters to the piano roll, rhythm grooves and playing with your DAW. Read it here or download the PDF.">
+    <link rel="canonical" href="https://immanentaudio.com/synth/user-guide/">
+
+    <!-- Icons -->
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
+    <link rel="icon" type="image/png" sizes="100x100" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <!-- Open Graph / social previews -->
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Immanent Audio">
+    <meta property="og:title" content="IA Synth User Guide — Synth, Chords &amp; EQ Pages">
+    <meta property="og:description" content="Every control on the SYNTH, CHORDS and EQ pages. Read the full guide or download the PDF.">
+    <meta property="og:url" content="https://immanentaudio.com/synth/user-guide/">
+    <meta property="og:image" content="https://immanentaudio.com/synth/user-guide/overview.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="IA Synth User Guide — Synth, Chords &amp; EQ Pages">
+    <meta name="twitter:description" content="Every control on the SYNTH, CHORDS and EQ pages. Read the full guide or download the PDF.">
+    <meta name="twitter:image" content="https://immanentaudio.com/synth/user-guide/overview.jpg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600;6..72,700;6..72,800&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        body { --accent: #a98bf5; --accent-rgb: 169, 139, 245; }
+    </style>
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TechArticle",
+          "headline": "IA Synth User Guide",
+          "description": "Every control on the SYNTH, CHORDS and EQ pages of IA Synth.",
+          "url": "https://immanentaudio.com/synth/user-guide/",
+          "image": "https://immanentaudio.com/synth/user-guide/overview.jpg",
+          "inLanguage": "en",
+          "datePublished": "2026-09-26",
+          "dateModified": "2026-09-26",
+          "about": {
+            "@type": "SoftwareApplication",
+            "name": "IA Synth",
+            "url": "https://immanentaudio.com/synth/",
+            "applicationCategory": "MultimediaApplication",
+            "applicationSubCategory": "Audio Plugin (VST3, AU)",
+            "operatingSystem": "macOS, Windows"
+          },
+          "author": { "@type": "Organization", "name": "Immanent Audio", "url": "https://immanentaudio.com/" },
+          "publisher": { "@type": "Organization", "name": "Immanent Audio", "url": "https://immanentaudio.com/" },
+          "mainEntityOfPage": "https://immanentaudio.com/synth/user-guide/"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://immanentaudio.com/" },
+            { "@type": "ListItem", "position": 2, "name": "IA Synth", "item": "https://immanentaudio.com/synth/" },
+            { "@type": "ListItem", "position": 3, "name": "User Guide", "item": "https://immanentaudio.com/synth/user-guide/" }
+          ]
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+
+    <!-- Animated deep-space backdrop -->
+    <div class="cosmos" aria-hidden="true"></div>
+
+    <!-- Navigation -->
+    <nav class="site-nav">
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">
+                <img src="/favicon.png" alt="Immanent Audio logo">
+                <span>Immanent Audio</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="/spectral-agent/">Spectral Agent 2</a></li>
+                <li><a href="/synth/" class="active">IA Synth</a></li>
+                <li><a href="/de-esser/">IA De-Esser</a></li>
+                <li><a href="/vibrancy/">Vibrancy</a></li>
+                <li><a href="/harmonic-saturator/">Harmonic Saturator</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="product-hero">
+        <div class="daw-grid" aria-hidden="true"></div>
+        <div class="container-wide">
+            <nav class="breadcrumbs" aria-label="Breadcrumb">
+                <a href="/">Home</a><span>/</span><a href="/synth/">IA Synth</a><span>/</span>User Guide
+            </nav>
+            <h1>IA Synth User Guide</h1>
+            <p class="product-tagline">Synthesizer, chord and rhythm studio, and EQ in one instrument.</p>
+            <div class="chip-row">
+                <span class="chip">Synth</span>
+                <span class="chip">Chords</span>
+                <span class="chip">EQ</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container-wide">
+        <div class="grid-container">
+
+            <!-- LEFT COLUMN: the guide -->
+            <section class="guide">
+
+                <div class="product-section">
+                    <h2 id="overview">Overview</h2>
+                    <p><strong>IA Synth</strong> is a polyphonic synthesizer with a chord and rhythm studio and a console-style EQ built in. It has three pages, switched with the tabs at the top.</p>
+                    <ul>
+                        <li><strong>SYNTH:</strong> 120 presets and all the controls.</li>
+                        <li><strong>CHORDS:</strong> genre-specific chord and progression suggestions, a piano roll, rhythm grooves, and MIDI drag-and-drop to your DAW.</li>
+                        <li><strong>EQ:</strong> a 5-band EQ with HPF/LPF and presets.</li>
+                    </ul>
+
+                    <figure class="guide-figure">
+                        <img src="/synth/user-guide/overview.jpg" width="1400" height="1067" data-full="/synth/user-guide/overview-full.jpg" alt="The IA Synth SYNTH page with the Supersaw Pad preset loaded" class="plugin-screenshot">
+                        <figcaption>The SYNTH page with the Supersaw Pad preset.</figcaption>
+                    </figure>
+
+                    <h3 id="getting-started">Getting started</h3>
+                    <ol>
+                        <li>Insert IA Synth on an instrument track.</li>
+                        <li>Pick a preset with the arrows or the preset name at the top.</li>
+                        <li>Play from your keyboard, the on-screen keys, or your computer keyboard.</li>
+                        <li>Open CHORDS to write a progression and drag into your DAW.</li>
+                    </ol>
+
+                    <h3 id="the-header">The header</h3>
+                    <figure class="guide-figure">
+                        <img src="/synth/user-guide/header.jpg" width="1400" height="61" data-full="/synth/user-guide/header-full.jpg" alt="The IA Synth header: SYNTH, CHORDS and EQ tabs, preset arrows, the preset name, SAVE, the output meter and MASTER" class="plugin-screenshot" loading="lazy">
+                    </figure>
+                    <div class="table-scroll">
+                        <table class="guide-table">
+                            <thead>
+                                <tr><th scope="col">Control</th><th scope="col">What it does</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><th scope="row">SYNTH / CHORDS / EQ</th><td>Switch pages.</td></tr>
+                                <tr><th scope="row">&lt; and &gt;</th><td>Previous / next preset.</td></tr>
+                                <tr><th scope="row">Preset name</th><td>Click for the full list by category, plus the user presets folder.</td></tr>
+                                <tr><th scope="row">SAVE</th><td>Save the current sound as your own preset.</td></tr>
+                                <tr><th scope="row">Meter</th><td>Output level.</td></tr>
+                                <tr><th scope="row">MASTER</th><td>Output volume, -36 to +12 dB.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 id="the-keyboard">The keyboard</h3>
+                    <figure class="guide-figure">
+                        <img src="/synth/user-guide/keyboard.jpg" width="1400" height="129" data-full="/synth/user-guide/keyboard-full.jpg" alt="The IA Synth on-screen keyboard with octave buttons" class="plugin-screenshot" loading="lazy">
+                    </figure>
+                    <p>Click to play, or use your computer keyboard. Z and X (or the &lt; and &gt; buttons) move the computer keys down or up an octave.</p>
+                </div>
+
+                <div class="product-section">
+                    <h2 id="the-synth-page">The SYNTH page</h2>
+                    <p>Two oscillators, a sub and noise feed the filter and amp. Effects, stereo tools and the performance controls sit below. Sections that are switched off are dimmed.</p>
+                    <figure class="guide-figure">
+                        <img src="/synth/user-guide/synth-page.jpg" width="1400" height="339" data-full="/synth/user-guide/synth-page-full.jpg" alt="The top row of the SYNTH page: OSC A, OSC B, Sub + Noise and the Filter" class="plugin-screenshot" loading="lazy">
+                    </figure>
+
+                    <h3 id="oscillators">Oscillators (OSC A and OSC B)</h3>
+                    <div class="table-scroll">
+                        <table class="guide-table">
+                            <thead>
+                                <tr><th scope="col">Control</th><th scope="col">What it does</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><th scope="row">ON</th><td>Turns the oscillator on.</td></tr>
+                                <tr><th scope="row">Wave menu</th><td>Six morphing tables: Classic, Mellow, Sync, Organ, Vocal, FM.</td></tr>
+                                <tr><th scope="row">SHAPE</th><td>Sweeps through the table's waveforms.</td></tr>
+                                <tr><th scope="row">OCTAVE / SEMI / FINE</th><td>Tuning: octaves, semitones, cents.</td></tr>
+                                <tr><th scope="row">UNISON</th><td>1 to 7 stacked copies of the oscillator.</td></tr>
+                                <tr><th scope="row">DETUNE</th><td>How far the copies spread in pitch.</td></tr>
+                                <tr><th scope="row">UNI WIDTH</th><td>How far the copies spread in stereo.</td></tr>
+                                <tr><th scope="row">LEVEL</th><td>Oscillator volume.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 id="sub-noise">Sub + Noise</h3>
+                    <div class="table-scroll">
+                        <table class="guide-table">
+                            <thead>
+                                <tr><th scope="col">Control</th><th scope="col">What it does</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><th scope="row">Sub wave / octave</th><td>Sine, triangle or square, one or two octaves below the note.</td></tr>
+                                <tr><th scope="row">SUB</th><td>Sub volume.</td></tr>
+                                <tr><th scope="row">NOISE TONE</th><td>Noise brightness.</td></tr>
+                                <tr><th scope="row">NOISE</th><td>Noise volume.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 id="filter">Filter</h3>
+                    <div class="table-scroll">
+                        <table class="guide-table">
+                            <thead>
+                                <tr><th scope="col">Control</th><th scope="col">What it does</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><th scope="row">Type</th><td>Ladder 24 (warm, classic), Smooth 12, Band Pass, High Pass.</td></tr>
+                                <tr><th scope="row">CUTOFF</th><td>Filter frequency.</td></tr>
+                                <tr><th scope="row">RES</th><td>Resonance.</td></tr>
+                                <tr><th scope="row">DRIVE</th><td>Saturation inside the filter.</td></tr>
+                                <tr><th scope="row">ENV AMT</th><td>How far the mod envelope moves the cutoff, up or down.</td></tr>
+                                <tr><th scope="row">KEY TRACK</th><td>Higher notes open the filter more.</td></tr>
+                                <tr><th scope="row">VELOCITY</th><td>Softer notes play darker.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <figure class="guide-figure">
+                        <img src="/synth/user-guide/envelopes-lfo-voice.jpg" width="1400" height="263" data-full="/synth/user-guide/envelopes-lfo-voice-full.jpg" alt="The middle row of the SYNTH page: amp envelope, mod envelope, LFO and Voice" class="plugin-screenshot" loading="lazy">
+                    </figure>
+
+                    <h3 id="envelopes">Envelopes</h3>
+                    <div class="table-scroll">
+                        <table class="guide-table">
+                            <thead>
+                                <tr><th scope="col">Control</th><th scope="col">What it does</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><th scope="row">ATTACK / DECAY / SUSTAIN / RELEASE</th><td>Shape of the note over time. You can also drag the handles on the display.</td></tr>
+                                <tr><th scope="row">Amp VELOCITY</th><td>How much softer soft notes play.</td></tr>
+                                <tr><th scope="row">MOD ENVELOPE</th><td>A second envelope. It moves the filter (through ENV AMT) and, with &gt; SHAPE, the oscillator shape.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 id="lfo">LFO</h3>
+                    <div class="table-scroll">
+                        <table class="guide-table">
+                            <thead>
+                                <tr><th scope="col">Control</th><th scope="col">What it does</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><th scope="row">Shape menu</th><td>Sine, Triangle, Saw, Square, Random, Pump (sidechain-style duck).</td></tr>
+                                <tr><th scope="row">RATE</th><td>Speed in Hz. With SYNC on it becomes SYNC RATE, in note values.</td></tr>
+                                <tr><th scope="row">SYNC / RETRIG</th><td>Lock to the DAW tempo / restart on each new note.</td></tr>
+                                <tr><th scope="row">OFFBEAT</th><td>Shifts the cycle half a beat. Available with SYNC or RETRIG.</td></tr>
+                                <tr><th scope="row">&gt; PITCH / &gt; CUTOFF / &gt; SHAPE / &gt; VOLUME</th><td>How much the LFO moves each of these.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 id="voice">Voice</h3>
+                    <div class="table-scroll">
+                        <table class="guide-table">
+                            <thead>
+                                <tr><th scope="col">Control</th><th scope="col">What it does</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><th scope="row">Poly / Mono / Legato</th><td>Chords, one note at a time, or one note without re-triggering.</td></tr>
+                                <tr><th scope="row">Legato / Always</th><td>Glide only between overlapping notes, or on every note.</td></tr>
+                                <tr><th scope="row">GLIDE TIME / GLIDE CURVE</th><td>How long a slide takes and its shape.</td></tr>
+                                <tr><th scope="row">ANALOG</th><td>Subtle per-note drift in tuning and tone.</td></tr>
+                                <tr><th scope="row">BEND RANGE / WHEEL VIB</th><td>Pitch-wheel range / mod-wheel vibrato depth.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <figure class="guide-figure">
+                        <img src="/synth/user-guide/effects.jpg" width="1400" height="144" data-full="/synth/user-guide/effects-full.jpg" alt="The effects row of the SYNTH page: Drive, Density, Chorus, Stereo + Space, Delay and Reverb" class="plugin-screenshot" loading="lazy">
+                    </figure>
+
+                    <h3 id="effects">Effects</h3>
+                    <div class="table-scroll">
+                        <table class="guide-table">
+                            <thead>
+                                <tr><th scope="col">Control</th><th scope="col">What it does</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><th scope="row">DRIVE</th><td>Warm saturation.</td></tr>
+                                <tr><th scope="row">DENSITY</th><td>Multiband compression for a fuller, closer sound.</td></tr>
+                                <tr><th scope="row">CHORUS</th><td>Classic ensemble chorus: RATE, DEPTH, MIX.</td></tr>
+                                <tr><th scope="row">DELAY</th><td>Tempo-synced echo: TIME, FEEDBACK, MIX, PING-PONG.</td></tr>
+                                <tr><th scope="row">REVERB</th><td>SIZE, DAMP (darkens the tail), MIX.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 id="stereo-space">Stereo + Space</h3>
+                    <div class="table-scroll">
+                        <table class="guide-table">
+                            <thead>
+                                <tr><th scope="col">Control</th><th scope="col">What it does</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><th scope="row">WIDTH</th><td>Stereo width. The low end always stays mono.</td></tr>
+                                <tr><th scope="row">VOICE PAN</th><td>Places each voice at its own position.</td></tr>
+                                <tr><th scope="row">AMBIENCE</th><td>A soft room space that fills the gaps between notes.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <figure class="guide-figure">
+                        <img src="/synth/user-guide/perform.jpg" width="1400" height="127" data-full="/synth/user-guide/perform-full.jpg" alt="The perform row of the SYNTH page: Energy, Shimmer, Orchestrate, Halo and Player" class="plugin-screenshot" loading="lazy">
+                    </figure>
+
+                    <h3 id="perform">Perform</h3>
+                    <div class="table-scroll">
+                        <table class="guide-table">
+                            <thead>
+                                <tr><th scope="col">Control</th><th scope="col">What it does</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><th scope="row">ENERGY</th><td>50% is the preset as designed. Lower is more intimate, higher is bigger and brighter.</td></tr>
+                                <tr><th scope="row">SHIMMER / BLOOM</th><td>Airy octave layers with their own reverb / how quickly they fade in.</td></tr>
+                                <tr><th scope="row">ORCHESTRATE</th><td>Octave doubles that thicken the sound.</td></tr>
+                                <tr><th scope="row">HALO</th><td>Strings that ring along with the chord.</td></tr>
+                                <tr><th scope="row">PLAYER</th><td>Rolls chords like a strum: Off, Roll Up, Roll Down, Loose. SPACING sets the gap between notes.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="product-section">
+                    <h2 id="the-chords-page">The CHORDS page</h2>
+                    <p>Write progressions without leaving the plugin. Everything follows the key, so the whole library works in any key.</p>
+                    <figure class="guide-figure">
+                        <img src="/synth/user-guide/chords-page.jpg" width="1400" height="328" data-full="/synth/user-guide/chords-page-full.jpg" alt="The top of the CHORDS page: key, mode and genre menus, BASS NOTE, chord tiles and progressions" class="plugin-screenshot" loading="lazy">
+                    </figure>
+
+                    <h3 id="key-mode-and-genre">Key, mode and genre</h3>
+                    <div class="table-scroll">
+                        <table class="guide-table">
+                            <thead>
+                                <tr><th scope="col">Control</th><th scope="col">What it does</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><th scope="row">Key / Major-Minor</th><td>The key.</td></tr>
+                                <tr><th scope="row">Genre</th><td>12 genres, each with their own chords, progressions and grooves.</td></tr>
+                                <tr><th scope="row">BASS NOTE</th><td>Adds the root note in the bass.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 id="chords-and-progressions">Chords and progressions</h3>
+                    <div class="table-scroll">
+                        <table class="guide-table">
+                            <thead>
+                                <tr><th scope="col">Control</th><th scope="col">What it does</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><th scope="row">Chord tiles</th><td>Hold to hear. The top button picks the chord colour and the lower one the inversion (hover the list to hear each).</td></tr>
+                                <tr><th scope="row">Progressions</th><td>Click to loop a preview; click again to stop.</td></tr>
+                                <tr><th scope="row">Drag</th><td>Drag any tile onto the roll, or straight into your DAW as MIDI.</td></tr>
+                                <tr><th scope="row">+ SAVE</th><td>Saves the chord selected in the roll, or the roll's progression, to this genre. Right-click a saved tile to rename or delete it.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <figure class="guide-figure">
+                        <img src="/synth/user-guide/piano-roll.jpg" width="1400" height="306" data-full="/synth/user-guide/piano-roll-full.jpg" alt="The IA Synth piano roll with a four-bar progression and the transport, PLAY WITH DAW and DRAG CLIP TO DAW controls" class="plugin-screenshot" loading="lazy">
+                    </figure>
+
+                    <h3 id="the-piano-roll">The piano roll</h3>
+                    <div class="table-scroll">
+                        <table class="guide-table">
+                            <thead>
+                                <tr><th scope="col">Control</th><th scope="col">What it does</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><th scope="row">ROLL / RHYTHM</th><td>Show the roll alone, or the rhythm editor under it.</td></tr>
+                                <tr><th scope="row">Length / Snap</th><td>1 to 16 bars / grid size.</td></tr>
+                                <tr><th scope="row">Time signature</th><td>Auto follows your DAW, or pick one.</td></tr>
+                                <tr><th scope="row">PLAY WITH DAW</th><td>Plays the roll in time whenever the DAW plays.</td></tr>
+                                <tr><th scope="row">Play / Pause / Back to start</th><td>Preview the roll while the DAW is stopped.</td></tr>
+                                <tr><th scope="row">CLEAR NOTES / CLEAR RHYTHM</th><td>Empty the roll / switch the rhythm off.</td></tr>
+                                <tr><th scope="row">Undo, Redo, Copy, Paste</th><td>Also Cmd (Ctrl) Z, C, X, V, and D.</td></tr>
+                                <tr><th scope="row">DRAG CLIP TO DAW</th><td>Drag the whole clip into your DAW as a MIDI item.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p>Editing: double-click the grid to add a note (keep holding and drag to set its length), drag a note to move it, drag its right edge to resize, double-click it to delete. Drag on empty grid to select.</p>
+                    <figure class="guide-figure">
+                        <img src="/synth/user-guide/rhythm.jpg" width="1400" height="245" data-full="/synth/user-guide/rhythm-full.jpg" alt="The rhythm editor: groove tiles above the CHORD and BASS step lanes" class="plugin-screenshot" loading="lazy">
+                    </figure>
+
+                    <h3 id="rhythm">Rhythm</h3>
+                    <div class="table-scroll">
+                        <table class="guide-table">
+                            <thead>
+                                <tr><th scope="col">Control</th><th scope="col">What it does</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><th scope="row">Groove tiles</th><td>Click to load a groove for this genre and meter. Click the lit one to turn it off.</td></tr>
+                                <tr><th scope="row">CHORD / BASS lanes</th><td>Click a step to add or remove a hit, drag to hold it, shift-click to accent.</td></tr>
+                                <tr><th scope="row">Pattern / SWING</th><td>One- or two-bar pattern / how much the off-beats lag.</td></tr>
+                                <tr><th scope="row">+ SAVE</th><td>Save the grid as your own groove.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p>The roll holds the harmony and the rhythm decides when it plays. Each hit plays whatever chord is current at that moment.</p>
+
+                    <h3 id="playing-with-your-daw">Playing with your DAW</h3>
+                    <ul>
+                        <li><strong>Bar 1 of the clip</strong> sits where you press play in the DAW, or on the loop start when the DAW is looping.</li>
+                        <li><strong>Switching PLAY WITH DAW on mid-song</strong> joins at the current position.</li>
+                        <li><strong>While the roll has notes,</strong> the track's own MIDI is muted.</li>
+                        <li><strong>Once you drag the clip into your DAW,</strong> PLAY WITH DAW turns off, so the notes aren't doubled.</li>
+                    </ul>
+                </div>
+
+                <div class="product-section">
+                    <h2 id="the-eq-page">The EQ page</h2>
+                    <p>A 5-band EQ on the synth's output (with HPF and LPF). Changing synth presets doesn’t change EQ settings.</p>
+                    <figure class="guide-figure">
+                        <img src="/synth/user-guide/eq-page.jpg" width="1400" height="482" data-full="/synth/user-guide/eq-page-full.jpg" alt="The IA Synth EQ display with the Warm curve selected, over the pad's input and output spectrum" class="plugin-screenshot" loading="lazy">
+                        <figcaption>The Warm curve, with the pad's spectrum in and out.</figcaption>
+                    </figure>
+
+                    <h3 id="curves">Curves</h3>
+                    <div class="table-scroll">
+                        <table class="guide-table">
+                            <thead>
+                                <tr><th scope="col">Control</th><th scope="col">What it does</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><th scope="row">Curve buttons</th><td>12 preset EQs.</td></tr>
+                                <tr><th scope="row">+ SAVE</th><td>Save your own. Right-click it to rename, update or delete.</td></tr>
+                                <tr><th scope="row">EQ IN</th><td>Bypass switch.</td></tr>
+                                <tr><th scope="row">MATCH</th><td>Keeps the loudness level, so you hear the tone change, not a volume jump.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 id="the-display">The display</h3>
+                    <ul>
+                        <li><strong>Drag a dot</strong> to move that band: left and right for frequency, up and down for gain.</li>
+                        <li><strong>Mouse wheel over a dot</strong> changes its width (Q). Double-click a dot to return it to the curve.</li>
+                        <li><strong>The filled trace</strong> is the sound going in; the outline is what comes out.</li>
+                    </ul>
+                    <figure class="guide-figure">
+                        <img src="/synth/user-guide/eq-bands.jpg" width="1400" height="400" data-full="/synth/user-guide/eq-bands-full.jpg" alt="The EQ band knobs: High Pass, Low, Low Mid, Mid, Presence, Air and Low Pass" class="plugin-screenshot" loading="lazy">
+                    </figure>
+
+                    <h3 id="the-bands">The bands</h3>
+                    <div class="table-scroll">
+                        <table class="guide-table">
+                            <thead>
+                                <tr><th scope="col">Control</th><th scope="col">What it does</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><th scope="row">HIGH PASS</th><td>Cuts lows below FREQ (18 dB/oct). Fully left is off.</td></tr>
+                                <tr><th scope="row">LOW / AIR</th><td>Shelves for the bottom and top end.</td></tr>
+                                <tr><th scope="row">LOW MID / MID / PRESENCE</th><td>Bell bands for the low, middle, and high mids.</td></tr>
+                                <tr><th scope="row">GAIN / FREQ / Q</th><td>±12 dB / band frequency / width. Q centered is Auto and follows the gain.</td></tr>
+                                <tr><th scope="row">LOW PASS</th><td>Cuts highs above FREQ (12 dB/oct). Fully right is off.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="product-section">
+                    <p class="muted">IA Synth is free — VST3 and AU, macOS and Windows. <a href="/synth/">Back to the plugin page</a>.</p>
+                </div>
+
+            </section>
+
+            <!-- RIGHT COLUMN: download + contents -->
+            <aside>
+                <div class="sidebar-sticky is-guide">
+                    <!-- Same card as the plugin page, minus the reviews. -->
+                    <div class="sidebar-card">
+                        <img src="/synth/ia-synth.jpg" data-full="/synth/ia-synth-full.jpg" alt="IA Synth plugin interface showing the SYNTH page with the Supersaw Pad preset" class="plugin-screenshot">
+
+                        <div class="sidebar-buy-row">
+                            <p class="sidebar-price">FREE</p>
+                            <span class="sidebar-guide">
+                                <span class="is-current" aria-current="page">User Guide</span>
+                                <a href="/synth/ia-synth-user-guide.pdf" class="sidebar-guide-dl" download title="Download the PDF" aria-label="Download the user guide as a PDF">
+                                    <svg viewBox="0 0 16 16" width="13" height="13" aria-hidden="true" focusable="false">
+                                        <path d="M8 1.5v8m0 0 3-3m-3 3-3-3M2.5 12v1.5A1 1 0 0 0 3.5 14.5h9a1 1 0 0 0 1-1V12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </a>
+                            </span>
+                        </div>
+
+                        <a href="https://immanentaudio.gumroad.com/l/siqlqg" class="cta-button" target="_blank" rel="noopener">Get (via Gumroad)</a>
+                    </div>
+
+                    <nav class="guide-toc" aria-label="Guide contents">
+                        <h2>Contents</h2>
+                        <ol>
+                            <li><a href="#overview">Overview</a>
+                                <ul>
+                                    <li><a href="#getting-started">Getting started</a></li>
+                                    <li><a href="#the-header">The header</a></li>
+                                    <li><a href="#the-keyboard">The keyboard</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#the-synth-page">The SYNTH page</a>
+                                <ul>
+                                    <li><a href="#oscillators">Oscillators (OSC A and OSC B)</a></li>
+                                    <li><a href="#sub-noise">Sub + Noise</a></li>
+                                    <li><a href="#filter">Filter</a></li>
+                                    <li><a href="#envelopes">Envelopes</a></li>
+                                    <li><a href="#lfo">LFO</a></li>
+                                    <li><a href="#voice">Voice</a></li>
+                                    <li><a href="#effects">Effects</a></li>
+                                    <li><a href="#stereo-space">Stereo + Space</a></li>
+                                    <li><a href="#perform">Perform</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#the-chords-page">The CHORDS page</a>
+                                <ul>
+                                    <li><a href="#key-mode-and-genre">Key, mode and genre</a></li>
+                                    <li><a href="#chords-and-progressions">Chords and progressions</a></li>
+                                    <li><a href="#the-piano-roll">The piano roll</a></li>
+                                    <li><a href="#rhythm">Rhythm</a></li>
+                                    <li><a href="#playing-with-your-daw">Playing with your DAW</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#the-eq-page">The EQ page</a>
+                                <ul>
+                                    <li><a href="#curves">Curves</a></li>
+                                    <li><a href="#the-display">The display</a></li>
+                                    <li><a href="#the-bands">The bands</a></li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+            </aside>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand">
+                    <img src="/favicon.png" alt="Immanent Audio logo">
+                    Immanent Audio
+                </div>
+                <p>Boutique VST3 &amp; AU audio plugins for mixing — made independently, with a serious emphasis on clarity.</p>
+            </div>
+            <div>
+                <h4>Plugins</h4>
+                <ul>
+                    <li><a href="/spectral-agent/">Spectral Agent 2 — Auto EQ</a></li>
+                    <li><a href="/synth/">IA Synth — Free</a></li>
+                    <li><a href="/de-esser/">IA De-Esser — Free</a></li>
+                    <li><a href="/vibrancy/">Vibrancy — Parallel FX</a></li>
+                    <li><a href="/harmonic-saturator/">Harmonic Saturator — Free</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="https://immanentaudio.gumroad.com/" target="_blank" rel="noopener">Gumroad Store</a></li>
+                    <li><a href="mailto:immanentaudio@gmail.com">immanentaudio@gmail.com</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 Immanent Audio. All rights reserved.</span>
+            <span>VST is a trademark of Steinberg Media Technologies GmbH.</span>
+        </div>
+    </footer>
+
+    <script src="/lightbox.js" defer></script>
+
+</body>
+</html>

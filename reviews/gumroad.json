@@ -1,12 +1,12 @@
 {
-  "updated": "2026-09-28T07:33:51Z",
+  "updated": "2026-09-28T15:37:06Z",
   "ratings": {
     "spectral-agent": {
       "count": 1,
       "average": 5.0
     },
     "synth": {
-      "count": 8,
+      "count": 9,
       "average": 4.9
     },
     "de-esser": {

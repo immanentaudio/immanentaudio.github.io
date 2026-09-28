@@ -1,9 +1,13 @@
 {
-  "updated": "2026-09-16T12:39:02Z",
+  "updated": "2026-09-28T07:33:51Z",
   "ratings": {
     "spectral-agent": {
       "count": 1,
       "average": 5.0
+    },
+    "synth": {
+      "count": 8,
+      "average": 4.9
     },
     "de-esser": {
       "count": 55,
@@ -15,6 +19,28 @@
     }
   },
   "reviews": [
+    {
+      "id": "Zgq8H_tgxd4kQcNii2LAqg==",
+      "source": "gumroad",
+      "product": "synth",
+      "product_name": "IA Synth",
+      "rating": 5,
+      "message": "Amazing!!!",
+      "response": null,
+      "date": "2026-09-28T07:00:44Z",
+      "url": "https://immanentaudio.gumroad.com/l/siqlqg"
+    },
+    {
+      "id": "aMsJpobcmMOTtmocyKrA2Q==",
+      "source": "gumroad",
+      "product": "synth",
+      "product_name": "IA Synth",
+      "rating": 5,
+      "message": "Great set of features, I use Serum2 and Vital already, but I've found this to slot nicely beside them.  The Chord and Rhythm generators are cool for when I'm feeling stuck, and the EQ is pretty handy too.  Definitely a good addition to my setup.",
+      "response": null,
+      "date": "2026-09-28T00:39:18Z",
+      "url": "https://immanentaudio.gumroad.com/l/siqlqg"
+    },
     {
       "id": "XBp2VjlhHZOLFERf02J3TA==",
       "source": "gumroad",

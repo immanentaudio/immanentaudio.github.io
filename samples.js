@@ -118,7 +118,7 @@
         var pct = audio.currentTime / audio.duration;
         current.seek.value = Math.round(pct * 1000);
         current.seek.style.setProperty('--fill', (pct * 100) + '%');
-        if (current.time) current.time.textContent = fmt(audio.currentTime) + ' / ' + current.total;
+        if (current.time) current.time.textContent = fmt(audio.currentTime);
     });
 
     // Run into the next clip, so pressing play once plays the whole set.

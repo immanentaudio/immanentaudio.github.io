@@ -1,12 +1,12 @@
 {
-  "updated": "2026-10-10T13:50:40Z",
+  "updated": "2026-10-10T17:59:36Z",
   "ratings": {
     "spectral-agent": {
       "count": 1,
       "average": 5.0
     },
     "synth": {
-      "count": 15,
+      "count": 16,
       "average": 4.9
     },
     "de-esser": {
@@ -19,6 +19,17 @@
     }
   },
   "reviews": [
+    {
+      "id": "iM7y2795Kg-rBcHQlWT8_w==",
+      "source": "gumroad",
+      "product": "synth",
+      "product_name": "IA Synth",
+      "rating": 5,
+      "message": "Oohhhh amazing 😍 really happy with this plugin. It helps beat creative block plus the presets sound absolutely amazing. I suck at sound design the factory presets sound amazing right out of the box. 🥰🥰🥰",
+      "response": null,
+      "date": "2026-10-10T17:26:22Z",
+      "url": "https://immanentaudio.gumroad.com/l/siqlqg"
+    },
     {
       "id": "x3Oq-FQ2VaSRxAKxNTXYAA==",
       "source": "gumroad",

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-10T17:59:36Z",
+  "updated": "2026-10-21T13:00:01Z",
   "ratings": {
     "spectral-agent": {
       "count": 1,
@@ -10,7 +10,7 @@
       "average": 4.9
     },
     "de-esser": {
-      "count": 58,
+      "count": 59,
       "average": 4.9
     },
     "harmonic-saturator": {

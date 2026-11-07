@@ -1,12 +1,12 @@
 {
-  "updated": "2026-11-02T17:12:41Z",
+  "updated": "2026-11-07T14:09:15Z",
   "ratings": {
     "spectral-agent": {
       "count": 1,
       "average": 5.0
     },
     "synth": {
-      "count": 16,
+      "count": 17,
       "average": 4.9
     },
     "de-esser": {
@@ -19,6 +19,17 @@
     }
   },
   "reviews": [
+    {
+      "id": "0vWA91K_ryEoRwdVDIB-Qg==",
+      "source": "gumroad",
+      "product": "synth",
+      "product_name": "IA Synth",
+      "rating": 5,
+      "message": "This is an absolutely fantastic and intuitive Synth. Everything about it is polished and is very well thought out. It's become my go-to synth and blends very well with the sample based instruments I use.\n\nThanks!",
+      "response": "Thank you!",
+      "date": "2026-11-07T02:03:39Z",
+      "url": "https://immanentaudio.gumroad.com/l/siqlqg"
+    },
     {
       "id": "iM7y2795Kg-rBcHQlWT8_w==",
       "source": "gumroad",
